@@ -54,7 +54,7 @@ Before opening a PR, confirm the build matrix still holds:
 3. For class/encoding changes, render the ToC and title page and check the umlauts
    (`Abkürzungsverzeichnis`, `Universität`, …) render correctly and are copy/paste-able.
 
-The reusable **Overleaf-conformance skill** (`.claude/skills/overleaf-conformance/`)
+The reusable **conformance tool** (`tools/overleaf-conformance/`, vendor-neutral)
 automates much of this audit and regenerates `docs/overleaf-conformance-report.md`.
 
 ## Commit messages
