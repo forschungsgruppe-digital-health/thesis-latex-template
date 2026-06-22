@@ -30,8 +30,8 @@ zero local install beyond Docker + VS Code.
 2. Clone and open this repository in VS Code:
    `git clone https://github.com/forschungsgruppe-digital-health/thesis-latex-template.git`
 3. Run **“Dev Containers: Reopen in Container”**. On first start it pulls TeX Live (a few GB).
-4. Open an example (e.g. `Beispielarbeit/BeispielarbeitDE/Beispielarbeit.tex`) and **Build**
-   (▶) — the PDF opens in a side tab.
+4. Open [`template/thesis.tex`](template/thesis.tex) and **Build** (▶) — the PDF opens in
+   a side tab. (Or open an example under `examples/`.)
 
 → Details: [docs/devcontainer.md](docs/devcontainer.md).
 
@@ -40,7 +40,7 @@ zero local install beyond Docker + VS Code.
 Requires a TeX Live (2021+ recommended) with `latexmk`. From the project root:
 
 ```bash
-latexmk Beispielarbeit/BeispielarbeitDE/Beispielarbeit.tex   # pdflatex + bibtex, via latexmkrc
+latexmk examples/de/Beispielarbeit.tex   # pdflatex + bibtex, via latexmkrc
 ```
 
 The bundled [`latexmkrc`](latexmkrc) puts the custom class (`texmf/`) on the search path.
@@ -62,23 +62,27 @@ release ZIP** (produced by the upcoming release workflow). The one-click button 
 
 ## What you edit
 
+Start from [`template/`](template/) — a minimal fill-in-the-blanks thesis (placeholders
+marked `« … »`). Then:
+
 | You want to… | File |
 |---|---|
-| Set title, author, supervisor, degree | the `\seminartitlepage{…}` block in your main `.tex` |
+| Set title, author, supervisor, degree | the `\bachelortitlepage{…}` block in `template/thesis.tex` (swap for `\master…`/`\diploma…`/`\dissertation…`) |
 | Choose language | class option: default German, `en` for English (`\documentclass[...,en]{wise}`) |
 | Add chapters | `\section{…}`, or split with `\include{chapter}` |
-| Add references | your `.bib` file + `\cite{key}`; style is `\bibliographystyle{wisenat}` (DIN 1505) |
+| Add references | `template/references.bib` + `\cite{key}`; style is `\bibliographystyle{wisenat}` (DIN 1505) |
 
-A dedicated minimal `template/` starter and a full “filling-in” guide are on the roadmap;
-until then, copy an example under `Beispielarbeit/` and edit it.
+Full walk-through: [docs/filling-in.md](docs/filling-in.md). The richer DE/EN sample
+theses live under [`examples/`](examples/).
 
 ## Repository layout
 
 ```text
+template/         minimal fill-in-the-blanks starter (start here)
+examples/         richer DE/EN sample theses (de/, en/)
 texmf/            custom class + styles + DIN 1505 .bst (the wise package)
-Beispielarbeit/   example theses (DE + EN) — also the current starting point
-Dokumentation/    German documentation (PDF + sources)
-docs/             new documentation, incl. the maintainer plan & conformance report
+Dokumentation/    original German documentation (PDF + sources)
+docs/             documentation: filling-in, troubleshooting, dev container, maintainer plan
 .devcontainer/    local LaTeX dev environment
 latexmkrc         search-path shim so the class is found from the project root
 ```
@@ -88,8 +92,11 @@ A critique and the target layout are in
 
 ## Documentation
 
-- [docs/](docs/) — guides and the [Overleaf conformance report](docs/overleaf-conformance-report.md)
-- [docs/maintainer/](docs/maintainer/) — inventory, decision log, structure proposal
+- [docs/filling-in.md](docs/filling-in.md) — how to fill in the template
+- [docs/troubleshooting.md](docs/troubleshooting.md) — common problems & fixes
+- [docs/devcontainer.md](docs/devcontainer.md) — the local LaTeX environment
+- [docs/maintainer/](docs/maintainer/) — inventory, decision log, structure proposal, releasing
+- [Overleaf conformance report](docs/overleaf-conformance-report.md)
 - [`Einfuehrung.pdf`](Einfuehrung.pdf), [Dokumentation/](Dokumentation/) — original German docs
 
 ## Contributing
