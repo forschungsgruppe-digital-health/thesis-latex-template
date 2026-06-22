@@ -10,6 +10,14 @@
 > lagging self-hosted ZIH). A green build here is an upper bound, not proof of the older
 > Overleaf baselines (see OVL-06).
 
+> **Update (2026-06-22, later — PR #1):** since this run, several items advanced:
+> **OVL-02** now satisfied for the distributed artifact (a root `template/thesis.tex` exists
+> and the release ZIP is flat); **OVL-06 / DEV-01** improved — CI, release, and dev container
+> are now pinned to `texlive/texlive:TL2025-historic` (still adjust to ZIH's year once O1 is
+> confirmed); **PKG-02** the `.sty` helpers now carry dated `\ProvidesPackage` lines and the
+> `wisetextDE`/`wisetextEN` name-mismatch warning is gone; and the **EN title-page** field
+> order is fixed. Re-run the skill to regenerate the rows below.
+
 ## Verdict
 
 **Compiles cleanly with correct German typesetting; licensing, hygiene, CI, and release

@@ -23,7 +23,7 @@
 
 | # | Question | Needed for |
 |---|---|---|
-| O1 | Exact **ZIH self-hosted TeX Live year** (Server Pro image) | Pin D6 dev container + CI for true Overleaf/ZIH parity (OVL-06) |
+| O1 | Exact **ZIH self-hosted TeX Live year** (Server Pro image) | Pin D6 dev container + CI for true Overleaf/ZIH parity (OVL-06). *Interim:* pinned to `texlive/texlive:TL2025-historic` (overleaf.com's year); change the tag if ZIH differs. |
 | O2 | Is `/docs?snip_uri=` enabled on the **ZIH** host? | Whether an Open-in-Overleaf badge can target ZIH (it targets overleaf.com by default) |
 | O3 | Exact ZIH **Server Pro version** | Confirms Git-bridge specifics (already known: bridge enabled, tokens present) |
 | O4 | Final **citable authors** for `CITATION.cff` (individuals vs. org entity) | Citation metadata; currently set to the research-group entity + Helmhold credit |

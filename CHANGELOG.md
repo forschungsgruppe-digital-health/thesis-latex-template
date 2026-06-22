@@ -20,6 +20,10 @@ Modernization after the migration to the `forschungsgruppe-digital-health` organ
 - Removed committed build/editor cruft (`wise.log`, `.swn/.swo/.swp`).
 - Fixed the malformed `\ProvidesClass` release date (`10/07/2012` → `2026/06/22`,
   `YYYY/MM/DD`) and gave it a SemVer version.
+- EN example title page: corrected the `\seminartitlepage` argument order (it passed 5
+  arguments to a 4-argument command, which scrambled the fields).
+- `\ProvidesPackage` names: `wisetextDE`/`wisetextEN` no longer both declare `wisetext`
+  (removes the "requested … but provides …" warning); style dates corrected.
 
 ### Added
 
@@ -34,15 +38,24 @@ Modernization after the migration to the `forschungsgruppe-digital-health` organ
 - `latexmkrc` search-path shim so the bundled class compiles from the project root
   (locally and on Overleaf) without moving files.
 - `.devcontainer/` — a reproducible VS Code + full TeX Live local authoring environment.
+- `template/` — a minimal fill-in-the-blanks thesis starter, plus `docs/filling-in.md` and
+  `docs/troubleshooting.md` student guides.
 - `docs/` — maintainer inventory, decision log, structure proposal, and release guide under
   `docs/maintainer/`; an Overleaf/CTAN **conformance report**; and a reusable
   `overleaf-conformance` skill that regenerates it.
 
+### Changed
+
+- Renamed example directories `Beispielarbeit/` → `examples/{de,en}`.
+- Pinned CI, release, and the dev container to `texlive/texlive:TL2025-historic`
+  (overleaf.com parity; adjust to ZIH's year per decision O1).
+
 ### Known issues (tracked for upcoming releases)
 
-- **Layout:** the custom class lives under `texmf/` (mitigated by `latexmkrc` + recursive
-  `TEXINPUTS`); a flattened `template/` starter and `examples/` reorganization are planned.
-- The EN title-page field order is scrambled and remains to be fixed.
+- The custom class still lives under `texmf/` (mitigated by `latexmkrc` + recursive
+  `TEXINPUTS`); moving it to `latex/` + `bst/` is a later structural step.
+- Class internals: `\LoadClass` precedes option processing (PKG-03) and some macros aren't
+  namespaced (PKG-06) — a future refactor.
 
 ## [1.x] — 2022 and earlier
 
