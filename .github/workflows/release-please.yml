@@ -60,15 +60,18 @@ jobs:
           # needs no search-path shim and the main file sits at the project root.
           cp -r template/* "$out"/
           rm -f "$out"/thesis.pdf "$out"/*.aux "$out"/*.log "$out"/*.fls "$out"/*.fdb_latexmk 2>/dev/null || true
-          cp texmf/tex/latex/wise/wise.cls texmf/tex/latex/wise/*.sty "$out"/
+          # The fgdh-thesis class + its deprecated wise.cls alias + the style files.
+          cp texmf/tex/latex/wise/fgdh-thesis.cls texmf/tex/latex/wise/wise.cls texmf/tex/latex/wise/*.sty "$out"/
           cp texmf/bibtex/bst/wise/*.bst "$out"/
           cp LICENSE THIRD-PARTY-NOTICES.md "$out"/ 2>/dev/null || true
           zip -r "$out.zip" "$out"
+          cp "$out.zip" template.zip   # stable name for the README badge (releases/latest/download/template.zip)
       - name: Attach assets to the release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.release-please.outputs.tag_name }}
           files: |
+            template.zip
             template-*.zip
             template/thesis.pdf
             examples/**/*.pdf

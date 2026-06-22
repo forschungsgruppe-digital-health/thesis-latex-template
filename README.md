@@ -2,16 +2,15 @@
 
 LaTeX template for academic theses (Seminar / Bachelor / Master / Diploma / PhD) at the
 **Forschungsgruppe Digital Health (FGDH)**, Faculty of Business and Economics,
-TU Dresden. Based on the `wise` document class (pdfLaTeX + BibTeX/`natbib`, DIN 1505
-citations), continued from the original template by Malte Helmhold.
+TU Dresden. Built on the `fgdh-thesis` document class (formerly `wise`; pdfLaTeX +
+BibTeX/`natbib`, DIN 1505 citations), continued from the original template by Malte Helmhold.
 
 [![License: LPPL 1.3c](https://img.shields.io/badge/code-LPPL%201.3c-blue.svg)](LICENSES/LPPL-1.3c.txt)
 [![Docs: CC BY 4.0](https://img.shields.io/badge/docs-CC%20BY%204.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 
-> **Status — modernization in progress (June 2026).** The repository has just been
-> migrated to the FGDH organization and is being modernized (UTF-8/encoding fix,
-> flattened layout, CI, releases). The **Dev Container** path below works today; the
-> one-click Overleaf path lands with the first tagged release. See the
+> **Status (June 2026).** The class was renamed **`wise` → `fgdh-thesis`**.
+> `\documentclass{wise}` still works via a deprecated alias (it loads `fgdh-thesis` and
+> prints a warning), so existing documents keep compiling. See the
 > [maintainer plan](docs/maintainer/) for the roadmap.
 
 ---
@@ -45,14 +44,14 @@ latexmk examples/de/Beispielarbeit.tex   # pdflatex + bibtex, via latexmkrc
 
 The bundled [`latexmkrc`](latexmkrc) puts the custom class (`texmf/`) on the search path.
 
-### C) Overleaf (cloud or TU Dresden ZIH) *(coming with the first release)*
+### C) Overleaf (cloud or TU Dresden ZIH)
 
-Because Overleaf does not search subfolders, the reliable Overleaf path is a **flattened
-release ZIP** (produced by the upcoming release workflow). The one-click button will be:
+Because Overleaf does not search subfolders, use the **flattened release ZIP** (the class
+sits beside the main `.tex`), built and attached to each release. One-click:
 
-[![Open in Overleaf](https://img.shields.io/badge/Open%20in-Overleaf-47A141.svg)](https://www.overleaf.com/docs?snip_uri=https://github.com/forschungsgruppe-digital-health/thesis-latex-template/archive/refs/heads/main.zip)
+[![Open in Overleaf](https://img.shields.io/badge/Open%20in-Overleaf-47A141.svg)](https://www.overleaf.com/docs?snip_uri=https://github.com/forschungsgruppe-digital-health/thesis-latex-template/releases/latest/download/template.zip)
 
-- **Cloud (overleaf.com):** click the badge (creates a new project from a ZIP).
+- **Cloud (overleaf.com):** click the badge — it imports the latest release's `template.zip`.
 - **TU Dresden ZIH (`tex.zih.tu-dresden.de`):** the badge targets overleaf.com only —
   download the release ZIP, then **New Project → Upload Project → Compile**.
   ⚠️ ZIH deletes projects inactive for **90 days** — keep GitHub (or a local clone) as the
@@ -68,7 +67,7 @@ marked `« … »`). Then:
 | You want to… | File |
 |---|---|
 | Set title, author, supervisor, degree | the `\bachelortitlepage{…}` block in `template/thesis.tex` (swap for `\master…`/`\diploma…`/`\dissertation…`) |
-| Choose language | class option: default German, `en` for English (`\documentclass[...,en]{wise}`) |
+| Choose language | class option: default German, `en` for English (`\documentclass[...,en]{fgdh-thesis}`) |
 | Add chapters | `\section{…}`, or split with `\include{chapter}` |
 | Add references | `template/references.bib` + `\cite{key}`; style is `\bibliographystyle{wisenat}` (DIN 1505) |
 
@@ -80,7 +79,7 @@ theses live under [`examples/`](examples/).
 ```text
 template/         minimal fill-in-the-blanks starter (start here)
 examples/         richer DE/EN sample theses (de/, en/)
-texmf/            custom class + styles + DIN 1505 .bst (the wise package)
+texmf/            fgdh-thesis class + styles + DIN 1505 .bst (+ deprecated wise.cls alias)
 Dokumentation/    original German documentation (PDF + sources)
 docs/             documentation: filling-in, troubleshooting, dev container, maintainer plan
 .devcontainer/    local LaTeX dev environment

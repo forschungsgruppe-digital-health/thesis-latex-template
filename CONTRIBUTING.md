@@ -42,7 +42,7 @@ These are non-negotiable because they protect Overleaf compatibility and output 
 - **Third-party files:** never strip the copyright/contribution headers from the bundled
   `.bst` files. If you must modify one, **rename it** and update its in-file support
   contact, per its license and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
-- **LPPL:** the `wise` class is LPPL 1.3c. Substantive modifications must keep the work
+- **LPPL:** the `fgdh-thesis` class is LPPL 1.3c. Substantive modifications must keep the work
   clearly identifiable as modified and record the change in [CHANGELOG.md](CHANGELOG.md).
 
 ## Verifying a change
