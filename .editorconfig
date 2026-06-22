@@ -1,0 +1,25 @@
+# EditorConfig — https://editorconfig.org
+# Enforces the encoding/line-ending rules that keep this template Overleaf-safe.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# LaTeX sources: UTF-8 is mandatory (see the encoding notes in docs/). Trailing
+# whitespace can be meaningful in TeX, so don't auto-trim it here.
+[*.{tex,cls,sty,bst,bib,dtx,ins,ltx}]
+charset = utf-8
+trim_trailing_whitespace = false
+
+# Markdown: two trailing spaces mean a hard line break — keep them.
+[*.md]
+trim_trailing_whitespace = false
+
+# Makefiles require real tabs.
+[Makefile]
+indent_style = tab

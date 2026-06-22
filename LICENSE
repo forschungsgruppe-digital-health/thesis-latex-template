@@ -1,0 +1,49 @@
+FGDH Thesis LaTeX Template — Licensing
+======================================
+
+This repository is dual-licensed, and additionally bundles third-party files that
+keep their own terms. Read this file first; the full legal texts are in `LICENSES/`.
+
+1. LaTeX code  (LPPL 1.3c)
+--------------------------
+The template's own LaTeX source — the `wise` document class and its style files
+(`wise.cls`, `wiseapp.sty`, `wisetextDE.sty`, `wisetextEN.sty`), the `template/` and
+`examples/` `.tex` sources, and any build configuration — is licensed under the
+LaTeX Project Public License, version 1.3c or later.
+
+  Full text: LICENSES/LPPL-1.3c.txt   (https://www.latex-project.org/lppl/lppl-1-3c/)
+  SPDX-License-Identifier: LPPL-1.3c
+
+This work has the maintenance status "maintained".
+
+  Original author (`wise` class, 2012): Malte Helmhold, TU Dresden,
+      Lehrstuhl für Wirtschaftsinformatik, insb. Systementwicklung.
+  Current Maintainer: Forschungsgruppe Digital Health, Technische Universität Dresden.
+  Contact (means of communication required by the LPPL):
+      https://github.com/forschungsgruppe-digital-health/thesis-latex-template/issues
+
+Per the LPPL, this is a modified/continued derived work of the original `wise` class;
+changes are recorded in CHANGELOG.md. Anyone distributing a further-modified version
+must comply with the LPPL (clearly identify it as modified; renaming is recommended).
+
+2. Documentation & template content  (CC BY 4.0)
+-------------------------------------------------
+The accompanying prose documentation (everything under `docs/`, this repository's
+README, and explanatory figures) is licensed under the Creative Commons
+Attribution 4.0 International license, so it may be reused with attribution.
+
+  Full text: LICENSES/CC-BY-4.0.txt   (https://creativecommons.org/licenses/by/4.0/)
+  SPDX-License-Identifier: CC-BY-4.0
+
+Creative Commons licenses are intentionally NOT applied to the LaTeX code above
+(CC recommends against using CC licenses for software).
+
+3. Third-party bundled files  (own terms — NOT covered by 1 or 2)
+-----------------------------------------------------------------
+The bundled BibTeX styles `wisenat.bst`, `wisealpha.bst`, and `wisenatnosc.bst`
+(K.F. Lorenzen's DIN 1505 `natdin`/`alphadin` styles, derived from Oren Patashnik's
+standard BibTeX styles) are third-party works whose original copyright and conditions
+are retained verbatim in the files. See THIRD-PARTY-NOTICES.md for the full attribution
+and terms. They are redistributed here under their original terms and are not relicensed.
+
+When in doubt about a specific file, the notice in that file's own header governs.
