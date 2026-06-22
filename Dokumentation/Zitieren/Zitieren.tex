@@ -26,16 +26,16 @@
 
 \introduction
 
-Um nach nach dem dem deutschen Zitierstandard DIN 1505 zitieren zu können, sind einige formale Regeln zu beachten. Wenn Sie mit dem wisenat-Zitierstil zitieren, sollten Sie besonders die Pflichtfelder in Kapitel (\ref{sec:Pflichtfelder}) beachten. In dieser Einführung erhalten Sie außerdem einen Überblick über alle Zitierbefehle, die Ihnen zur Verfügung stehen. Diese finden Sie in Kap. \ref{sec:commands}. Welche Informationen den jeweiligen Feldern zuzuordnen sind, ist ausführlich in Kap. \ref{sec:fields} aufgeführt.  \\
+Um nach nach dem dem deutschen Zitierstandard DIN 1505 zitieren zu kÃ¶nnen, sind einige formale Regeln zu beachten. Wenn Sie mit dem wisenat-Zitierstil zitieren, sollten Sie besonders die Pflichtfelder in Kapitel (\ref{sec:Pflichtfelder}) beachten. In dieser EinfÃ¼hrung erhalten Sie auÃŸerdem einen Ãœberblick Ã¼ber alle Zitierbefehle, die Ihnen zur VerfÃ¼gung stehen. Diese finden Sie in Kap. \ref{sec:commands}. Welche Informationen den jeweiligen Feldern zuzuordnen sind, ist ausfÃ¼hrlich in Kap. \ref{sec:fields} aufgefÃ¼hrt.  \\
 
-Hilfreiche Tipps und Hinweise zur Verwendung der wisenat.bst, finden Sie im Kapitel \ref{sec:hints}. Diese sollten Sie sich vor der Verwendung von \bibtex{} anschauen. Achten Sie auf die richtige Zeichenkodierung Ihrer Literaturdatenbank! Wenn diese fälschlicherweise auf Latin1 gestellt haben, werden Sie dies spätestens beim ersten Umlaut merken, den Sie versuchen in Ihrer Literaturdatenbank abzuspeichern. Achten Sie auf die richtige Kodierung. Wir arbeiten nur mit ISO 8859-1 (Latin-9). \\
+Hilfreiche Tipps und Hinweise zur Verwendung der wisenat.bst, finden Sie im Kapitel \ref{sec:hints}. Diese sollten Sie sich vor der Verwendung von \bibtex{} anschauen. Achten Sie auf die richtige Zeichenkodierung Ihrer Literaturdatenbank! Wenn diese fÃ¤lschlicherweise auf Latin1 gestellt haben, werden Sie dies spÃ¤testens beim ersten Umlaut merken, den Sie versuchen in Ihrer Literaturdatenbank abzuspeichern. Achten Sie auf die richtige Kodierung. Wir arbeiten nur mit ISO 8859-1 (Latin-9). \\
 
 Sie sollten auch die wisenatlit.bib zurate ziehen. Dort finden Sie beispielhaft alle Entry-Types, die Sie in Ihrer Arbeit verwenden werden. \\
 
 Viel Erfolg beim erfolgreichen Zitieren. \\
 
 \section{Zitierbefehle}
-Diese Befehle wurden alle mittels \command{cite}-Befehl konstruiert. Sie können selbstverständlich mit \command{cite} eigene Konstrukte erstellen. Exemplarisch wurde hier das Sekundärzitat erschaffen. Beispielsweise wurden die \& Klammern selber gesetzt. Sekundärzitate in wissenschaftlichen Arbeiten sind zu vermeiden. 
+Diese Befehle wurden alle mittels \command{cite}-Befehl konstruiert. Sie kÃ¶nnen selbstverstÃ¤ndlich mit \command{cite} eigene Konstrukte erstellen. Exemplarisch wurde hier das SekundÃ¤rzitat erschaffen. Beispielsweise wurden die \& Klammern selber gesetzt. SekundÃ¤rzitate in wissenschaftlichen Arbeiten sind zu vermeiden. 
 \begin{table}[H]
 \label{sec:commands}
 \begin{tabular}{|p{35mm}|p{65mm}|p{55mm}|}
@@ -45,13 +45,13 @@ Zitierbefehl & Quellcode & Beispiel \\
 cite & \command{cite\{citekey\}} & \cite{book} \\
 \hline
 indirect & \command{indirect\{citekey\}\{Seite\}} & \indirect{book}{10} 
-\tabularnewline (früher longcite) & \command{longcite\{citekey\}\{Seite\}} & \\
+\tabularnewline (frÃ¼her longcite) & \command{longcite\{citekey\}\{Seite\}} & \\
 \hline  
 indirectf/longcitef & \command{indirectf\{citekey\}\{Seite\}}  & \indirectf{book}{10}
 \tabularnewline (analog mit ff.) & \command{longcitef\{citekey\}\{Seite\}} &\indirectff{book}{10} \\ 
 \hline 
 direct & \command{direct\{citekey\}\{Seite\}} & \direct{book}{10} 
-\tabularnewline (früher shortcite) & \command{shortcite\{citekey\}\{Seite\}} & \\
+\tabularnewline (frÃ¼her shortcite) & \command{shortcite\{citekey\}\{Seite\}} & \\
 \hline  
 directf/shortcitef& \command{direct\{citekey\}\{Seite\}}  & \directf{book}{10}
 \tabularnewline (analog mit ff.) & \command{shortcite\{citekey\}\{Seite\}} & \directff{book}{10} \\ 
@@ -60,7 +60,7 @@ vlg & \command{vgl\{citekey\}} & \vgl{book} \\
 \hline
 Seiten von-bis & \command{citepages\{book\}\{von\}\{bis\}} & \citepages{book}{1}{13} \\
 \hline
-Sekundärzitat:  & (\command{cite\{sek. \}}, S. 10 & (\cite{book}, S.10 zit. n. 
+SekundÃ¤rzitat:  & (\command{cite\{sek. \}}, S. 10 & (\cite{book}, S.10 zit. n. 
 \tabularnewline & zit. n. \command{cite\{prim.\}}, S.100) & \cite{booklet} S. 100) \\
 \hline
 optionaler Parameter & \command{cite[S. 10 ff]\{book\}} & \cite[S.10 ff]{book}  
@@ -85,14 +85,14 @@ zwei Quellen & \command{cite\{url(booklet), url\}} & \cite{url(booklet), url} \\
 \hline 
 address & Verlagsort (immer!) \\ 
 \hline 
-author & a) persönlicher Urheber eines Werkes oder am Zustandekommen 
-\tabularnewline & b) beteiligte Personen (=Mitarbeiter, Übersetzer, Redakteur u.a.
-\tabularnewline & c) ggf. Insititution eintragen und für Institiution den Autor 
+author & a) persÃ¶nlicher Urheber eines Werkes oder am Zustandekommen 
+\tabularnewline & b) beteiligte Personen (=Mitarbeiter, Ãœbersetzer, Redakteur u.a.
+\tabularnewline & c) ggf. Insititution eintragen und fÃ¼r Institiution den Autor 
 \tabularnewline & {\bf BEI VERWENDUNG MEHRERER AUTOREN SIEHE KAP. \ref{sec:mehrereAutoren}}. \\
 \hline 
-booktitle & a) Gesamttitel eines mehrbändigen Werkes
-\tabularnewline &  b) Titel des Sammelwerks, das einzelne selbständige 
-\tabularnewline & Beiträge mit eigenem Titel enthält $\rightarrow$ incollection \\ 
+booktitle & a) Gesamttitel eines mehrbÃ¤ndigen Werkes
+\tabularnewline &  b) Titel des Sammelwerks, das einzelne selbstÃ¤ndige 
+\tabularnewline & BeitrÃ¤ge mit eigenem Titel enthÃ¤lt $\rightarrow$ incollection \\ 
 \hline 
 chapter & Kapitel in einem Buch (Monographie) \\ 
 \hline 
@@ -101,29 +101,29 @@ doi & Digital Object Identifier $\rightarrow$ article \\
 edition &   a) Auflagevermerk
 \tabularnewline & b) bei selbst. elektron. Quellen == Version $\rightarrow$ booklet \\ 
 \hline 
-howpublished &  beliebiger Verlegervermerk: veröffentlicht \glqq von wem, wo\grqq \\ 
+howpublished &  beliebiger Verlegervermerk: verÃ¶ffentlicht \glqq von wem, wo\grqq \\ 
 \hline 
-institution & Institution, die eine verlagsfreie Veröffentlichung betreibt \\ 
+institution & Institution, die eine verlagsfreie VerÃ¶ffentlichung betreibt \\ 
 \hline 
-isbn & Standardnr. für Bücher \\ 
+isbn & Standardnr. fÃ¼r BÃ¼cher \\ 
 \hline 
-issn &  Standardnr. für Zeitschriften u. Serien \\ 
+issn &  Standardnr. fÃ¼r Zeitschriften u. Serien \\ 
 \hline 
 journal & Titel einer Zeitschrift \\ 
 \hline 
-key & Zusätzlich vergebener Sortierschlüssel, mitunter notwendig. \\ 
+key & ZusÃ¤tzlich vergebener SortierschlÃ¼ssel, mitunter notwendig. \\ 
 \hline 
-lastchecked & neues Feld für das Datum des Online-Abrufs 
+lastchecked & neues Feld fÃ¼r das Datum des Online-Abrufs 
 \tabularnewline & einer Internetquelle (n. GRAY)
  \\ 
 \hline 
-month & nähere Bestimmung des Erscheinungsjahres \\ 
+month & nÃ¤here Bestimmung des Erscheinungsjahres \\ 
 \hline 
-note & freies Eingabefeld für zusätzliche Informationen z. Quelle. \
+note & freies Eingabefeld fÃ¼r zusÃ¤tzliche Informationen z. Quelle. \
 \tabularnewline & \textbf{Bei misc kann hiermit der Publikationstyp bestimmt werden.} \\
 \hline 
-number &  Versch. Bedeutungen in Abhängigkeit vom Eingabetyp:
-\tabularnewline & a) Bandnummer einer gezählten Reihe (series)
+number &  Versch. Bedeutungen in AbhÃ¤ngigkeit vom Eingabetyp:
+\tabularnewline & a) Bandnummer einer gezÃ¤hlten Reihe (series)
 \tabularnewline & b) Heftnummer einer Zeitschrift $\rightarrow$ article
 \tabularnewline & c) Nummer eines Forschungsberichts $\rightarrow$ techreport\\
 \hline 
@@ -132,7 +132,7 @@ organization & a) Name der Organisation/des Organisators e. Tagung,Konferenz
  \\ 
 \hline
 \end{tabular} 
-\caption[Felder für Literaturangaben - 01]{Felder für Literaturangaben - 01. Quelle: \cite{alphadin}}
+\caption[Felder fÃ¼r Literaturangaben - 01]{Felder fÃ¼r Literaturangaben - 01. Quelle: \cite{alphadin}}
 \end{table}
 
 \newpage
@@ -144,11 +144,11 @@ pages & Umfangsangaben, meist Seitenzahlen \\
 \hline 
 publisher & Verlag \\ 
 \hline 
-school & Hochschule/Universitaet, die eine Dipl.-Arb./Dissertation veröff. \\ 
+school & Hochschule/Universitaet, die eine Dipl.-Arb./Dissertation verÃ¶ff. \\ 
 \hline 
 series &  Titel e.Reihe, in der ein best. Buchtitel erschienen ist \\ 
 \hline 
-title & Titel einer (namentlich gekennzeichneten) Veröffentlichung
+title & Titel einer (namentlich gekennzeichneten) VerÃ¶ffentlichung
  \\ 
 \hline 
 type &  \textbf{Zusatzfeld z. Kennzeichnung eines besonderen Publikationstyps }
@@ -160,13 +160,13 @@ url & neues Feld URL ( Uniform Resource Locator ):
 urn & neues Feld URN ( Uniform Resource Name ): 
 \tabularnewline &  Persistent Identifier einer Internetquelle\\ 
 \hline 
-volume &  a) Zählung bei einem mehrbändigen Werk $\rightarrow $ book $\rightarrow $ proceedings
+volume &  a) ZÃ¤hlung bei einem mehrbÃ¤ndigen Werk $\rightarrow $ book $\rightarrow $ proceedings
 \tabularnewline &  b) Jahrgang einer Zeitschrift $\rightarrow$ article \\ 
 \hline 
 year & Erscheinungsjahr \\ 
 \hline 
 \end{tabular}
-\caption[Felder für Literaturangaben - 02]{Felder für Literaturangaben - 02. Quelle: \cite{alphadin}}
+\caption[Felder fÃ¼r Literaturangaben - 02]{Felder fÃ¼r Literaturangaben - 02. Quelle: \cite{alphadin}}
 \end{table}
 
 \subsection{Entry-Types}
@@ -175,7 +175,7 @@ year & Erscheinungsjahr \\
 \hline
 \textbf{\bibtex -Type} & \textbf{Beschreibung / Funktion}\\
 \hline 
-URL (booklet) & Für Internetquellen bitte den Entry-Type booklet verwenden. \\
+URL (booklet) & FÃ¼r Internetquellen bitte den Entry-Type booklet verwenden. \\
 \hline
 article & Zeitungs- oder Zeitschriftenartikel  \\ 
 \hline 
@@ -197,24 +197,24 @@ conference & Wissenschaftliche Konferenz \\
 \hline 
 manual & Technische Dokumentation \\ 
 \hline 
-mastersthesis & Diplom-, Magister- oder andere Abschlussarbeit (außer Promotion)\\ 
+mastersthesis & Diplom-, Magister- oder andere Abschlussarbeit (auÃŸer Promotion)\\ 
 \hline 
 phdthesis & Doktor- oder andere Promotionsarbeit \\ 
 \hline 
 proceedings & Konferenzbericht \\ 
 \hline 
-techreport & veröffentlichter Bericht einer Hochschule oder anderen Institution  \\ 
+techreport & verÃ¶ffentlichter Bericht einer Hochschule oder anderen Institution  \\ 
 \hline 
-unpublished & nicht formell veröffentlichtes Dokument  \\ 
+unpublished & nicht formell verÃ¶ffentlichtes Dokument  \\ 
 \hline 
 
 \end{tabular}
 \caption[Entry-Types]{Entry-Types der wisenat.bst. Quelle: \cite{entries}} 
 \end{table}
 
-\subsection{Beispieleinträge und Pflichfelder}
+\subsection{BeispieleintrÃ¤ge und Pflichfelder}
 
-Wenn Sie die im Verzeichnis liegende wisenatlit.bib mit JabRef öffnen, können Sie nachvollziehen, welche Felder bei jedem \bibtex -Typ benutzt wurden. Es ist nicht notwendig alle Felder auszufüllen, auch wenn sie bei der \bibtex -Kompilierung Warnungen erhalten. Dennoch ist es sinnvoll, alle obligatorischen Felder auszufüllen, um nach der Zitiernorm DIN 1505 zu zitieren. 
+Wenn Sie die im Verzeichnis liegende wisenatlit.bib mit JabRef Ã¶ffnen, kÃ¶nnen Sie nachvollziehen, welche Felder bei jedem \bibtex -Typ benutzt wurden. Es ist nicht notwendig alle Felder auszufÃ¼llen, auch wenn sie bei der \bibtex -Kompilierung Warnungen erhalten. Dennoch ist es sinnvoll, alle obligatorischen Felder auszufÃ¼llen, um nach der Zitiernorm DIN 1505 zu zitieren. 
 
 
 \begin{table}[H]
@@ -269,7 +269,7 @@ unpublished & \indirectff{unpub}{10}  &
 \tabularnewline  & \command{indirect\{unpub\}}  & title, author, year \\
 \hline 
 \end{tabular} 
-\caption[Beispiele der Entry Types]{ Achtung Zitierbefehle sind zufällig gewählt. Sie können selbstverständlich für alle \bibtex -Typen auch jeden Zitierbefehl (\command{cite}, \command{shortcite}...) benutzen.}
+\caption[Beispiele der Entry Types]{ Achtung Zitierbefehle sind zufÃ¤llig gewÃ¤hlt. Sie kÃ¶nnen selbstverstÃ¤ndlich fÃ¼r alle \bibtex -Typen auch jeden Zitierbefehl (\command{cite}, \command{shortcite}...) benutzen.}
 \end{table}
 
 
@@ -281,21 +281,21 @@ unpublished & \indirectff{unpub}{10}  &
 \label{sec:hints}
 \subsection{Zeichensatz}
 \subsubsection{Zeichenkodierung}
-\textbf{Bitte verwenden Sie für Ihre Literaturdatenbank auf die ISO 8859-15 (Latin-9) Zeichenkodierung. } In jeder Literaturverwaltungssoftware ist eine Auswahl für die Einstellung der Kodierung vorhanden. In JabRef ist diese sehr schnell unter \textsc{File $\rightarrow$ Database properties} zu finden. 
+\textbf{Bitte verwenden Sie fÃ¼r Ihre Literaturdatenbank auf die ISO 8859-15 (Latin-9) Zeichenkodierung. } In jeder Literaturverwaltungssoftware ist eine Auswahl fÃ¼r die Einstellung der Kodierung vorhanden. In JabRef ist diese sehr schnell unter \textsc{File $\rightarrow$ Database properties} zu finden. 
 \subsubsection{Sonderzeichen}
-Es ist erforderlich Sonderzeichen wie \%, \& usw. im erforderlichen \LaTeX -Format zu schreiben (z. B. \% als \command{\%}), da sie sonst als \LaTeX -Befehl interpretiert werden. Es kommt zu Kompilierungsblockade. Um aus dieser herauszukommen, müssen Sie erst \bibtex{} und dann erst wieder \textsc{pdflatex} kompilieren. 
+Es ist erforderlich Sonderzeichen wie \%, \& usw. im erforderlichen \LaTeX -Format zu schreiben (z. B. \% als \command{\%}), da sie sonst als \LaTeX -Befehl interpretiert werden. Es kommt zu Kompilierungsblockade. Um aus dieser herauszukommen, mÃ¼ssen Sie erst \bibtex{} und dann erst wieder \textsc{pdflatex} kompilieren. 
 
 
 \newpage
 \subsection{Allgemeine Hinweise}
 
-Nach Lorenzen 2006: Treten kleinere \glqq Schönheitsfehler\gr im fertig gesetzten output auf, lassen sich diese so gut wie immer durch eine veränderte
+Nach Lorenzen 2006: Treten kleinere \glqq SchÃ¶nheitsfehler\gr im fertig gesetzten output auf, lassen sich diese so gut wie immer durch eine verÃ¤nderte
 Erfassung im bib-inputfile beseitigen \cite{alphadin}. Weitere Hinweise zu \bibtex -Syntax und Literaturerfassung finden Sie in diesem Kapitel. 
 
 \subsubsection{Mehrere Autoren zitieren}
 \label{sec:mehrereAutoren}
 
-Für ein optimales Ergebnis tragen Sie die Autoren folgendermaßen in das dafür vorgesehene Feld ein:\\
+FÃ¼r ein optimales Ergebnis tragen Sie die Autoren folgendermaÃŸen in das dafÃ¼r vorgesehene Feld ein:\\
 
 \textbf{Frank Mittelbach and M. Gossens and J. Braams}\\
 
@@ -303,7 +303,7 @@ Wichtig:
 
 \begin{itemize}
 \item Vornamen des ersten Autors ausschreiben 
-\item Weitere Vornamen abkürzen 
+\item Weitere Vornamen abkÃ¼rzen 
 \item Mehrere Autoren mit \glqq and\gr trennen (KEIN deutsches \glqq Und\gr verwenden) 
 \end{itemize}
 
@@ -312,11 +312,11 @@ Beispiel: \\
 
 \subsubsection{Erfassen von Medien und MISC (miscellaneous)}
 
-Zur Erfassung der neuen digitalen Online-Medien z.B. Internetquellen, E-journals, E-books, E-mail u.a. gibt es die zusätzlichen Felder: doi, url, urn, lastchecked.\\ Internetquellen werden vorzugsweise mit dem BOOKLET-Typ erfasst. \\
+Zur Erfassung der neuen digitalen Online-Medien z.B. Internetquellen, E-journals, E-books, E-mail u.a. gibt es die zusÃ¤tzlichen Felder: doi, url, urn, lastchecked.\\ Internetquellen werden vorzugsweise mit dem BOOKLET-Typ erfasst. \\
 Normen, Patente, Schutzrechte sind mit dem MISC-Typ zu erfassen.
 
 \subsubsection{Auflagevermerke}
-Auflagenvermerke gibt man komplett, einschließlich Abkürzungen in das Feld edition ein: $\Longrightarrow$ EDITION= { 3., erw. und verb. Aufl. }
+Auflagenvermerke gibt man komplett, einschlieÃŸlich AbkÃ¼rzungen in das Feld edition ein: $\Longrightarrow$ EDITION= { 3., erw. und verb. Aufl. }
 oder fremdsprachlich:      EDITION= { 2nd edition }
 
 \subsubsection{wissenschaftl. Arbeiten zitieren}
@@ -330,7 +330,7 @@ phdthesis und mastersthesis ist identisch bis auf Standardwert, s.o.\\
 
 (Wie Sie an diesem Beispiel sehen, kann man die in diesem Dokument definierte Umgebung \command{bibtex} auch in der Literaturdatenbank verwenden.)\\
 
-\textbf{Beispiel 2} misc für andere Publikationen: 
+\textbf{Beispiel 2} misc fÃ¼r andere Publikationen: 
 \begin{lstlisting}
 @MISC{misc,
   author = {Name of institution},
@@ -343,8 +343,8 @@ phdthesis und mastersthesis ist identisch bis auf Standardwert, s.o.\\
 
 \end{lstlisting} 
 
-\subsubsection{Veröffentlichungen einer Institution}
-Bei Veröffentlichungen einer Institution kann anstelle des Autors der Name der Institution eingetragen werden. Vermerken Sie den Autor dann allerdings im Feld \textit{Institution}. Diese Umkehrung hat zur Folge, dass im Fließtext nach dem Autor-Jahr-Zitierweise die Institution aufgeführt wird. Der Name des Autors könnte Missverständnis beim Leser erzeugen. Zudem können Sie dann mit \command{citeauthor} auf die Institution verweisen. 
+\subsubsection{VerÃ¶ffentlichungen einer Institution}
+Bei VerÃ¶ffentlichungen einer Institution kann anstelle des Autors der Name der Institution eingetragen werden. Vermerken Sie den Autor dann allerdings im Feld \textit{Institution}. Diese Umkehrung hat zur Folge, dass im FlieÃŸtext nach dem Autor-Jahr-Zitierweise die Institution aufgefÃ¼hrt wird. Der Name des Autors kÃ¶nnte MissverstÃ¤ndnis beim Leser erzeugen. Zudem kÃ¶nnen Sie dann mit \command{citeauthor} auf die Institution verweisen. 
 
 \newpage
 \subsubsection{Interpunktion -- direktes/indirektes Zitieren}
@@ -352,41 +352,41 @@ Bei Veröffentlichungen einer Institution kann anstelle des Autors der Name der I
 
 \textbf{Beispiel 1} abgesetztes direktes Zitat\\
 
-Eine Definition des \cc  nach dem National Institute of Standards and Technology \cite{nist11} soll für diese Arbeit genügen. Es werden fünf wichtige {\bf Charakteristiken}, drei {\bf Service-Modelle} und vier {\bf Einsatzmodelle} näher beschrieben.\\
+Eine Definition des \cc  nach dem National Institute of Standards and Technology \cite{nist11} soll fÃ¼r diese Arbeit genÃ¼gen. Es werden fÃ¼nf wichtige {\bf Charakteristiken}, drei {\bf Service-Modelle} und vier {\bf Einsatzmodelle} nÃ¤her beschrieben.\\
 
 \textit{\glqq Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. This cloud model is composed of five essential characteristics, three service models, and four deployment 
 models.\grqq} \shortcite{nist11}{2}\\
 
 
-\textbf{Beispiel 2} Gehört der Punkt zum Zitat wird kein weiteres Satzzeichen gesetzt. Bei indirekten Zitaten verhält sich die Interpunktion dagegen umgekehrt, sollte der zitierte Satz im Original mit einem Punkt beendet sein (keine Ellipse o. ä.):\\
+\textbf{Beispiel 2} GehÃ¶rt der Punkt zum Zitat wird kein weiteres Satzzeichen gesetzt. Bei indirekten Zitaten verhÃ¤lt sich die Interpunktion dagegen umgekehrt, sollte der zitierte Satz im Original mit einem Punkt beendet sein (keine Ellipse o. Ã¤.):\\
 
-Der Begriff {\sc Cloud Computing} wird nach dem \citeauthor{nist11} {\sc (National Institute of Standards and Technology)} durch fünf Charakteristiken geprägt. Diesen werden  im Kap. \ref{sec:mehrereAutoren}* ausführlich dargestellt. Zudem erwägt das \citeauthor{nist11} im Bereich des Cloud Computing  drei {\bf Service-Modelle}. Im {\it Cloud Computing-Leitfaden} von \citeauthor{bitcom09}  werden diese als {\bf 3-Ebenen-Modell} bezeichnet \indirect{bitcom09}{22}**. Hinsichtlich einer Definitionsfindung kann der Begriff {\sc Cloud Computing} als Innovation angezweifelt werden. \glqq In der öffentlichen Diskussion wird oft nicht zwischen Ebenen und Organisationsformen von Clouds sowie zwischen Nutzergruppen unterschieden. Die Folge sind konträre Bewertungen von Cloud Computing als Innovation.\grqq \direct{bitcom09}{22}*** \\
+Der Begriff {\sc Cloud Computing} wird nach dem \citeauthor{nist11} {\sc (National Institute of Standards and Technology)} durch fÃ¼nf Charakteristiken geprÃ¤gt. Diesen werden  im Kap. \ref{sec:mehrereAutoren}* ausfÃ¼hrlich dargestellt. Zudem erwÃ¤gt das \citeauthor{nist11} im Bereich des Cloud Computing  drei {\bf Service-Modelle}. Im {\it Cloud Computing-Leitfaden} von \citeauthor{bitcom09}  werden diese als {\bf 3-Ebenen-Modell} bezeichnet \indirect{bitcom09}{22}**. Hinsichtlich einer Definitionsfindung kann der Begriff {\sc Cloud Computing} als Innovation angezweifelt werden. \glqq In der Ã¶ffentlichen Diskussion wird oft nicht zwischen Ebenen und Organisationsformen von Clouds sowie zwischen Nutzergruppen unterschieden. Die Folge sind kontrÃ¤re Bewertungen von Cloud Computing als Innovation.\grqq \direct{bitcom09}{22}*** \\
 
 \begin{tabular}{c l}
-{\bf *} & Was nicht für diese Präsentation gilt.\\
+{\bf *} & Was nicht fÃ¼r diese PrÃ¤sentation gilt.\\
 {\bf **} & Interpunktion eines indirektes Zitat. \\
 {\bf ***} & Interpunktion eines direkten Zitats. 
 \end{tabular}\\
 
 
 
-%Die Arbeit schließt mit dem Anhang
+%Die Arbeit schlieÃŸt mit dem Anhang
 \begin{appendix}  
   %Abbildungsverzeichnis
   %Tabellenverzeichnis
   \listoftables
 
-  %Liste alleer Abkürzungen
+  %Liste alleer AbkÃ¼rzungen
   \listofabbreviations
     \abbreviation{n.}{nach}
     \abbreviation{opt.}{optional}
 \abbreviation{NIST}{National Institute of Standards and Technology} 
   %Literaturverzeichnis unter Angabe der Literaturdatenbank
-  %literatur.bib sollte von einem Literaturverwaltungsprogramm geöffnet und editiert werden. 
+  %literatur.bib sollte von einem Literaturverwaltungsprogramm geÃ¶ffnet und editiert werden. 
   \bibliography{literatur}
   \bibliographystyle{wisenat}
  
-  %Die Arbeit schließt mit der ehrenwörtlichen Erklärung
+  %Die Arbeit schlieÃŸt mit der ehrenwÃ¶rtlichen ErklÃ¤rung
 \end{appendix}
 
 \end{document}

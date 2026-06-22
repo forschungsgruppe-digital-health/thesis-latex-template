@@ -1,0 +1,28 @@
+# Citation metadata for this repository (https://citation-file-format.github.io/).
+# GitHub renders a "Cite this repository" link from this file.
+# The `version` line is kept in sync by Release Please (see docs/maintainer/releasing.md).
+cff-version: 1.2.0
+message: "If you use this template, please cite it using the metadata below."
+title: "FGDH Thesis LaTeX Template"
+abstract: >-
+  A LaTeX template (the `wise` document class; pdfLaTeX + BibTeX/natbib, DIN 1505
+  citations) for academic theses at the Forschungsgruppe Digital Health,
+  Faculty of Business and Economics, TU Dresden.
+type: software
+authors:
+  - name: "Forschungsgruppe Digital Health, Technische Universität Dresden"
+    website: "https://github.com/forschungsgruppe-digital-health"
+  - family-names: "Helmhold"
+    given-names: "Malte"
+    # Original author of the `wise` document class (2012).
+repository-code: "https://github.com/forschungsgruppe-digital-health/thesis-latex-template"
+url: "https://github.com/forschungsgruppe-digital-health/thesis-latex-template"
+license: LPPL-1.3c
+version: "1.0.0" # x-release-please-version
+date-released: "2026-06-22"
+keywords:
+  - latex
+  - thesis
+  - template
+  - overleaf
+  - tu-dresden

@@ -1,0 +1,5 @@
+# Put figures here and include them with, e.g.:
+#   \begin{figure}[H]\centering
+#     \includegraphics[width=\textwidth]{figures/myplot}
+#     \caption{…}\label{fig:myplot}
+#   \end{figure}

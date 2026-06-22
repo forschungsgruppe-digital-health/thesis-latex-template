@@ -1,0 +1,77 @@
+% =====================================================================
+%  FGDH thesis template — minimal starter
+%  Forschungsgruppe Digital Health, TU Dresden
+%
+%  Fill in the places marked « … ». A filling-in guide is in
+%  docs/filling-in.md. Compile with pdfLaTeX + BibTeX (latexmk does this
+%  for you). Save every file as UTF-8.
+%
+%  Class options:  hyperref  clickable links/TOC
+%                  nat       use the wisenat (DIN 1505) bibliography style
+%                  mp        margin notes
+%                  en        switch the template to English (default: German)
+%                  xlevel    enable a 4th numbered sectioning level
+% =====================================================================
+\documentclass[hyperref, nat]{wise}
+
+\begin{document}
+
+% --- Title page -------------------------------------------------------
+% Pick the command for your thesis type (all take the same 8 arguments):
+%   \bachelortitlepage  \mastertitlepage  \diplomatitlepage  \dissertationtitlepage
+%   (\seminartitlepage / \projecttitlepage take 4 — see the WiSe documentation)
+% Args: {title}{degree}{author}{student-id}{supervisor 1}{supervisor 2}{start date}{end date}
+\bachelortitlepage
+  {«Titel der Arbeit»}
+  {Bachelor of Science}
+  {«Vorname Nachname»}
+  {«Matrikelnummer»}
+  {«Titel und Name der/des Betreuenden»}
+  {«Titel und Name der/des Zweitbetreuenden»}
+  {«TT.MM.JJJJ»}
+  {«TT.MM.JJJJ»}
+
+% --- Front matter -----------------------------------------------------
+\begin{preface}
+  \abstract
+  «Kurze Zusammenfassung der Arbeit (Abstract).»
+
+  \tableofcontents
+\end{preface}
+
+% --- Main matter ------------------------------------------------------
+\introduction
+«Einleitung.»
+
+\section{«Erstes Kapitel»}
+\label{sec:erstes-kapitel}
+«Text. Verweise mit \ref{...}, Zitate mit \cite{schlüssel}» \cite{beispiel2025}.
+
+% Split large chapters into separate files with \include{dateiname}.
+
+\section{«Zweites Kapitel»}
+\label{sec:zweites-kapitel}
+«Text.»
+
+% --- Back matter ------------------------------------------------------
+\begin{appendix}
+  \listoffigures
+  \listoftables
+
+  \listofabbreviations
+  \abbreviation{z.\,B.}{zum Beispiel}
+
+  % Bibliography: entries live in references.bib; style is wisenat (DIN 1505).
+  \bibliography{references}
+  \bibliographystyle{wisenat}
+
+  \begin{appendices}
+    \section{«Anhang»}
+    «Ergänzendes Material.»
+  \end{appendices}
+
+  % Statutory declaration of authorship.
+  \declaration
+\end{appendix}
+
+\end{document}
