@@ -17,7 +17,7 @@ There is no assumed local TeX install; build through Docker (this is also the CI
 ```bash
 # Compile an example (latexmkrc handles the search path + engine + bibtex):
 docker run --rm -v "$PWD":/work texlive/texlive:latest \
-  latexmk -cd Beispielarbeit/BeispielarbeitDE/Beispielarbeit.tex
+  latexmk -cd examples/de/Beispielarbeit.tex
 ```
 
 - Image: `texlive/texlive:latest` (full scheme; pin to the Overleaf/ZIH TeX Live year

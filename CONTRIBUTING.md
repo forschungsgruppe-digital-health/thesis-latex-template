@@ -22,7 +22,7 @@ You do **not** need a local TeX install.
 
   ```bash
   docker run --rm -v "$PWD":/work texlive/texlive:latest \
-    latexmk -cd Beispielarbeit/BeispielarbeitDE/Beispielarbeit.tex
+    latexmk -cd examples/de/Beispielarbeit.tex
   ```
 
 - **Native** — any TeX Live 2021+ with `latexmk`. The root [`latexmkrc`](latexmkrc) puts

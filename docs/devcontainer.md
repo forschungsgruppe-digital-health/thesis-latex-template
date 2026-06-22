@@ -20,7 +20,7 @@ with the repository, so everyone gets the same TeX Live, extensions, and build s
 1. Clone the repo and open the folder in VS Code.
 2. Command Palette → **Dev Containers: Reopen in Container**.
    The first build pulls the TeX Live image (several GB) — subsequent starts are fast.
-3. Open a `.tex` file (e.g. `Beispielarbeit/BeispielarbeitDE/Beispielarbeit.tex`).
+3. Open a `.tex` file (e.g. `examples/de/Beispielarbeit.tex`).
 4. **Build:** save the file (build-on-save is enabled) or click the green ▶ (TeX badge →
    *Build LaTeX project*). The PDF opens in a side tab.
 5. **Navigate:** `Ctrl/Cmd+Alt+J` jumps from source to PDF (forward SyncTeX);
