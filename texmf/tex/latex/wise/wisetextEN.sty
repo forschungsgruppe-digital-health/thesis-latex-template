@@ -1,7 +1,7 @@
 %%****************************************
 %%*                                      *
 %%* TU Dresden                           *
-%%* Lehrstuhl für Wirtschaftsinformatik, *
+%%* Lehrstuhl fÃ¼r Wirtschaftsinformatik, *
 %%* insbesondere Systementwicklung       *
 %%*                                      *
 %%****************************************
@@ -12,10 +12,10 @@
 %% Version: 1.0  Neuversionierung (Malte Helmhold, 07/10/2012) 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{wisetext}[10/07/2004 Textbausteine für Dokumente an
+\ProvidesPackage{wisetext}[10/07/2004 Textbausteine fÃ¼r Dokumente an
 der WiSe von Malte Helmhold]
 
-%Behandlung der pdf-Option. Dies wird eingeführt, um Übersetzungszeit
+%Behandlung der pdf-Option. Dies wird eingefÃ¼hrt, um Ãœbersetzungszeit
 %zu sparen, wenn nur ein .ps erzeugt werden soll. Zum anderen
 %interpretiert ps2pdf die Seitenaufteilung anders.
 \newif\if@pdf
@@ -26,21 +26,21 @@ der WiSe von Malte Helmhold]
 \DeclareOption*{%
     \typeout{Die Klasse kann die Option \CurrentOption nicht
         verarbeiten.}%
-    \typeout{Die einzigst zulässig Option ist: pdf}%
+    \typeout{Die einzigst zulÃ¤ssig Option ist: pdf}%
 }%
 \ProcessOptions\relax
 
 %------------------------interne Befehle-------------------------
 
 % Institution englisch
-% Befehl dient zur Unterstützung der Erstellung von Titelseiten der
-% Lehrstuhldokumente. Er schreibt zentriert den Namen der Uni, der Fakultät
+% Befehl dient zur UnterstÃ¼tzung der Erstellung von Titelseiten der
+% Lehrstuhldokumente. Er schreibt zentriert den Namen der Uni, der FakultÃ¤t
 % und des Lehrstuhls auf englisch aus.
 \newcommand{\@institutionEN}{
   \begin{center}
   %Institution an der die Arbeit geschrieben wurde
   \LARGE 
-  Technische Universität Dresden
+  Technische UniversitÃ¤t Dresden
 
   \bigskip
   \normalsize
@@ -51,18 +51,18 @@ der WiSe von Malte Helmhold]
 % Ende des \institution Befehls
 
 % Institution deutsch
-% Befehl dient zur Unterstützung der Erstellung von Titelseiten der
-% Lehrstuhldokumente. Er schreibt zentriert den Namen der Uni, der Fakultät auf deutsch
+% Befehl dient zur UnterstÃ¼tzung der Erstellung von Titelseiten der
+% Lehrstuhldokumente. Er schreibt zentriert den Namen der Uni, der FakultÃ¤t auf deutsch
 % und des Lehrstuhls aus.
 \newcommand{\@institutionDE}{
   \begin{center}
   %Institution an der die Arbeit geschrieben wurde
   \LARGE 
-  Technische Universität Dresden
+  Technische UniversitÃ¤t Dresden
 
   \bigskip
   \normalsize
-  Fakultät Wirtschaftswissenschaften\\
+  FakultÃ¤t Wirtschaftswissenschaften\\
   Forschungsgruppe Digital Health
   \end{center}   
 }
@@ -70,17 +70,17 @@ der WiSe von Malte Helmhold]
 
 
 %####
-% Befehl für eine doppelte englisch/deutsche Titelseite einer Seminarar- oder Projektarbeit. Die
-% beiden Typen unterscheiden sich nur nach der Überschrift auf dem
+% Befehl fÃ¼r eine doppelte englisch/deutsche Titelseite einer Seminarar- oder Projektarbeit. Die
+% beiden Typen unterscheiden sich nur nach der Ãœberschrift auf dem
 % Deckblatt. Die Befehle \seminartitlepage und \projecttitlepage rufen
 % diesen Befehl hier auf. Er sollte nicht vom Nutzer verwendet werden!
-% Es werden 6 Parameter benötigt:
+% Es werden 6 Parameter benÃ¶tigt:
 % 1. englischer Titel der Seminararbeit
 % 2. deutscher Titel der Seminararbeit
 % 3. Autorname (MATRIKELNUMMER)
 % 4. Titel Vor- und Zuname des Betreuers
 \newcommand\@doubleseminartitlepage[6] {%
-  %Einfügen des hypersetups, falls wir ein pdf bauen
+  %EinfÃ¼gen des hypersetups, falls wir ein pdf bauen
   \if@pdf
   \hypersetup {%
       pdfauthor={#3}%
@@ -103,10 +103,10 @@ der WiSe von Malte Helmhold]
   \normalsize
  Seminar Paper\\%
 for Attainment of a Seminar Attestation\\%
-required by §7 of the Exam Regulations (#5)
+required by Â§7 of the Exam Regulations (#5)
 
-  % Mit dem \vfill sorgen wir dafür, da je nach Länge des Titels der Arbeit der
-  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefüllt
+  % Mit dem \vfill sorgen wir dafÃ¼r, da je nach LÃ¤nge des Titels der Arbeit der
+  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefÃ¼llt
   % wird, mit anderen Worten wird die Seite mittels des Zwischenraums immer
   % auf die gesamte Seite gezogen
   \end{center}
@@ -117,7 +117,7 @@ required by §7 of the Exam Regulations (#5)
         Dresden, \today }
   \end{flushright}      
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \newpage
    \thispagestyle{empty}
   \enlargethispage{1cm}
@@ -135,10 +135,10 @@ required by §7 of the Exam Regulations (#5)
   \normalsize
 Seminararbeit\\%
   zur Erlangung eines Seminarscheines\\%
-  nach §7 der Prüfungsordnung #6
+  nach Â§7 der PrÃ¼fungsordnung #6
 
-  % Mit dem \vfill sorgen wir dafür, da je nach Länge des Titels der Arbeit der
-  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefüllt
+  % Mit dem \vfill sorgen wir dafÃ¼r, da je nach LÃ¤nge des Titels der Arbeit der
+  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefÃ¼llt
   % wird, mit anderen Worten wird die Seite mittels des Zwischenraums immer
   % auf die gesamte Seite gezogen
   \end{center}
@@ -153,11 +153,11 @@ Seminararbeit\\%
 }
 
 %####
-% Befehl für die Titelseite einer ENGLISCHEN Seminarar- oder Projektarbeit. Die
-% beiden Typen unterscheiden sich nur nach der Überschrift auf dem
+% Befehl fÃ¼r die Titelseite einer ENGLISCHEN Seminarar- oder Projektarbeit. Die
+% beiden Typen unterscheiden sich nur nach der Ãœberschrift auf dem
 % Deckblatt. Die Befehle \seminartitlepage und \projecttitlepage rufen
 % diesen Befehl hier auf. Er sollte nicht vom Nutzer verwendet werden!
-% Es werden 6 Parameter benötigt:
+% Es werden 6 Parameter benÃ¶tigt:
 % 1. English Title
 % 2. Name of Author
 % 3. Name of Supervisor
@@ -185,8 +185,8 @@ Seminararbeit\\%
   \normalsize
 #4
 
-  % Mit dem \vfill sorgen wir dafür, da je nach Länge des Titels der Arbeit der
-  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefüllt
+  % Mit dem \vfill sorgen wir dafÃ¼r, da je nach LÃ¤nge des Titels der Arbeit der
+  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefÃ¼llt
   % wird, mit anderen Worten wird die Seite mittels des Zwischenraums immer
   % auf die gesamte Seite gezogen
   \end{center}
@@ -197,13 +197,13 @@ Seminararbeit\\%
         Dresden, \today }
   \end{flushright}      
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \setcounter{page}{1}
 }
 
-%-----------Öffentliche Befehle---------------------------
+%-----------Ã–ffentliche Befehle---------------------------
 
 % Definiert ein Seminararbeitsdeckblatt. Ruft \@seminartitlepage
 % auf. Parameter:
@@ -215,7 +215,7 @@ Seminararbeit\\%
 \newcommand{\seminartitlepage}[4]{%
   \@seminartitlepage{#1}{#2}{#3}{Seminar Paper\\%
 for Attainment of a Seminar Attestation\\%
-required by §7 of the Exam Regulations (#4)}
+required by Â§7 of the Exam Regulations (#4)}
 }
 
 \newcommand{\doubleseminartitlepage}[6]{%
@@ -233,11 +233,11 @@ required by §7 of the Exam Regulations (#4)}
 % 5. Studiengang
 \newcommand{\projecttitlepage}[5]{%
   \@seminartitlepage{#1}{#2}{#3}{Project Paper %
-  by §8 of the \\Exam Regulations (#4)}%
+  by Â§8 of the \\Exam Regulations (#4)}%
 }
 
-%Befehl für die Erstellung der Titelseite einer Diplomarbeit. Es werden 7
-%Parameter benötigt: 
+%Befehl fÃ¼r die Erstellung der Titelseite einer Diplomarbeit. Es werden 7
+%Parameter benÃ¶tigt: 
 %1. Titel der Arbeit
 %2. Zu erlangender Titel
 %3. Autor (Vor- und Zuname)
@@ -247,7 +247,7 @@ required by §7 of the Exam Regulations (#4)}
 %7. Beginn der Bearbeitungszeit (dd.mm.yyyy)
 %8. Ende der Bearbeitungszeit (dd.mm.yyyy)
 \newcommand\diplomatitlepage[8] {%
-  %Einfügen des hypersetups, falls wir ein pdf bauen
+  %EinfÃ¼gen des hypersetups, falls wir ein pdf bauen
   \if@pdf
   \hypersetup {%
       pdfsubject={Diplomarbeit zur Erlangung des akademischen Grades #2},%
@@ -273,8 +273,8 @@ required by §7 of the Exam Regulations (#4)}
   zur Erlangung des akademischen Grades\\
   \glqq #2\grqq\
 
-  % Mit dem \vfill sorgen wir dafür, daje nach Länge des Titels der Arbeit der
-  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefüllt
+  % Mit dem \vfill sorgen wir dafÃ¼r, daje nach LÃ¤nge des Titels der Arbeit der
+  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefÃ¼llt
   % wird, mit anderen Worten wird die Seite mittels des Zwischenraums immer
   % auf die gesamte Seite gezogen
   \vfill
@@ -290,12 +290,12 @@ required by §7 of the Exam Regulations (#4)}
     Bearbeitungszeit: & #7 - #8\\
   \end{tabular}
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \setcounter{page}{1}
 }
 
-%Befehl für die Erstellung der Titelseite einer Bachelor-Arbeit. Es werden 8
-%Parameter benötigt: 
+%Befehl fÃ¼r die Erstellung der Titelseite einer Bachelor-Arbeit. Es werden 8
+%Parameter benÃ¶tigt: 
 %1. Title 
 %2. Zu erlangender Titel
 %3. Autor (Vor- und Zuname)
@@ -305,7 +305,7 @@ required by §7 of the Exam Regulations (#4)}
 %7. Beginn der Bearbeitungszeit (dd.mm.yyyy)
 %8. Ende der Bearbeitungszeit (dd.mm.yyyy)
 \newcommand\bachelortitlepage[8] {%
-  %Einfügen des hypersetups, falls wir ein pdf bauen
+  %EinfÃ¼gen des hypersetups, falls wir ein pdf bauen
   \if@pdf
   \hypersetup {%
       pdfsubject={A Thesis Submitted in Partial Fulfillment of the Requirements for the Degree of #2},%
@@ -332,8 +332,8 @@ Partial Fulfillment of the \\
  Requirements for the Degree of\\
   \glqq #2\grqq\
 
-  % Mit dem \vfill sorgen wir dafür, daje nach Länge des Titels der Arbeit der
-  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefüllt
+  % Mit dem \vfill sorgen wir dafÃ¼r, daje nach LÃ¤nge des Titels der Arbeit der
+  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefÃ¼llt
   % wird, mit anderen Worten wird die Seite mittels des Zwischenraums immer
   % auf die gesamte Seite gezogen
   \vfill
@@ -349,12 +349,12 @@ Submitted by:  & #3\\
     Working Period: & #7 - #8\\
   \end{tabular}
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \setcounter{page}{1}
 }
 
-%Befehl für die Erstellung der Titelseite einer Master-Arbeit. Es werden 7
-%Parameter benötigt: 
+%Befehl fÃ¼r die Erstellung der Titelseite einer Master-Arbeit. Es werden 7
+%Parameter benÃ¶tigt: 
 %1. Titel der Arbeit
 %2. Zu erlangender Titel
 %3. Autor (Vor- und Zuname)
@@ -364,7 +364,7 @@ Submitted by:  & #3\\
 %7. Beginn der Bearbeitungszeit (dd.mm.yyyy)
 %8. Ende der Bearbeitungszeit (dd.mm.yyyy)
 \newcommand\mastertitlepage[8] {%
-  %Einfügen des hypersetups, falls wir ein pdf bauen
+  %EinfÃ¼gen des hypersetups, falls wir ein pdf bauen
   \if@pdf
   \hypersetup {%
       pdfsubject={A Thesis Submitted in Partial Fulfillment of the Requirements for the Degree of #2},%
@@ -391,8 +391,8 @@ Partial Fulfillment of the \\
  Requirements for the Degree of\\
   \glqq #2\grqq\
 
-  % Mit dem \vfill sorgen wir dafür, daje nach Länge des Titels der Arbeit der
-  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefüllt
+  % Mit dem \vfill sorgen wir dafÃ¼r, daje nach LÃ¤nge des Titels der Arbeit der
+  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefÃ¼llt
   % wird, mit anderen Worten wird die Seite mittels des Zwischenraums immer
   % auf die gesamte Seite gezogen
   \vfill
@@ -408,19 +408,19 @@ Partial Fulfillment of the \\
     Working Period: & #7 - #8\\
   \end{tabular}
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \setcounter{page}{1}
 }
 
-%Tittelblatt für die Kurzfassung einer Dissertation
-%Es wird benötigt:
+%Tittelblatt fÃ¼r die Kurzfassung einer Dissertation
+%Es wird benÃ¶tigt:
 %1. Titel der Arbeit
 %2. zu erlangender akademischer Grad
 %3. Autor der Arbeit
 %4. Datum der Arbeit
 %5. Betreuer
 \newcommand\dissertationshorttitlepage[5] {%
-  %Einfügen des hypersetups, falls wir ein pdf bauen
+  %EinfÃ¼gen des hypersetups, falls wir ein pdf bauen
   \if@pdf
   \hypersetup {%
       pdfsubject={Dissertation zur Erlangung des akademischen Grades #2},%
@@ -457,17 +457,17 @@ Partial Fulfillment of the \\
   \vspace{1cm}
 
   %Institution an der die Arbeit geschrieben wurde
-  Fakultät für Wirtschaftswissenschaften\\
+  FakultÃ¤t fÃ¼r Wirtschaftswissenschaften\\
   der\\
-  Technischen Universität Dresden
+  Technischen UniversitÃ¤t Dresden
   \vspace{1cm}
 
   von\\
   \vspace{1cm}
   #3
 
-  % Mit dem \vfill sorgen wir dafür, daje nach Länge des Titels der Arbeit der
-  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefüllt
+  % Mit dem \vfill sorgen wir dafÃ¼r, daje nach LÃ¤nge des Titels der Arbeit der
+  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefÃ¼llt
   % wird, mit anderen Worten wird die Seite mittels des Zwischenraums immer
   % auf die gesamte Seite gezogen
   \vfill
@@ -482,11 +482,11 @@ Partial Fulfillment of the \\
   \end{center}
 
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \setcounter{page}{1}
 }
 
-% Befehl für das Deckblatt einer Dissertation an der Fakultät WIWI der TU
+% Befehl fÃ¼r das Deckblatt einer Dissertation an der FakultÃ¤t WIWI der TU
 % Dresden 
 % Parameter:
 % 1. Titel der Dissertation
@@ -498,7 +498,7 @@ Partial Fulfillment of the \\
 % 7. 2. Gutachter
 % 8. 3. Gutachter
 \newcommand\dissertationtitlepage[8] {%
-  %Einfügen des hypersetups, falls wir ein pdf bauen
+  %EinfÃ¼gen des hypersetups, falls wir ein pdf bauen
   \if@pdf
   \hypersetup {%
       pdfsubject={Dissertation zur Erlangung des akademischen Grades #2},%
@@ -531,17 +531,17 @@ Partial Fulfillment of the \\
 
   %Institution an der die Arbeit geschrieben wurde
   %Institution an der die Arbeit geschrieben wurde
-  Fakultät für Wirtschaftswissenschaften\\
+  FakultÃ¤t fÃ¼r Wirtschaftswissenschaften\\
   der\\
-  Technischen Universität Dresden
+  Technischen UniversitÃ¤t Dresden
   \vspace{1cm}
 
   von\\
   \vspace{1cm}
   #3
 
-  % Mit dem \vfill sorgen wir dafür, daje nach Länge des Titels der Arbeit der
-  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefüllt
+  % Mit dem \vfill sorgen wir dafÃ¼r, daje nach LÃ¤nge des Titels der Arbeit der
+  % entstehende Zwischenraum zwichen Zweck der Arbeit und Autor aufgefÃ¼llt
   % wird, mit anderen Worten wird die Seite mittels des Zwischenraums immer
   % auf die gesamte Seite gezogen
   \vfill
@@ -564,19 +564,19 @@ Partial Fulfillment of the \\
   \end{tabular}
 
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \setcounter{page}{1}
 }
 
-% Dieser Befehl ist als Deckblatt für Diskussionspapier gedacht, die
-% während des Schreibens der DA entstehen. Die Parameter im
+% Dieser Befehl ist als Deckblatt fÃ¼r Diskussionspapier gedacht, die
+% wÃ¤hrend des Schreibens der DA entstehen. Die Parameter im
 % Einzelnen:
 % 1 - Der Titel des Papiers
 % 2 - Eine Anmerkung, z.B. Tag der Diskussion
 % 3 - Autorenkollektiv
-% Vereinbarungsgemäß wird der Zeilenabstand auf 1 gesetzt.
+% VereinbarungsgemÃ¤ÃŸ wird der Zeilenabstand auf 1 gesetzt.
 \newcommand\shorttitlepage[3] {%
-  %Einfügen des hypersetups, falls wir ein pdf bauen
+  %EinfÃ¼gen des hypersetups, falls wir ein pdf bauen
   \if@pdf
   \hypersetup {%
       pdftitle={#1},%
@@ -605,7 +605,7 @@ Partial Fulfillment of the \\
     \noindent#3%
   \end{quotation}
   \cleardoublepage
-  %Den Page-Counter zurücksetzen, falls wir keine Abstract haben
+  %Den Page-Counter zurÃ¼cksetzen, falls wir keine Abstract haben
   \setcounter{page}{1}
 }
 

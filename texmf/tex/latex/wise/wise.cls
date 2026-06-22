@@ -12,8 +12,7 @@
 %% Version: 1.0  Neuversionierung (Malte Helmhold, 07/10/2012) 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{wise}[10/07/2012 Vorlage fuer Dokumente an der WiSe von 
-Malte Helmhold]
+\ProvidesClass{wise}[2026/06/22 v1.0.0 FGDH thesis class (UTF-8/fontenc modernized; orig. WiSe template by Malte Helmhold, 2012)]
 \LoadClass[clearpage=empty, listof=totoc,  bibliography=totoc, index=totoc, 12pt, abstracton, numbers=noenddot]{scrartcl}
 
 % Quellcode darstellen
@@ -198,7 +197,8 @@ tabsize=2,
 \setkomafont{paragraph}{\normalcolor\sffamily\bfseries}
 \setkomafont{subparagraph}{\normalcolor\sffamily\slshape}
 
-\RequirePackage[latin9]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{times}
 
 \RequirePackage{graphicx}

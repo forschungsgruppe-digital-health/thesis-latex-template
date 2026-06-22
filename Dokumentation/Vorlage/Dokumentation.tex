@@ -6,7 +6,7 @@
 \newcommand\command[1]{\code{\textbackslash{}#1}}
 
 \begin{document}
-\shorttitlepage{Dokumentation der \LaTeX{}-Vorlage für die \\Forschungsgruppe Digital Health\\der TU Dresden}{Stand: 17.01.2022}{Malte Helmhold}
+\shorttitlepage{Dokumentation der \LaTeX{}-Vorlage fÃ¼r die \\Forschungsgruppe Digital Health\\der TU Dresden}{Stand: 17.01.2022}{Malte Helmhold}
 
 \begin{preface}
   \tableofcontents
@@ -16,35 +16,35 @@
 
 \introduction
 %  Arbeitstypen korrigieren
-Das hier vorgestellte \LaTeX{}-Paket ermöglicht das Schreiben von
+Das hier vorgestellte \LaTeX{}-Paket ermÃ¶glicht das Schreiben von
 Projekt-, Seminar-, Diplom-, Bachelor-, Master-, und Doktorarbeiten in einem Layout, welches
-durch den Lehrstuhl für Wirtschaftsinformatik, insbesondere Systementwicklung
+durch den Lehrstuhl fÃ¼r Wirtschaftsinformatik, insbesondere Systementwicklung
 der TU Dresden vorgeschrieben ist.
 
 Die vorliegende Dokumentation gliedert sich in zwei Teile. Zuerst
-werden die für den Nutzer relevanten Teile des Paketes beschrieben.
-Es schließen sich weiterführende Erläuterungen für Entwickler an,
-bum die Weiterentwicklung des Paketes zu gewährleisten. 
+werden die fÃ¼r den Nutzer relevanten Teile des Paketes beschrieben.
+Es schlieÃŸen sich weiterfÃ¼hrende ErlÃ¤uterungen fÃ¼r Entwickler an,
+bum die Weiterentwicklung des Paketes zu gewÃ¤hrleisten. 
 
 
 \section{Anwenderdokumentation}
 
-Dieser Teil dokumentiert ausschließlich die Teile der Vorlage, die
-für den Anwender relevant sind. Beginnend mit der Paketinstallation
-und den Grundlagen des Paketes werden anschließend die neu definierten
-Befehle und Umgebungen erläutert.
+Dieser Teil dokumentiert ausschlieÃŸlich die Teile der Vorlage, die
+fÃ¼r den Anwender relevant sind. Beginnend mit der Paketinstallation
+und den Grundlagen des Paketes werden anschlieÃŸend die neu definierten
+Befehle und Umgebungen erlÃ¤utert.
 
 \subsection{Paketinstallation}
 
 \subsubsection{Vorbereitung}
 
-%Hier lieber beschreiben wie man über den optionalen Parameter []{wise} die Packages zusätzlich einbinden kann. 
+%Hier lieber beschreiben wie man Ã¼ber den optionalen Parameter []{wise} die Packages zusÃ¤tzlich einbinden kann. 
 \begin{comment}
 
-Überprüfen Sie, ob bei Ihrer \LaTeX{}-Distribution die in der folgenden
+ÃœberprÃ¼fen Sie, ob bei Ihrer \LaTeX{}-Distribution die in der folgenden
 Tabelle angegebenen Pakete in der jeweiligen oder neueren Version
-installiert sind (Anmerkung: Das Paket ist mit der unten aufgeführten
-Konfiguration getestet wurden. In Einzelfällen kann es vorkommen,
+installiert sind (Anmerkung: Das Paket ist mit der unten aufgefÃ¼hrten
+Konfiguration getestet wurden. In EinzelfÃ¤llen kann es vorkommen,
 dass ein neueres Paket eine Fehlermeldung verursacht. Schicken Sie
 in diesem Fall die Fehlermeldung und die Versionen der benutzten Pakete
 an \url{mailto:maltehelmhold@gmail.de}). Ist dies nicht
@@ -53,11 +53,11 @@ Ihres Textsatzsystems.
 \end{comment}
 
 Alle in der Wise-Klasse verwendeten Pakete finden Sie im \textbf{C}omprehensive
-\textbf{T}eX \textbf{A}rchive \textbf{N}etwork (CTAN) unter \url{http://www.dante.de}. Bei Bedarf kann die Vorlage um Pakete ergänzt werden. Schicken sie hierfür eine Nachricht an \url{mailto:maltehelmhold@gmail.de}. 
-%Die mit einem Stern gekennzeichneten Pakete sind üblicherweise bereits
+\textbf{T}eX \textbf{A}rchive \textbf{N}etwork (CTAN) unter \url{http://www.dante.de}. Bei Bedarf kann die Vorlage um Pakete ergÃ¤nzt werden. Schicken sie hierfÃ¼r eine Nachricht an \url{mailto:maltehelmhold@gmail.de}. 
+%Die mit einem Stern gekennzeichneten Pakete sind Ã¼blicherweise bereits
 %in Ihrer \LaTeX{}-Distribution enthalten. 
 Das \code{hyperref}-Paket
-benötigen Sie nur, wenn Sie eine .pdf-Datei erzeugen, bzw.\ zur besseren
+benÃ¶tigen Sie nur, wenn Sie eine .pdf-Datei erzeugen, bzw.\ zur besseren
 Navigation Abschnitte und Literaturververweise in ihrem DVI-Dokument
 als Links gestalten wollen. 
 
@@ -119,7 +119,7 @@ Das Paket liegt als .zip-Archiv vor. Entpacken Sie es mit::
 \begin{quotation}
 \code{unzip wise.zip}
 \end{quotation}
-und kopieren Sie anschließend die Dateien
+und kopieren Sie anschlieÃŸend die Dateien
 
 \begin{itemize}
 \item \code{wise.cls}
@@ -138,17 +138,17 @@ drei Dateien nach \linebreak{}\code{texmf/tex/latex/wise} und die letzte
 Datei nach \code{texmf/bibtex/wise}). Aktualisieren Sie
 ggf.\ die Dateidatenbank Ihres Textsatzsystems.
 
-Die Datei \code{wisedoku.tex} enthält
+Die Datei \code{wisedoku.tex} enthÃ¤lt
 diese Dokumentation (die Datei \code{wisedoku.pdf} bereits in kompilierter
-Form). Des weiteren steht die Datei \code{wisetest.tex} zur Verfügung,
+Form). Des weiteren steht die Datei \code{wisetest.tex} zur VerfÃ¼gung,
 die die Anwendung der hier beschriebenen Vorlage am Beispiel einer
 Diplomarbeit demonstriert.
 
 \subsection{Grundlagen}\label{sec:basics}
 Die Vorlage basiert auf dem \code{koma-script}-Paket, genauer auf
 \code{scrartcl}, d.\,h.\ alle Befehle dieser Vorlage stehen in
-wise.cls ebenfalls zur Verfügung. Weiterhin werden eine Reihe von
-Standardpaketen benutzt, die üblicherweise in jeder \LaTeX{}-Distribution
+wise.cls ebenfalls zur VerfÃ¼gung. Weiterhin werden eine Reihe von
+Standardpaketen benutzt, die Ã¼blicherweise in jeder \LaTeX{}-Distribution
 enthalten sind.
 
 \subsection{Fehler beheben}
@@ -156,45 +156,45 @@ enthalten sind.
 In diesem Kapitel werden ein paar grundlegende Techniken vorgestellt, die immer wieder hilfreich sind, Syntaxfehler schnell ausfindig zu machen und vorzubeugen. 
 
 \subsubsection{Backups}
-Sie sollten häufig genug datierte Backups Ihrer Arbeit anlegen. So können Sie bei hartnäckigen Syntaxfehlern immer wieder auf diese zurückgreifen. Es bietet sich dafür an, Ihre Arbeit in einem dedizierten Ordner zu speichern, diesen regelmäßig an einem anderen Ort abzulegen und dort mit dem aktuellen Datum zu benennen (der Ordner enthält zur Übersicht nicht mehr als eine einzige Kopie Ihrer Arbeit).  Das sollten Sie ebenso mit Ihrer Literaturdatenbank tun. Keine Sicherheitskopien anzulegen, ist ein fataler Anfängerfehler und sollte bei wissenschaftlichen Arbeiten nicht vorkommen.
+Sie sollten hÃ¤ufig genug datierte Backups Ihrer Arbeit anlegen. So kÃ¶nnen Sie bei hartnÃ¤ckigen Syntaxfehlern immer wieder auf diese zurÃ¼ckgreifen. Es bietet sich dafÃ¼r an, Ihre Arbeit in einem dedizierten Ordner zu speichern, diesen regelmÃ¤ÃŸig an einem anderen Ort abzulegen und dort mit dem aktuellen Datum zu benennen (der Ordner enthÃ¤lt zur Ãœbersicht nicht mehr als eine einzige Kopie Ihrer Arbeit).  Das sollten Sie ebenso mit Ihrer Literaturdatenbank tun. Keine Sicherheitskopien anzulegen, ist ein fataler AnfÃ¤ngerfehler und sollte bei wissenschaftlichen Arbeiten nicht vorkommen.
 
-\subsubsection{Datenbankeinträge}
-Meine Empfehlung ist es, niemals zu viele Datenbankeinträge auf einmal zu tätigen. Sie sollten regelmäßig einen Kompilierungsdurchlauf - mit den neu eingetragenen Datensätzen - durchführen, um auch Ihre Literaturdatenbank syntaktisch fehlerfrei zu halten. 
+\subsubsection{DatenbankeintrÃ¤ge}
+Meine Empfehlung ist es, niemals zu viele DatenbankeintrÃ¤ge auf einmal zu tÃ¤tigen. Sie sollten regelmÃ¤ÃŸig einen Kompilierungsdurchlauf - mit den neu eingetragenen DatensÃ¤tzen - durchfÃ¼hren, um auch Ihre Literaturdatenbank syntaktisch fehlerfrei zu halten. 
 
 \subsubsection{Auskommentieren}
-In dieser Klasse steht ihnen das Package Verbatim zur Verfügung. Sie könenen mit der \command{comment}-Umgebung Textteile auskommentieren. Um einen Syntaxfehler zu finden, bietet es sich an, wenigstens jenen Teil auszukommentieren, in welchem sich mit absoluter Sicherheit der kompilierungskritische Fehler befindet. Im Zweifelsfall ist das der ganze Text. Da Zeichen in einer \command{comment}-Umgebung nicht als \LaTeX -Anweisungen verstanden werden, kann man die auskommentierte Umgebung nun so weit sukzessiv \glqq einschnüren \grqq , bis Sie eruieren können, wo sich mit Sicherheit der Fehler befindet. Achten Sie bitte auch auf Textbausteine in ihrer Literaturdatenbank, in welchen sich möglicherweise ein Fehler befinden könnte. 
+In dieser Klasse steht ihnen das Package Verbatim zur VerfÃ¼gung. Sie kÃ¶nenen mit der \command{comment}-Umgebung Textteile auskommentieren. Um einen Syntaxfehler zu finden, bietet es sich an, wenigstens jenen Teil auszukommentieren, in welchem sich mit absoluter Sicherheit der kompilierungskritische Fehler befindet. Im Zweifelsfall ist das der ganze Text. Da Zeichen in einer \command{comment}-Umgebung nicht als \LaTeX -Anweisungen verstanden werden, kann man die auskommentierte Umgebung nun so weit sukzessiv \glqq einschnÃ¼ren \grqq , bis Sie eruieren kÃ¶nnen, wo sich mit Sicherheit der Fehler befindet. Achten Sie bitte auch auf Textbausteine in ihrer Literaturdatenbank, in welchen sich mÃ¶glicherweise ein Fehler befinden kÃ¶nnte. 
 
 \subsection{Fehler in der Literaturdatenbank}
-Mittels einer geeigneten Literatur-Verwaltungssoftware können Sie erzwingen, dass Ihre Literaturdatenbank ISO 8859-15 (Latin-9) kodiert ist, also die gleiche Zeichenkodierung wie Ihre Arbeit aufweist. Achten Sie bitte darauf, auch in der Literaturdatenbank KEINE für \LaTeX \ als Anweisung üblichen Zeichen (wie z.B. das \glqq \& \grqq , \glqq \% \grqq \ usw.) zu verwenden. Ersetzen Sie auch diese in der Literaturdatenbank durch die entsprechende Syntax (z. B. \&  ersetzen durch  \command{\&}). Dies ist häufig der Fall, wenn beispielsweise Buchtitel, Autoren usw. einfach in die entsprechenden Felder kopiert werden, ohne anschließend kontrolliert zu werden.
+Mittels einer geeigneten Literatur-Verwaltungssoftware kÃ¶nnen Sie erzwingen, dass Ihre Literaturdatenbank ISO 8859-15 (Latin-9) kodiert ist, also die gleiche Zeichenkodierung wie Ihre Arbeit aufweist. Achten Sie bitte darauf, auch in der Literaturdatenbank KEINE fÃ¼r \LaTeX \ als Anweisung Ã¼blichen Zeichen (wie z.B. das \glqq \& \grqq , \glqq \% \grqq \ usw.) zu verwenden. Ersetzen Sie auch diese in der Literaturdatenbank durch die entsprechende Syntax (z. B. \&  ersetzen durch  \command{\&}). Dies ist hÃ¤ufig der Fall, wenn beispielsweise Buchtitel, Autoren usw. einfach in die entsprechenden Felder kopiert werden, ohne anschlieÃŸend kontrolliert zu werden.
 
 \subsection{Paketoptionen}\label{sec:paketoptionen}
 Im Folgenden werden die Optionen des Paketes vorgestellt und beschrieben.
 
 \subsubsection{Die \code{en}-Option}
 \label{sec:enoption}
-Durch die Benutzung der \code{en}-Option werden sämtliche Textbausteine ins Englische übersetzt.
+Durch die Benutzung der \code{en}-Option werden sÃ¤mtliche Textbausteine ins Englische Ã¼bersetzt.
 
 
 
 \subsubsection{Die \code{nat}-Option}
 \label{sec:natbib}
 
-Die \code{nat} Option ermöglicht das Arbeiten mit dem übersichtlichen wisenat.bst Zitierstil. 
+Die \code{nat} Option ermÃ¶glicht das Arbeiten mit dem Ã¼bersichtlichen wisenat.bst Zitierstil. 
 
 
 \begin{description}
-\item [Achtung:]Der ältere wisealpha.bst Style kann nicht unter Verwendung der \code{nat}-Option ausgeführt werden. 
+\item [Achtung:]Der Ã¤ltere wisealpha.bst Style kann nicht unter Verwendung der \code{nat}-Option ausgefÃ¼hrt werden. 
 \end{description}
 
 
 \begin{comment}
 \subsubsection{Die \code{pdf}-Option}
 
-Mit Hilfe der Vorlage ist es möglich, das Dokument in eine \code{.pdf}-Datei
+Mit Hilfe der Vorlage ist es mÃ¶glich, das Dokument in eine \code{.pdf}-Datei
 umzuwandeln. Dazu schlagen die Autoren folgende Schritte vor:
 
 % Malte Helmhold:
-% Das muss überhaupt nicht mehr sein. Man kann die Bilder ja inzwischen einfacher handhaben.
+% Das muss Ã¼berhaupt nicht mehr sein. Man kann die Bilder ja inzwischen einfacher handhaben.
 \begin{enumerate}
 \item Umwandeln aller Grafiken in das \code{.pdf}-Format, z.\,B.
 
@@ -207,22 +207,22 @@ umzuwandeln. Dazu schlagen die Autoren folgende Schritte vor:
 \code{\url{http://ik.fh-hannover.de/tr/technik/ps2pdf.html}} (Service
 der FH-Hannover)
 \end{quote}
-\item Erneutes Übersetzen des Dokumentes mit PDF\LaTeX{} und der \code{pdf}-Option:
+\item Erneutes Ãœbersetzen des Dokumentes mit PDF\LaTeX{} und der \code{pdf}-Option:
 
 
 \begin{quotation}
 \command{documentclass{[}pdf{]}\{wise\}}
 \end{quotation}
 
-\item Ein dreimaliges Übersetzen ist i.\,d.\,R.\ erforderlich. Sollte
-der Übersetzungsvorgang fehlschlagen, so löschen Sie bitte alle temporären
+\item Ein dreimaliges Ãœbersetzen ist i.\,d.\,R.\ erforderlich. Sollte
+der Ãœbersetzungsvorgang fehlschlagen, so lÃ¶schen Sie bitte alle temporÃ¤ren
 Dateien (\code{.bbl}, \code{.blg}, \code{.aux}, \code{.toc},
 \code{.lof}, \code{.idx}, \code{.idl}, \ldots{}) und versuchen
 Sie es erneut (Problem im \code{hyperref}-Paket). 
 \end{enumerate}
-Dieses Vorgehen bringt den Vorteil mit sich, dass alle Überschriften
+Dieses Vorgehen bringt den Vorteil mit sich, dass alle Ãœberschriften
 als Navigationsleiste in das \code{.pdf}-Dokument eingeblendet werden.
-Der Nachteil liegt eindeutig in der teilweise mühseligen Umwandlung
+Der Nachteil liegt eindeutig in der teilweise mÃ¼hseligen Umwandlung
 aller Grafiken in das \code{.pdf}-Format. Wollen Sie Ihr Dokument
 ohne viel Aufwand als \code{.pdf}-Datei erhalten, gehen Sie wie
 folgt vor:
@@ -230,7 +230,7 @@ folgt vor:
 \begin{enumerate}
 \item Compilieren Sie Ihr \LaTeX{}-Dokument wie gewohnt. Schalten Sie dabei
 aber die \code{hyperref}- und die \code{pdf}-Option aus!
-\item Übersetzen Sie Ihre \code{.dvi}-Datei in ein PostScript-Dokument
+\item Ãœbersetzen Sie Ihre \code{.dvi}-Datei in ein PostScript-Dokument
 wie folgt:
 
 \begin{quotation}
@@ -240,8 +240,8 @@ wie folgt:
 auf einem der oben unter 1. beschriebenen Wege.
 \end{enumerate}
 Beachten Sie bitte, dass bei dieser Vorgehensweise keine Querverweise
-und Lesezeichen in Ihr \code{.pdf}-Dokument eingebunden werden können.
-Es entfällt aber die Aufwendige Konversion der verwendeten Bilder.
+und Lesezeichen in Ihr \code{.pdf}-Dokument eingebunden werden kÃ¶nnen.
+Es entfÃ¤llt aber die Aufwendige Konversion der verwendeten Bilder.
 
 
 \end{comment}
@@ -255,38 +255,38 @@ zu Grunde gelegt.
 
 \subsubsection{Randnotizen-Optionen}
 
-Randnotizen stellen eine Möglichkeit dar, lange Dokumente lesbarer
-zu gestalten, indem für jeden Absatz eine stichwortartige Zusammenfassung
+Randnotizen stellen eine MÃ¶glichkeit dar, lange Dokumente lesbarer
+zu gestalten, indem fÃ¼r jeden Absatz eine stichwortartige Zusammenfassung
 an den Rand gesetzt wird. Weiterhin kann sich dadurch das Schreiben
-eines Dokumentes vereinfachen, da für den aktuellen Absatz stets das
-angestrebte Erklärungsziel im Voraus bestimmt wird.
+eines Dokumentes vereinfachen, da fÃ¼r den aktuellen Absatz stets das
+angestrebte ErklÃ¤rungsziel im Voraus bestimmt wird.
 
-Da aber Randnotizen nicht für das endgültige Dokument vorgesehen sind,
-für die eigene Version aber dennoch gedruckt werden sollen, werden
-zwei Paketoptionen zur Verfügung gestellt:
+Da aber Randnotizen nicht fÃ¼r das endgÃ¼ltige Dokument vorgesehen sind,
+fÃ¼r die eigene Version aber dennoch gedruckt werden sollen, werden
+zwei Paketoptionen zur VerfÃ¼gung gestellt:
 
 \begin{enumerate}
-\item Die \code{mp}-Option erzeugt die gewünschten Randnotizen. Die Breite
-des Dokuments ändert sich dadurch nicht, d.\,h.\ das Dokument
+\item Die \code{mp}-Option erzeugt die gewÃ¼nschten Randnotizen. Die Breite
+des Dokuments Ã¤ndert sich dadurch nicht, d.\,h.\ das Dokument
 wird exakt genau so formatiert wie ohne Angabe dieser Option. Das
 Dokument wird lediglich um 7 mm nach links verschoben. Selbst beim
 Binden von Diplomarbeiten ist dieses Vorgehen noch akzeptabel. Der
-Abstand zwischen Randnotiz und Text beträgt 5mm.
-\item Die \code{mppdf}-Option ermöglicht ein weiteres Verschieben des
+Abstand zwischen Randnotiz und Text betrÃ¤gt 5mm.
+\item Die \code{mppdf}-Option ermÃ¶glicht ein weiteres Verschieben des
 Textes nach links. Da die elektronische Version nicht gedruckt werden
 soll, kann der Text weiter nach links verschoben werden (12 mm) und
-der Abstand der Randnotizen zum Text erhöht werden (10 mm). Damit wird
-die Lesbarkeit eines solchen Dokumentes weiter erhöht. Mit der \code{mppdf}-Option
+der Abstand der Randnotizen zum Text erhÃ¶ht werden (10 mm). Damit wird
+die Lesbarkeit eines solchen Dokumentes weiter erhÃ¶ht. Mit der \code{mppdf}-Option
 wird automatisch die \code{pdf}-Option aktiviert.
 \end{enumerate}
-\marginpar{Randnotizen helfen  die Übersicht zu behalten, sollten aber nicht mitgedruckt werden.} 
+\marginpar{Randnotizen helfen  die Ãœbersicht zu behalten, sollten aber nicht mitgedruckt werden.} 
 Wird keine dieser Optionen angegeben, wird das Dokument ohne Randnotizen
 und der vorgeschriebenen Seitenaufteilung formatiert. Randnotizen
 werden wie bisher auch durch den \command{marginpar}-Befehl
 gesetzt. Beispiel:
 \begin{footnotesize}
 \begin{lstlisting}
-\marginpar{Randnotizen helfen  die Übersicht zu behalten,
+\marginpar{Randnotizen helfen  die Ãœbersicht zu behalten,
  sollten aber nicht mitgedruckt werden.} 
 \end{lstlisting}
 \end{footnotesize}
@@ -296,28 +296,28 @@ gesetzt. Beispiel:
 
 \subsubsection{Die \code{xlevel}-Option}
 
-Gemäß den Definitionen der als Basis dienenden \code{scrartcl}-Vorlage
-stehen standardmäßig drei nummerierte (\command{section,
+GemÃ¤ÃŸ den Definitionen der als Basis dienenden \code{scrartcl}-Vorlage
+stehen standardmÃ¤ÃŸig drei nummerierte (\command{section,
 \textbackslash{}subsection} und \command{subsubsection)}
 und zwei unnummerierte (\command{paragraph} und \command{subparagraph})
-Gliederungsebenen zur Verfügung. Wird die \code{xlevel}-Option eingesetzt,
-so kann zusätzlich \command{paragraph} als nummerierte
+Gliederungsebenen zur VerfÃ¼gung. Wird die \code{xlevel}-Option eingesetzt,
+so kann zusÃ¤tzlich \command{paragraph} als nummerierte
 Gliederungsebene verwendet werden.
 
 Mit der Anwendung von \code{xlevel} werden gleichzeitig auch die
-entsprechenden Eintragungen in das Inhaltsverzeichnis für die entsprechenden
-Überschriften vorgenommen. Um die neue Gliederungsebene im Text geeignet
+entsprechenden Eintragungen in das Inhaltsverzeichnis fÃ¼r die entsprechenden
+Ãœberschriften vorgenommen. Um die neue Gliederungsebene im Text geeignet
 zu kennzeichnen, wird sie fett \code{\textit{}}gesetzt. Die Formatierungen
-der verbleibenden Ebenen bleiben durch die Option unberührt.
+der verbleibenden Ebenen bleiben durch die Option unberÃ¼hrt.
 
 
 \subsubsection{Die \code{partmarking}-Option}
 
-Werden größere Arbeiten, wie z.\,B.\ Dissertationen oder Skripte
-verfasst, so wird zur besseren Gliederung zusätzlich häufig der \command{part}-Befehl
-verwendet. Soll nun anstatt der üblichen Markierung in der Kopfzeile
-durch die Hauptüberschrift (und erste Unterüberschrift bei doppelseitigem
-Druck) nun der Abschnitt (und bei doppelseitigem Druck die Hauptüberschrift)
+Werden grÃ¶ÃŸere Arbeiten, wie z.\,B.\ Dissertationen oder Skripte
+verfasst, so wird zur besseren Gliederung zusÃ¤tzlich hÃ¤ufig der \command{part}-Befehl
+verwendet. Soll nun anstatt der Ã¼blichen Markierung in der Kopfzeile
+durch die HauptÃ¼berschrift (und erste UnterÃ¼berschrift bei doppelseitigem
+Druck) nun der Abschnitt (und bei doppelseitigem Druck die HauptÃ¼berschrift)
 an diese Stelle treten, so verwenden Sie bitte die \code{partmarking}-Option.
 
 
@@ -326,22 +326,22 @@ an diese Stelle treten, so verwenden Sie bitte die \code{partmarking}-Option.
 Durch Anwendung der \code{hyperref}-Option wird das gleichnamige
 Paket in das Dokumet eingebunden. Es dient unter anderem dazu, Kapitel,
 Abschnitte und Literaturverweise als Links zu gestalten. Somit ist
-eine vereinfachte Navigation im Dokument möglich.
+eine vereinfachte Navigation im Dokument mÃ¶glich.
 
-Für den Einsatz der Option im Dokument sind zwei Fälle zu unterscheiden.
+FÃ¼r den Einsatz der Option im Dokument sind zwei FÃ¤lle zu unterscheiden.
 Wird sie zusammen mit der \code{pdf}-Option verwendet, so werden
-zusätzlich für das .\code{pdf}-Dokument sowohl das Inhaltsverzeichnis
+zusÃ¤tzlich fÃ¼r das .\code{pdf}-Dokument sowohl das Inhaltsverzeichnis
 zur Navigation, als auch die Dokumentinformationen (Thema, Titel und
 Autor) erzeugt. Wird die \code{hyperref}-Option ohne die \code{pdf}-Option
-genutzt, so beschränken sich die Auswirkungen allein auf die Generation
-von Links für Überschriften und Literaturverweise.
+genutzt, so beschrÃ¤nken sich die Auswirkungen allein auf die Generation
+von Links fÃ¼r Ãœberschriften und Literaturverweise.
 
-Um die durch das \code{Hyperref}-Paket erzeugten Zusätze besser
+Um die durch das \code{Hyperref}-Paket erzeugten ZusÃ¤tze besser
 vom verbleibenden Text abzusetzen, werden sie mit speziellen Farben
 und \underbar{Unterstreichungen} gekennzeichnet. Die Farbgebung betrifft
-jedoch ausschließlich die Bildschirmdarstellung. Wird das Dokument
-über einen Drucker ausgegeben, so gelten wieder die ursprünglichen
-Formatkonventionen (z.\,B.\ Schwarz als Standard für Schrift).
+jedoch ausschlieÃŸlich die Bildschirmdarstellung. Wird das Dokument
+Ã¼ber einen Drucker ausgegeben, so gelten wieder die ursprÃ¼nglichen
+Formatkonventionen (z.\,B.\ Schwarz als Standard fÃ¼r Schrift).
 
 \begin{description}
 \item [Achtung:]Benutzen Sie zum Ausdruck Ihrer Arbeit immer die \code{.ps}-Datei,
@@ -355,35 +355,35 @@ erzeugt wurde!
 
 \subsubsection{Die Einleitung}
 
-Für die Einleitung wird der Befehl \command{introduction}
-zur Verfügung gestellt. Sie ist das erste Kapitel nach der \code{preface}-Umgebung
+FÃ¼r die Einleitung wird der Befehl \command{introduction}
+zur VerfÃ¼gung gestellt. Sie ist das erste Kapitel nach der \code{preface}-Umgebung
 (vgl.\ Abschnitt~\ref{sec:preface}).
 
 
-\subsubsection{Das Abkürzungsverzeichnis}
+\subsubsection{Das AbkÃ¼rzungsverzeichnis}
 
-Für das Abkürzungsverzeichnis werden zwei Befehle zur Verfügung gestellt.
-Für die Überschrift der Befehl \command{listofabbreviations}
-und für die Einträge in das Abkürzungsverzeichnis \command{abbreviation}.
-Der letzte Befehl nimmt zwei Parameter entgegen, die die Abkürzung
-und die entsprechende Erläuterung wiederspiegeln.
+FÃ¼r das AbkÃ¼rzungsverzeichnis werden zwei Befehle zur VerfÃ¼gung gestellt.
+FÃ¼r die Ãœberschrift der Befehl \command{listofabbreviations}
+und fÃ¼r die EintrÃ¤ge in das AbkÃ¼rzungsverzeichnis \command{abbreviation}.
+Der letzte Befehl nimmt zwei Parameter entgegen, die die AbkÃ¼rzung
+und die entsprechende ErlÃ¤uterung wiederspiegeln.
 
 \begin{quotation}
 Beispiel:\command{abbreviation\{bzw.\}\{beziehungsweise\}}
 \end{quotation}
-Damit muss sich der Nutzer nicht mehr um die jeweiligen Einrückungen
-kümmern. Die alphabetische Sortierung des Abkürzungsverzeichnisses
+Damit muss sich der Nutzer nicht mehr um die jeweiligen EinrÃ¼ckungen
+kÃ¼mmern. Die alphabetische Sortierung des AbkÃ¼rzungsverzeichnisses
 ist jedoch weiterhin manuell vorzunehmen. Laut Konvention ist das
-Abkürzungsverzeichnis Bestandteil des Anhangs, d.\,h.\ die zur Verfügung
-gestellten Befehle treten ausschließlich in der \code{appendix}-Umgebung
+AbkÃ¼rzungsverzeichnis Bestandteil des Anhangs, d.\,h.\ die zur VerfÃ¼gung
+gestellten Befehle treten ausschlieÃŸlich in der \code{appendix}-Umgebung
 auf (vgl.~Abschnitt~\ref{sec:appendix}).
 
 
 \subsubsection{wisealpha/wisenat Zitate}
 
 Neben dem normalen \command{cite}-Befehl stehen auch
-für die am Lehrstuhl typischen kurzen und langen Zitierweisen entsprechende
-Befehle zur Verfügung:
+fÃ¼r die am Lehrstuhl typischen kurzen und langen Zitierweisen entsprechende
+Befehle zur VerfÃ¼gung:
 
 \vspace{0.3cm}
 \begin{center}\begin{tabular}{|l|l|}
@@ -392,19 +392,19 @@ Befehle zur Verfügung:
 \multicolumn{1}{c|}{Ausgabe}\\
 \hline
 \hline 
-\command{shortcite\{Zitierschlüssel\}\{Seite\}}&
-\textit{({[}Zitierschlüssel{]}, S. Seite)}\\
+\command{shortcite\{ZitierschlÃ¼ssel\}\{Seite\}}&
+\textit{({[}ZitierschlÃ¼ssel{]}, S. Seite)}\\
 \hline 
-\command{longcite\{Zitierschlüssel\}\{Seite\}}&
-\textit{(vgl. {[}Zitierschlüssel{]}, S. Seite)}\\
+\command{longcite\{ZitierschlÃ¼ssel\}\{Seite\}}&
+\textit{(vgl. {[}ZitierschlÃ¼ssel{]}, S. Seite)}\\
 \hline
-\command{longcitef\{Zitierschlüssel\}\{Seite\}} & \textit{(vgl. {[Zitierschlüssel{]}}, S. Seite f.})\\
+\command{longcitef\{ZitierschlÃ¼ssel\}\{Seite\}} & \textit{(vgl. {[ZitierschlÃ¼ssel{]}}, S. Seite f.})\\
 \hline
-\command{longciteff\{Zitierschlüssel\}\{Seite\}} & \textit{(vgl. {[Zitierschlüssel{]}}, S. Seite ff.})\\
+\command{longciteff\{ZitierschlÃ¼ssel\}\{Seite\}} & \textit{(vgl. {[ZitierschlÃ¼ssel{]}}, S. Seite ff.})\\
 \hline
-\command{shortcitef\{Zitierschlüssel\}\{Seite\}} & \textit{({[Zitierschlüssel{]}}, S. Seite f.})\\
+\command{shortcitef\{ZitierschlÃ¼ssel\}\{Seite\}} & \textit{({[ZitierschlÃ¼ssel{]}}, S. Seite f.})\\
 \hline
-\command{shortciteff\{Zitierschlüssel\}\{Seite\}} & \textit{({[Zitierschlüssel{]}}, S. Seite ff.})\\
+\command{shortciteff\{ZitierschlÃ¼ssel\}\{Seite\}} & \textit{({[ZitierschlÃ¼ssel{]}}, S. Seite ff.})\\
 \hline
 \end{tabular}\end{center}
 \vspace{0.3cm}
@@ -414,8 +414,8 @@ Literaturdatenbank noch mit \command{bibliography\{Datei\}}
 noch innerhalb der \code{appendix}-Umgebung eingebunden werden (vgl.~Abschnitt~\ref{sec:appendix}).
 \\
 
-Um die Zitationsmöglichkeiten auszuweiten wird der wisenat.bst Style angeboten. Diese basiert auf dem Harvard Zitierstil, auch bekannt als Autor-Jahr-Zitierweise. Ihre Einbindung in die Wise-Klasse bietet mehr Zitiermöglichkeiten und eine übersichtlichere Darstellungsweise. Für die Verwendung von wisenat.bst muss die Option \code{nat} verwendet werden.(\ref{sec:natbib}) \\
-Weitere Zitationsmöglichkeiten entnehmen Sie bitte dem \glqq natbib reference sheet\grqq :\\
+Um die ZitationsmÃ¶glichkeiten auszuweiten wird der wisenat.bst Style angeboten. Diese basiert auf dem Harvard Zitierstil, auch bekannt als Autor-Jahr-Zitierweise. Ihre Einbindung in die Wise-Klasse bietet mehr ZitiermÃ¶glichkeiten und eine Ã¼bersichtlichere Darstellungsweise. FÃ¼r die Verwendung von wisenat.bst muss die Option \code{nat} verwendet werden.(\ref{sec:natbib}) \\
+Weitere ZitationsmÃ¶glichkeiten entnehmen Sie bitte dem \glqq natbib reference sheet\grqq :\\
 \url{http://merkel.zoneo.net/Latex/natbib.php} 
 
 
@@ -424,49 +424,49 @@ Weitere Zitationsmöglichkeiten entnehmen Sie bitte dem \glqq natbib reference sh
 
 \subsubsection{Die \code{preface}-Umgebung}\label{sec:preface}
 
-Diese Umgebung schließt den Beginn der Arbeit, d.\,h.\ den Abstract
+Diese Umgebung schlieÃŸt den Beginn der Arbeit, d.\,h.\ den Abstract
 und das Inhaltsverzeichnis, ein. Sie dient lediglich dazu, die Seitennummerierung
-auf römisch bzw.\ arabisch zu setzen.
+auf rÃ¶misch bzw.\ arabisch zu setzen.
 
 
 \subsubsection{Die \code{abstract}-Umgebung}
 
 Der Abstract der Arbeit wird in die \code{abstract}-Umgebung eingeschlossen,
 die wiederum in die \code{preface}-Umgebung eingebettet ist. Diese
-Umgebung setzt die Überschrift ,,Abstract'' auf die Seite und schaltet
+Umgebung setzt die Ãœberschrift ,,Abstract'' auf die Seite und schaltet
 die Kopfzeile aus.
 
 
 \subsubsection{Die \code{appendix}-Umgebung}\label{sec:appendix}
 
-Mit der \code{appendix}-Umgebung schließt die Arbeit ab. In ihr
-werden die Abbildungsverzeichnisse, das Abkürzungsverzeichnis, das
-Literaturverzeichnis, die Anhänge sowie die ehrenwörtliche Erklärung
+Mit der \code{appendix}-Umgebung schlieÃŸt die Arbeit ab. In ihr
+werden die Abbildungsverzeichnisse, das AbkÃ¼rzungsverzeichnis, das
+Literaturverzeichnis, die AnhÃ¤nge sowie die ehrenwÃ¶rtliche ErklÃ¤rung
 eingeschlossen.
 
-Gemäß den Vorgaben des Lehrstuhls folgen sämtliche Anhänge dem Literaturverzeichnis.
-Die einzubindenden Anhänge werden in die \code{appendices}-Umgebung
-eingeschlossen. In dieser erfolgt eine Redefinition der Überschriftenbefehle,
+GemÃ¤ÃŸ den Vorgaben des Lehrstuhls folgen sÃ¤mtliche AnhÃ¤nge dem Literaturverzeichnis.
+Die einzubindenden AnhÃ¤nge werden in die \code{appendices}-Umgebung
+eingeschlossen. In dieser erfolgt eine Redefinition der Ãœberschriftenbefehle,
 so dass mit den Befehlen \command{section}, \command{subsection}
 und \command{subsubsection} eine Nummerierung des Anhangs
-erfolgt. Außerdem wird im Inhaltsverzeichnis der Beginn dieses Teils
-durch das Einfügen des Wortes ,,Anhänge'' dokumentiert.
+erfolgt. AuÃŸerdem wird im Inhaltsverzeichnis der Beginn dieses Teils
+durch das EinfÃ¼gen des Wortes ,,AnhÃ¤nge'' dokumentiert.
 
 
 \subsection{Textbausteine}\label{sec:textbausteine}
 
-Mit Hilfe des vorliegenden Arbeitspaketes lassen sich die Titelblätter
-für alle relevanten Dokumente am Lehrstuhl erstellen. Bei jedem der
-folgenden Befehle ist für jeden Parameter ein geschweiftes Klammernpaar
-anzugeben (\{\}). Nicht benötigte Optionen enthalten keinen Wert im
+Mit Hilfe des vorliegenden Arbeitspaketes lassen sich die TitelblÃ¤tter
+fÃ¼r alle relevanten Dokumente am Lehrstuhl erstellen. Bei jedem der
+folgenden Befehle ist fÃ¼r jeden Parameter ein geschweiftes Klammernpaar
+anzugeben (\{\}). Nicht benÃ¶tigte Optionen enthalten keinen Wert im
 Klammernpaar.
 
 
-\subsubsection{Deckblatt für Doktorarbeiten}
+\subsubsection{Deckblatt fÃ¼r Doktorarbeiten}
 
 Der Befehl \command{dissertationtitlepage} erzeugt
-ein nach den Vorschriften der wirtschaftswissenschaftlichen Fakultät
-der TU Dresden korrekt formatiertes Titelblatt für Dissertationen
+ein nach den Vorschriften der wirtschaftswissenschaftlichen FakultÃ¤t
+der TU Dresden korrekt formatiertes Titelblatt fÃ¼r Dissertationen
 (vgl.\ auch Abschnitt~\ref{sec:titelblatt_dissertationen}).
 
 \begin{quotation}
@@ -482,9 +482,9 @@ der TU Dresden korrekt formatiertes Titelblatt für Dissertationen
 \item Titel Vor- und Zuname 3. Gutachter
 \end{enumerate}
 \end{quotation}
-Weiterhin steht für Doktorarbeiten ein eigenes Deckblatt für deren
+Weiterhin steht fÃ¼r Doktorarbeiten ein eigenes Deckblatt fÃ¼r deren
 Kurzfassung mit dem Befehl \command{dissertationshorttitlepage}
-zur Verfügung (vgl.\ auch Abschnitt~\ref{sec:titelblatt_dissertationen}).
+zur VerfÃ¼gung (vgl.\ auch Abschnitt~\ref{sec:titelblatt_dissertationen}).
 
 \begin{quotation}
 \noindent \textbf{Parameter:}
@@ -497,14 +497,14 @@ zur Verfügung (vgl.\ auch Abschnitt~\ref{sec:titelblatt_dissertationen}).
 \end{enumerate}
 \end{quotation}
 
-\subsubsection{Deckblatt für Diplomarbeiten}
+\subsubsection{Deckblatt fÃ¼r Diplomarbeiten}
 
 
 \paragraph{Titelblatt}
 
-Der Befehl \command{diplomatitlepage} erzeugt in Abhängigkeit
+Der Befehl \command{diplomatitlepage} erzeugt in AbhÃ¤ngigkeit
 von den angegebenen Parametern das korrekt formatierte Titelblatt
-für eine Diplomarbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_diplomarbeiten}).
+fÃ¼r eine Diplomarbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_diplomarbeiten}).
 
 \begin{quotation}
 \noindent \textbf{Parameter:}
@@ -520,20 +520,20 @@ für eine Diplomarbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_diplomarbeiten})
 \end{enumerate}
 \end{quotation}
 
-\paragraph{Ehrenwörtliche Erklärung}
+\paragraph{EhrenwÃ¶rtliche ErklÃ¤rung}
 
-Die Ehrenwörtliche Erklärung zur Erstellung der Diplomarbeit wird
+Die EhrenwÃ¶rtliche ErklÃ¤rung zur Erstellung der Diplomarbeit wird
 mit dem Befehl \command{declaration} erzeugt. Dieser
 Befehl erscheint innerhalb der \code{appendix}-Umgebung.
 
-\subsubsection{Deckblatt für Bachelor-Arbeiten}
+\subsubsection{Deckblatt fÃ¼r Bachelor-Arbeiten}
 
 
 \paragraph{Titelblatt}
 
-Der Befehl \command{bachelortitlepage} erzeugt in Abhängigkeit
+Der Befehl \command{bachelortitlepage} erzeugt in AbhÃ¤ngigkeit
 von den angegebenen Parametern das korrekt formatierte Titelblatt
-für eine Bachelor-Arbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_bachelorarbeiten}).
+fÃ¼r eine Bachelor-Arbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_bachelorarbeiten}).
 
 \begin{quotation}
 \noindent \textbf{Parameter:}
@@ -549,20 +549,20 @@ für eine Bachelor-Arbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_bachelorarbei
 \end{enumerate}
 \end{quotation}
 
-\paragraph{Ehrenwörtliche Erklärung}
+\paragraph{EhrenwÃ¶rtliche ErklÃ¤rung}
 
-Die Ehrenwörtliche Erklärung zur Erstellung der Bachelor-Arbeit wird
+Die EhrenwÃ¶rtliche ErklÃ¤rung zur Erstellung der Bachelor-Arbeit wird
 mit dem Befehl \command{declaration} erzeugt. Dieser
 Befehl erscheint innerhalb der \code{appendix}-Umgebung.
 
-\subsubsection{Deckblatt für Master-Arbeiten}
+\subsubsection{Deckblatt fÃ¼r Master-Arbeiten}
 
 
 \paragraph{Titelblatt}
 
-Der Befehl \command{mastertitlepage} erzeugt in Abhängigkeit
+Der Befehl \command{mastertitlepage} erzeugt in AbhÃ¤ngigkeit
 von den angegebenen Parametern das korrekt formatierte Titelblatt
-für eine Master-Arbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_masterarbeiten}).
+fÃ¼r eine Master-Arbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_masterarbeiten}).
 
 \begin{quotation}
 \noindent \textbf{Parameter:}
@@ -578,15 +578,15 @@ für eine Master-Arbeit (vgl.\ auch Abschnitt~\ref{sec:titelblatt_masterarbeiten}
 \end{enumerate}
 \end{quotation}
 
-\paragraph{Ehrenwörtliche Erklärung}
+\paragraph{EhrenwÃ¶rtliche ErklÃ¤rung}
 
-Die Ehrenwörtliche Erklärung zur Erstellung der Master-Arbeit wird
+Die EhrenwÃ¶rtliche ErklÃ¤rung zur Erstellung der Master-Arbeit wird
 mit dem Befehl \command{declaration} erzeugt. Dieser
 Befehl erscheint innerhalb der \code{appendix}-Umgebung.
 
-\subsubsection{Deckblatt für Seminararbeiten}\label{sec:deckblatt_seminararbeiten}
+\subsubsection{Deckblatt fÃ¼r Seminararbeiten}\label{sec:deckblatt_seminararbeiten}
 
-Das Deckblatt für eine Seminararbeit wird mit dem Befehl \command{seminartitlepage}
+Das Deckblatt fÃ¼r eine Seminararbeit wird mit dem Befehl \command{seminartitlepage}
 erzeugt (vgl.\ auch Abschnitt~\ref{sec:titelblatt_seminararbeiten}). 
 
 \begin{quotation}
@@ -600,17 +600,17 @@ erzeugt (vgl.\ auch Abschnitt~\ref{sec:titelblatt_seminararbeiten}).
 \end{enumerate}
 \end{quotation}
 
-\subsubsection{Deckblatt für Projektarbeiten}
+\subsubsection{Deckblatt fÃ¼r Projektarbeiten}
 
-Deckblätter für Projektarbeiten werden ähnlich wie Seminararbeiten
-behandelt. Sie benötigen die gleichen Parameter (vgl.~Abschnitt~\ref{sec:deckblatt_seminararbeiten}).
-Für ein Beispiel für ein solches Deckblatt sei auf den Abschnitt~\ref{sec:titelblatt_projektarbeiten}
+DeckblÃ¤tter fÃ¼r Projektarbeiten werden Ã¤hnlich wie Seminararbeiten
+behandelt. Sie benÃ¶tigen die gleichen Parameter (vgl.~Abschnitt~\ref{sec:deckblatt_seminararbeiten}).
+FÃ¼r ein Beispiel fÃ¼r ein solches Deckblatt sei auf den Abschnitt~\ref{sec:titelblatt_projektarbeiten}
 verwiesen.
 
 
 \subsubsection{Sonstige Dokumente}
 
-Für die Erstellung der Titelseiten von Zwischenberichten oder sonstigen
+FÃ¼r die Erstellung der Titelseiten von Zwischenberichten oder sonstigen
 Arbeitspapieren ist der Befehl \command{shorttitlepage}
 vorgesehen (vgl.\ auch Abschnitt~\ref{sec:titelblatt_diskussionspapiere}). 
 
@@ -618,12 +618,12 @@ vorgesehen (vgl.\ auch Abschnitt~\ref{sec:titelblatt_diskussionspapiere}).
 \noindent \textbf{Parameter:}
 \begin{enumerate}
 \item Titel des Papiers
-\item Zusätzliche Anmerkung (z.~B. Datum der zugehörigen Diskussion)
+\item ZusÃ¤tzliche Anmerkung (z.~B. Datum der zugehÃ¶rigen Diskussion)
 \item Autorenkollektiv (durch Kommas getrennt)
 \end{enumerate}
 \end{quotation}
-Soll für Arbeitspapiere der Zeilenabstand von 1,5 Zeilen reduziert
-werden, so ist einfach der Preamble hinzuzufügen: 
+Soll fÃ¼r Arbeitspapiere der Zeilenabstand von 1,5 Zeilen reduziert
+werden, so ist einfach der Preamble hinzuzufÃ¼gen: 
 
 \begin{quotation}
 \command{singlespacing}.
@@ -631,8 +631,8 @@ werden, so ist einfach der Preamble hinzuzufügen:
 
 \subsection{Nutzen der Literaturvorlage}
 
-Eine Vorlage für das Benutzen von Bib\TeX{} ist Bestandteil dieses
-Pakets. Sie trägt den Namen \code{wisenat} und wird mit dem üblichen
+Eine Vorlage fÃ¼r das Benutzen von Bib\TeX{} ist Bestandteil dieses
+Pakets. Sie trÃ¤gt den Namen \code{wisenat} und wird mit dem Ã¼blichen
 Kommando \command{bibliographystyle\{wisenat\}} aktiviert
 (Anm.: Zur Benutzung mit anderen Literaturvorlagen wurde der WiSe-Zitierstil
 aus der Vorlage entfernt). 
@@ -642,28 +642,28 @@ aus der Vorlage entfernt).
 Den Abschluss der Dokumentation bildet die Beschreibung des Paketes
 aus der Sicht des Entwicklers. Hier werden insbesondere die Teile
 beschrieben, die in der Anwendungsbeschreibung nicht enthalten, aber
-für die weitere Entwicklung des Paketes von Bedeutung sind. Den Ausgangspunkt
-bildet die \LaTeX{}-Vorlage. Das Kapitel schließt mit einer Betrachtung
+fÃ¼r die weitere Entwicklung des Paketes von Bedeutung sind. Den Ausgangspunkt
+bildet die \LaTeX{}-Vorlage. Das Kapitel schlieÃŸt mit einer Betrachtung
 der verwendeten Bib\TeX{}-Vorlage ab.
 
 
 \subsection{Paketbeschreibung}
 
 Beginnend mit der Gliederung des Paketes werden nachfolgend dessen
-interne Befehle vorgestellt und abschließend sämtliche Redefinitionen
-erläutert. 
+interne Befehle vorgestellt und abschlieÃŸend sÃ¤mtliche Redefinitionen
+erlÃ¤utert. 
 
 
 \subsubsection{Gliederung}
 
 Den Einstiegspunkt des Paketes bildet die Dokumentvorlage \code{wise.cls}.
-Hier werden sämtliche Seitenaufteilungen, Kopfzeilen, Zusatzbefehle
+Hier werden sÃ¤mtliche Seitenaufteilungen, Kopfzeilen, Zusatzbefehle
 etc.\ definiert sowie die entsprechenden Redefinitionen vorgenommen
 (vgl.~Abschnitt~\ref{sec:redefinierte_befehle}). Die Dokumentvorlage
 nutzt wiederum die Pakete \code{wisetext.sty} und \code{wiseapp.sty}.
-Erstere enthält sämtliche Textbausteine. Das zweite Paket dient der
-Verarbeitung von Anhängen. Die nachfolgende Tabelle stellt die Bestandteile
-des Paketes im Überblick dar:
+Erstere enthÃ¤lt sÃ¤mtliche Textbausteine. Das zweite Paket dient der
+Verarbeitung von AnhÃ¤ngen. Die nachfolgende Tabelle stellt die Bestandteile
+des Paketes im Ãœberblick dar:
 
 \vspace{0.375cm}
 \begin{center}\begin{tabular}{|l|p{7cm}|l|}
@@ -674,7 +674,7 @@ des Paketes im Überblick dar:
 \hline
 \hline 
 \code{wise.cls} &
-Standardeinstellungen, zusätzliche/ redefinierte Befehle bzw.\ Umgebungen&
+Standardeinstellungen, zusÃ¤tzliche/ redefinierte Befehle bzw.\ Umgebungen&
 \code{wise.layout}\\
 \hline 
 \code{wisetext.sty}&
@@ -682,7 +682,7 @@ Definition der Textbausteine&
 \code{wise.cls}\\
 \hline
 \code{wiseapp.sty}&
-Definition der Anhänge.&
+Definition der AnhÃ¤nge.&
 \code{wise.cls}\\
 \hline
 \end{tabular}\end{center}
@@ -692,23 +692,23 @@ Definition der Anhänge.&
 \subsubsection{Grundlagen}
 
 Die Vorlage basiert auf \code{scrartcl} des \code{koma-script}
-Paketes. Diese wird bereits angewiesen, sämtliche Verzeichnisse in
-das Inhaltsverzeichnis mit aufzunehmen, so dass dazu kein zusätzliches
-Paket verwendet werden muss. Die Schriftgröße wird auf 12pt voreingestellt.
+Paketes. Diese wird bereits angewiesen, sÃ¤mtliche Verzeichnisse in
+das Inhaltsverzeichnis mit aufzunehmen, so dass dazu kein zusÃ¤tzliches
+Paket verwendet werden muss. Die SchriftgrÃ¶ÃŸe wird auf 12pt voreingestellt.
 Die Schriftart ist Times.
 
-Die Schriftarten für den Pragraphen und den Subparagraphen werden auf
+Die Schriftarten fÃ¼r den Pragraphen und den Subparagraphen werden auf
 Helvetica gesetzt (\code{sffamily}) und entweder fett oder slanted
 hervorgehoben. Mit dem \command{addtokomafont}-Befehl des
-\code{koma-script}-Pakets steht nun auch eine elegante Möglichkeit zur
-Verfügung, die Überschriften und Parts auf eine neue Seite ohne Kopf-
-und Fußzeile zu setzen \linebreak{}
+\code{koma-script}-Pakets steht nun auch eine elegante MÃ¶glichkeit zur
+VerfÃ¼gung, die Ãœberschriften und Parts auf eine neue Seite ohne Kopf-
+und FuÃŸzeile zu setzen \linebreak{}
 (\command{addkomafont}\{section\}\{\command{clearpage}\command{thispagestyle\{empty\}}).
 
-Bei der Einführung eines \command{part}-Befehls und
-der damit angenommenen einhergehenden Verwendung von römischen Zahlen
+Bei der EinfÃ¼hrung eines \command{part}-Befehls und
+der damit angenommenen einhergehenden Verwendung von rÃ¶mischen Zahlen
 in der Gliederungsebene wird auf die alternative Nummerierung (Alle
-Überschriftennummern erhalten einen abschließenden Punkt) umgeschaltet
+Ãœberschriftennummern erhalten einen abschlieÃŸenden Punkt) umgeschaltet
 (Siehe Dokumentation des \code{koma-script}-Paketes). Dieses Verhalten
 scheint ein Bug im \code{koma-script}-Paket zu sein, der mit der
 Option \code{pointlessnumbers} abgeschaltet wird.
@@ -731,8 +731,8 @@ an die Teile und nicht die Unterschriften markiert. Ich hoffe, dass
 \subsubsection{Die hyperref-Option}
 
 Mit der Option wird das \code{Hyperref}-Paket in das Dokument integriert.
-Da hierdurch die Übersetzungszeit signifikant steigt, wird empfohlen
-bei langsamen Rechnern auf die Option während der Dokumenterstellung
+Da hierdurch die Ãœbersetzungszeit signifikant steigt, wird empfohlen
+bei langsamen Rechnern auf die Option wÃ¤hrend der Dokumenterstellung
 zu verzichten. Sie sollte erst zur Erstellung des finalen Dokuments
 herangezogen werden.
 
@@ -740,9 +740,9 @@ herangezogen werden.
 \subsubsection{Die \code{pdf}-Option}
 
 Mit dem Aktivieren der \code{pdf}-Option erfolgt die Aktivierung
-zusätzlicher Definitionen zur Erstellung von PDF-Dokumenten. So werden
+zusÃ¤tzlicher Definitionen zur Erstellung von PDF-Dokumenten. So werden
 bei Vorhandensein entsprechender Titelseiten (vgl.\ Abschnitt~\ref{sec:textbausteine})
-die Informationen über den Autor etc.\ für das Erzeugen der .pdf-Datei
+die Informationen Ã¼ber den Autor etc.\ fÃ¼r das Erzeugen der .pdf-Datei
 genutzt (\command{hypersetup}). Damit wird es notwendig
 die Option sowohl in der Datei \code{wise.cls,} als auch in \code{wisetext.sty}
 zu verarbeiten. Sie wird einfach an die entsprechenden Dateien weitergeleitet.
@@ -751,7 +751,7 @@ zu verarbeiten. Sie wird einfach an die entsprechenden Dateien weitergeleitet.
 \subsubsection{Interne Befehle}\label{sec:interne_befehle}
 
 Es werden einige Befehle definiert, die nur zur Verwendung innerhalb
-der Dokumentklasse vorgesehen sind. Dazu zählen in erster Linie die
+der Dokumentklasse vorgesehen sind. Dazu zÃ¤hlen in erster Linie die
 Definition der verschiedenen Seitenaufteilungen (vgl.~Abschnitt~\ref{sec:paketoptionen}):
 
 \begin{itemize}
@@ -765,51 +765,51 @@ nach links und definiert den Abstand zwischen Text und Randnoten auf
 \end{itemize}
 Zum setzen von Randnotizen wird der Befehl \command{@marginpar}
 definiert. Dieser stellt eine Kopie aus der Datei \code{latex.ltx}
-dar und wird benötigt, um das Formatieren von Randnotizen ggf.\ auszuschalten.
-Für das Festlegen der Schriftgröße der Randnotizen wird zusätzlich
+dar und wird benÃ¶tigt, um das Formatieren von Randnotizen ggf.\ auszuschalten.
+FÃ¼r das Festlegen der SchriftgrÃ¶ÃŸe der Randnotizen wird zusÃ¤tzlich
 noch der Befehl \command{@mp} verwendet.
 
 Weiterer interne Befehle sind \command{@institution}
 \command{@seminartitlepage} in \code{wise-\linebreak text.sty}.
 Mit ersterem wird der Kopf der Titelseite gesetzt und mit dem zweiten
-können allgemeine Seminartitelseiten (Seminararbeiten, Projektarbeiten,
+kÃ¶nnen allgemeine Seminartitelseiten (Seminararbeiten, Projektarbeiten,
 Studienarbeiten, usw.) gestaltet werden.
 
 
 \subsubsection{Redefinierte Befehle}\label{sec:redefinierte_befehle}
 Die erste Redefinition betrifft die \command{paragraph} und
 \command{subparagraph}-Befehle.  Dieser werden in soweit
-verändert, als dass sie nun wie eine Überschrift formatiert werden und
-nicht standardmäßig im Text stehen.
+verÃ¤ndert, als dass sie nun wie eine Ãœberschrift formatiert werden und
+nicht standardmÃ¤ÃŸig im Text stehen.
 
 Weiterhin wird \command{refname} redefiniert, so dass
-nicht mehr Literatur sondern Literaturverzeichnis für die zitierte
+nicht mehr Literatur sondern Literaturverzeichnis fÃ¼r die zitierte
 Literatur erscheint. \command{appendixtocname} wird
-umdefiniert, sodass im Inhaltsverzeichnis das Wort ,,Anhänge'' erscheint.
+umdefiniert, sodass im Inhaltsverzeichnis das Wort ,,AnhÃ¤nge'' erscheint.
 
-Das Formatieren der Anhänge mit einer römischen Seitennummer erfordert
-im Inhaltsverzeichnis zusätzlichen Platz für die Seitenzahlen. Aus
+Das Formatieren der AnhÃ¤nge mit einer rÃ¶mischen Seitennummer erfordert
+im Inhaltsverzeichnis zusÃ¤tzlichen Platz fÃ¼r die Seitenzahlen. Aus
 diesem Grund werden ebenfalls folgende Befehle umdefiniert:
 
 \begin{itemize}
 \item \command{@pnumwidth}
 \item \command{@tocrmarg}
 \end{itemize}
-Schließlich wird der \command{marginpar}-Befehl umdefiniert,
-um das Erzeugen der Randnotizen ggf.\ abschalten zu können.
+SchlieÃŸlich wird der \command{marginpar}-Befehl umdefiniert,
+um das Erzeugen der Randnotizen ggf.\ abschalten zu kÃ¶nnen.
 
 
 \subsubsection{Redefinierte Umgebungen}
 
 Die \code{abstract}-Umgebung wird so umdefiniert, dass innerhalb
 des Abstracts die Kopfzeile unterbunden wird. Wird die Umgebung beendet,
-so wird die Seitennummer wieder auf 0 gesetzt. Damit können auch mehrseitige
+so wird die Seitennummer wieder auf 0 gesetzt. Damit kÃ¶nnen auch mehrseitige
 Abstracts verfasst werden.
 
 Zudem wird die \code{appendix}-Umgebung umgeschrieben. Beim Eintritt
-in die Umgebung wird die Seitennummerierung auf römisch gesetzt und
-zusätzlicher Platz für die Seitennummern im Inhaltsverzeichnis reserviert.
-Wird die Umgebung verlassen, so werden diese Befehle wieder rückgängig
+in die Umgebung wird die Seitennummerierung auf rÃ¶misch gesetzt und
+zusÃ¤tzlicher Platz fÃ¼r die Seitennummern im Inhaltsverzeichnis reserviert.
+Wird die Umgebung verlassen, so werden diese Befehle wieder rÃ¼ckgÃ¤ngig
 gemacht.
 
 
@@ -821,13 +821,13 @@ Der BibTex-style  \code{wisenat.bst} basiert auf K.F.Autor-Jahr-Stil nach P.W. D
 
 
  Mehr Informationen gibt es zu hierzu unter\\ \url{http://web.archive.org/web/20061118193457/http://www.haw-hamburg.de/pers/Lorenzen/bibtex/} \\
-Geändert wurde das deutsche \glqq u. a.\grqq in das lateinische \glqq et al.\grqq. 
+GeÃ¤ndert wurde das deutsche \glqq u. a.\grqq in das lateinische \glqq et al.\grqq. 
 Ein Literaturverzeichnis wird initialisiert durch:
 \begin{verbatim}
   \bibliography{literatur}
   \bibliographystyle{wisenat}
 \end{verbatim}
-Um die Einbindung von Literaturverweisen auf Richtigkeit zu prüfen, sollten Sie Ihr Dokument ausschließlich mit dem BibTeX Kommando (z.B. TexShop oder Texmaker) kompilieren. 
+Um die Einbindung von Literaturverweisen auf Richtigkeit zu prÃ¼fen, sollten Sie Ihr Dokument ausschlieÃŸlich mit dem BibTeX Kommando (z.B. TexShop oder Texmaker) kompilieren. 
 
 \begin{description}
 \item [Achtung:]  wisenat.bst  wird im lokalen texmf Verzeichnis \code{username/texmf/bibtex/bst}) und Ihre literatur.bib im lokalen texmf Verzeichnis  \code{username/texmf/bibtex/bib}) abgelegt.
@@ -837,25 +837,25 @@ Um die Einbindung von Literaturverweisen auf Richtigkeit zu prüfen, sollten Sie 
 
 \begin{comment}
 Die Literaturvorlage \code{wisealpha.bst} basiert im wesentlichen
-auf \code{dinalpha.bst}. Da der DIN-Standard bezüglich der optionalen
+auf \code{dinalpha.bst}. Da der DIN-Standard bezÃ¼glich der optionalen
 und zwingenden Felder sehr stark von den \LaTeX{}-Vorgaben abweicht,
-wurden diese Veränderungen wieder rückgängig gemacht. Das bedeutet,
+wurden diese VerÃ¤nderungen wieder rÃ¼ckgÃ¤ngig gemacht. Das bedeutet,
 dass die aktuelle Vorlage wieder den \LaTeX{}-Konventionen entspricht.
 Damit wird ein Werkzeugeinsatz zum Editieren der Bib\TeX{}-Datenbank
 sinnvoll und die Fehlermeldungen und Warnungen werden interpretierbar.
 
 Weiterhin wurde der Bug bei der Formatierung von \code{Number} in
 \code{TechReports} beseitigt. In diesem Zusammenhang gibt es eine
-vernachlässigbare Fehlermeldung. Wird in einem solchen technischen
+vernachlÃ¤ssigbare Fehlermeldung. Wird in einem solchen technischen
 Report nur der Verlagsort, nicht aber der Verlag angegeben (normalerweise
 nicht vorgesehen), so gibt es eine Warnung und einen Stackfehler,
-der aber zu keiner Beeinträchtigung der Ausgabe führt.
+der aber zu keiner BeeintrÃ¤chtigung der Ausgabe fÃ¼hrt.
 
-Schließlich wurde die Weiterleitung der Formatierung wieder aufgehoben,
+SchlieÃŸlich wurde die Weiterleitung der Formatierung wieder aufgehoben,
 so dass jetzt praktisch alle Literaturtypen wieder genutzt werden
-können.
+kÃ¶nnen.
 
-Zusätzlich erfolgten kosmetische Veränderungen an den Formatierungskonventionen.
+ZusÃ¤tzlich erfolgten kosmetische VerÃ¤nderungen an den Formatierungskonventionen.
 So werden bei einem Buch Auflage und Verlagsort durch ein Komma getrennt.
 Bei sonstigen Lietraturangaben (\code{Misc}) erfolgt die Trennung
 zwischen Autor und Titel nun durch einen Doppelpunkt. Das Erscheinungsdatum
@@ -869,11 +869,11 @@ oder \code{inbook}-Eintrages ebenfalls kursiv gesetzt.
 
 \section{Dissertationstitel}\label{sec:titelblatt_dissertationen}
 
-Für Dissertationen stehen zwei Deckblätter zur Verfügung. Das erste
-Deckblatt ist für die vollständige Version der Arbeit und das Zweite
-ist für die Zusammenfassung gedacht.
+FÃ¼r Dissertationen stehen zwei DeckblÃ¤tter zur VerfÃ¼gung. Das erste
+Deckblatt ist fÃ¼r die vollstÃ¤ndige Version der Arbeit und das Zweite
+ist fÃ¼r die Zusammenfassung gedacht.
 
-\LaTeX{} Code für die vollständige Version der Dissertation:
+\LaTeX{} Code fÃ¼r die vollstÃ¤ndige Version der Dissertation:
 
 \vspace{0.3cm}
 \begin{center}\begin{tabular}{ll}
@@ -902,7 +902,7 @@ ist für die Zusammenfassung gedacht.
 
 \clearpage
 
-\LaTeX{} Code für die Zusammenfassung der Dissertation:
+\LaTeX{} Code fÃ¼r die Zusammenfassung der Dissertation:
 
 \vspace{0.3cm}
 \begin{center}\begin{tabular}{ll}
