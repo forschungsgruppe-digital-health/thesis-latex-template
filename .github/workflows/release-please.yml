@@ -36,18 +36,18 @@ jobs:
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
-    container: texlive/texlive:latest   # TODO: pin to the ZIH TeX Live year (decision O1)
+    container: texlive/texlive:TL2025-historic   # pinned to overleaf.com's TeX Live 2025; set to ZIH's year if it differs (decision O1)
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Build example PDFs
+      - name: Build the template + example PDFs
         env:
           TEXINPUTS: "${{ github.workspace }}//:"
           BSTINPUTS: "${{ github.workspace }}//:"
         run: |
           set -e
-          for dir in Beispielarbeit/BeispielarbeitDE Beispielarbeit/BeispielarbeitEN; do
+          for dir in template examples/de examples/en; do
             main=$(grep -l '\\documentclass' "$dir"/*.tex | head -1)
             ( cd "$dir" && latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error "$(basename "$main")" )
           done
@@ -56,12 +56,13 @@ jobs:
           set -e
           out=template-${{ needs.release-please.outputs.tag_name }}
           mkdir -p "$out"
-          # Flatten: class/styles/bst beside the main .tex so Overleaf needs no shim.
-          cp texmf/tex/latex/wise/*.cls texmf/tex/latex/wise/*.sty "$out"/
+          # Flatten the starter: class/styles/bst beside the main .tex so Overleaf
+          # needs no search-path shim and the main file sits at the project root.
+          cp -r template/* "$out"/
+          rm -f "$out"/thesis.pdf "$out"/*.aux "$out"/*.log "$out"/*.fls "$out"/*.fdb_latexmk 2>/dev/null || true
+          cp texmf/tex/latex/wise/wise.cls texmf/tex/latex/wise/*.sty "$out"/
           cp texmf/bibtex/bst/wise/*.bst "$out"/
-          cp -r Beispielarbeit/BeispielarbeitDE/* "$out"/
           cp LICENSE THIRD-PARTY-NOTICES.md "$out"/ 2>/dev/null || true
-          (cd "$out" && rm -f wise_diff.cls)   # dev-only variant excluded from the student ZIP
           zip -r "$out.zip" "$out"
       - name: Attach assets to the release
         uses: softprops/action-gh-release@v2
@@ -69,4 +70,5 @@ jobs:
           tag_name: ${{ needs.release-please.outputs.tag_name }}
           files: |
             template-*.zip
-            Beispielarbeit/**/*.pdf
+            template/thesis.pdf
+            examples/**/*.pdf

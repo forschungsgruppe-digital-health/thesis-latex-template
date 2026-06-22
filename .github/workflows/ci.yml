@@ -14,7 +14,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: texlive/texlive:latest   # TODO: pin to the ZIH TeX Live year (decision O1) for output parity
+    container: texlive/texlive:TL2025-historic   # pinned to overleaf.com's TeX Live 2025; set to ZIH's year if it differs (decision O1)
     steps:
       - uses: actions/checkout@v4
 
@@ -27,7 +27,7 @@ jobs:
           BSTINPUTS: "${{ github.workspace }}//:"
         run: |
           set -e
-          for dir in Beispielarbeit/BeispielarbeitDE Beispielarbeit/BeispielarbeitEN; do
+          for dir in template examples/de examples/en; do
             main=$(grep -l '\\documentclass' "$dir"/*.tex | head -1)
             echo "::group::Building $main"
             ( cd "$dir" && latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error "$(basename "$main")" )
@@ -38,6 +38,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: example-pdfs
-          path: Beispielarbeit/**/*.pdf
+          name: pdfs
+          path: |
+            template/thesis.pdf
+            examples/**/*.pdf
           if-no-files-found: warn
