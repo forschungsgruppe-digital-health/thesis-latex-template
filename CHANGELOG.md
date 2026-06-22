@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 From the next release onward this file is **maintained automatically by Release Please**
 from Conventional Commits — see [docs/maintainer/releasing.md](docs/maintainer/releasing.md).
 
+## [3.0.0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v2.0.0...v3.0.0) (2026-06-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* the bibliography style is now fgdh-thesis-nat (was wisenat); update \bibliographystyle{...} in existing documents.
+
+### Code Refactoring
+
+* rename bundled bst styles and internal macros from wise to fgdh-thesis ([d61a29b](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/d61a29b24abfbcae98a1784bb7d88fd05027e8f1))
+
 ## [2.0.0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v1.1.0...v2.0.0) (2026-06-22)
 
 
