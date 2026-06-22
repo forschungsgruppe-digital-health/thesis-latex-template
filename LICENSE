@@ -6,10 +6,10 @@ keep their own terms. Read this file first; the full legal texts are in `LICENSE
 
 1. LaTeX code  (LPPL 1.3c)
 --------------------------
-The template's own LaTeX source — the `wise` document class and its style files
-(`wise.cls`, `wiseapp.sty`, `wisetextDE.sty`, `wisetextEN.sty`), the `template/` and
-`examples/` `.tex` sources, and any build configuration — is licensed under the
-LaTeX Project Public License, version 1.3c or later.
+The template's own LaTeX source — the `fgdh-thesis` document class and its style files
+(`fgdh-thesis.cls`, the deprecated `wise.cls` alias, `wiseapp.sty`, `wisetextDE.sty`,
+`wisetextEN.sty`), the `template/` and `examples/` `.tex` sources, and any build
+configuration — is licensed under the LaTeX Project Public License, version 1.3c or later.
 
   Full text: LICENSES/LPPL-1.3c.txt   (https://www.latex-project.org/lppl/lppl-1-3c/)
   SPDX-License-Identifier: LPPL-1.3c

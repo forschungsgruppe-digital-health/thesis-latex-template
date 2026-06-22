@@ -6,7 +6,8 @@ from this file alone.
 
 ## What this is
 
-A LaTeX **thesis template** built on the custom `wise` document class.
+A LaTeX **thesis template** built on the custom `fgdh-thesis` document class (formerly
+`wise`; a deprecated `wise.cls` alias still loads it).
 Engine: **pdfLaTeX**. Bibliography: **BibTeX + `natbib`** with custom DIN 1505 `.bst`
 styles. Not biber/biblatex, not xelatex/lualatex.
 
@@ -28,7 +29,7 @@ docker run --rm -v "$PWD":/work texlive/texlive:latest \
 
 ## Definition of done for a build change
 
-1. DE and EN examples compile to PDF — no `File 'wise.cls' not found`, no missing graphics.
+1. DE and EN examples compile to PDF — no `File 'fgdh-thesis.cls' not found`, no missing graphics.
 2. Bibliography resolves: no undefined citations/references in the final pass.
 3. For class/encoding edits: the rendered ToC + title page show correct, copy/paste-able
    umlauts (`Abkürzungsverzeichnis`, `Universität`, `Prüfungsordnung`).
@@ -40,7 +41,7 @@ docker run --rm -v "$PWD":/work texlive/texlive:latest \
 - pdfLaTeX requires `\usepackage[T1]{fontenc}`. Do not add `fontspec` without switching
   the engine and documenting it.
 - Do not strip headers from the bundled `.bst` files; rename on modification
-  (see `THIRD-PARTY-NOTICES.md`). The `wise` class is LPPL 1.3c (record changes in the
+  (see `THIRD-PARTY-NOTICES.md`). The `fgdh-thesis` class is LPPL 1.3c (record changes in the
   CHANGELOG and keep the work identifiable as modified).
 
 ## Conformance audit

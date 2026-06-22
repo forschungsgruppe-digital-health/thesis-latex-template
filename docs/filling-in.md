@@ -28,7 +28,7 @@ Arguments, in order:
 German is the default. For an English thesis add the `en` class option:
 
 ```latex
-\documentclass[hyperref, nat, en]{wise}
+\documentclass[hyperref, nat, en]{fgdh-thesis}
 ```
 
 ## 3. Write content

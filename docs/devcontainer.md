@@ -29,7 +29,7 @@ with the repository, so everyone gets the same TeX Live, extensions, and build s
 ## How it finds the custom class
 
 The container sets `TEXINPUTS`/`BSTINPUTS`/`BIBINPUTS` to search the whole workspace
-recursively, so `wise.cls` and the DIN 1505 `.bst` files under `texmf/` are found no
+recursively, so `fgdh-thesis.cls` and the DIN 1505 `.bst` files under `texmf/` are found no
 matter which folder your document lives in — no manual install, no `texmf` setup.
 (The root [`latexmkrc`](../latexmkrc) does the same for command-line `latexmk` and for
 Overleaf.)
@@ -60,7 +60,7 @@ exact ZIH TeX Live year).
 
 | Symptom | Fix |
 |---|---|
-| `File 'wise.cls' not found` | Ensure you opened the **repository root** as the workspace (the recursive `TEXINPUTS` is relative to it). |
+| `File 'fgdh-thesis.cls' not found` | Ensure you opened the **repository root** as the workspace (the recursive `TEXINPUTS` is relative to it). |
 | Umlauts look wrong in the PDF | Known class encoding bug — see the [conformance report](overleaf-conformance-report.md); not specific to the container. |
 | PDF preview doesn't refresh | Run *LaTeX Workshop: Build LaTeX project* once; check the LaTeX Workshop output panel for errors. |
 | First start is very slow | Expected — it's pulling multi-GB TeX Live. Later starts reuse the image. |
