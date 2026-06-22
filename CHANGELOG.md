@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 From the next release onward this file is **maintained automatically by Release Please**
 from Conventional Commits — see [docs/maintainer/releasing.md](docs/maintainer/releasing.md).
 
+## [2.0.0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v1.1.0...v2.0.0) (2026-06-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* the class is now named fgdh-thesis. \documentclass{wise} still works via a deprecated alias that emits a warning; switch to \documentclass{fgdh-thesis}.
+
+### Features
+
+* rename the wise document class to fgdh-thesis ([78c76c0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/78c76c01dc21f1aa8f6523a71def804a10695ee6))
+
 ## [1.1.0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v1.0.0...v1.1.0) (2026-06-22)
 
 
@@ -28,4 +39,3 @@ from Conventional Commits — see [docs/maintainer/releasing.md](docs/maintainer
 - Original `wise`-based template (Malte Helmhold, 2012) with German/English example
   theses, maintained under `helict/fgdh-thesis-latex-template`; chair renamed to
   *Research Group Digital Health*. See the Git history for details.
-
