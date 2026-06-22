@@ -20,7 +20,7 @@ with the repository, so everyone gets the same TeX Live, extensions, and build s
 1. Clone the repo and open the folder in VS Code.
 2. Command Palette → **Dev Containers: Reopen in Container**.
    The first build pulls the TeX Live image (several GB) — subsequent starts are fast.
-3. Open a `.tex` file (e.g. `examples/de/Beispielarbeit.tex`).
+3. Open a `.tex` file (e.g. `examples/de/thesis-de.tex`).
 4. **Build:** save the file (build-on-save is enabled) or click the green ▶ (TeX badge →
    *Build LaTeX project*). The PDF opens in a side tab.
 5. **Navigate:** `Ctrl/Cmd+Alt+J` jumps from source to PDF (forward SyncTeX);
@@ -29,8 +29,8 @@ with the repository, so everyone gets the same TeX Live, extensions, and build s
 ## How it finds the custom class
 
 The container sets `TEXINPUTS`/`BSTINPUTS`/`BIBINPUTS` to search the whole workspace
-recursively, so `fgdh-thesis.cls` and the DIN 1505 `.bst` files under `texmf/` are found no
-matter which folder your document lives in — no manual install, no `texmf` setup.
+recursively, so `fgdh-thesis.cls` (under `latex/`) and the DIN 1505 `.bst` files (under
+`bst/`) are found no matter which folder your document lives in — no manual TEXMF setup.
 (The root [`latexmkrc`](../latexmkrc) does the same for command-line `latexmk` and for
 Overleaf.)
 

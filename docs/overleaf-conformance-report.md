@@ -16,7 +16,14 @@
 > are now pinned to `texlive/texlive:TL2025-historic` (still adjust to ZIH's year once O1 is
 > confirmed); **PKG-02** the `.sty` helpers now carry dated `\ProvidesPackage` lines and the
 > `wisetextDE`/`wisetextEN` name-mismatch warning is gone; and the **EN title-page** field
-> order is fixed. Re-run the skill to regenerate the rows below.
+> order is fixed.
+>
+> **Update (v2.0.0 — PR #3):** the class was renamed `wise` → `fgdh-thesis` (with a
+> deprecated `wise.cls` alias), and the repo was **restructured**: the package moved out of
+> `texmf/` to `latex/fgdh-thesis/` + `bst/`, `Dokumentation/` → `docs/manual/`, all names are
+> kebab-case, build PDFs are removed/git-ignored, and each buildable folder has its own
+> `latexmkrc`. **OVL-01** is now fully satisfied (the release ZIP is flat; in-repo builds use
+> per-folder search paths). Re-run the skill to regenerate the rows below.
 
 ## Verdict
 

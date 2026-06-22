@@ -50,7 +50,7 @@
  \@entrue%
  }%
 
-%natbib Literaturverzeichnis erzeugen mit wisenat
+%natbib Literaturverzeichnis erzeugen mit fgdh-thesis-nat
 \newif\if@nat
 \@pdffalse
 \DeclareOption{nat} {%
@@ -158,7 +158,7 @@ tabsize=2,
   \fi
 \fi
 
-%Option nat auswerten und natbib Package einbinden für wisenat. Ohne diese Option muss die alte wisealpha.bst benutzt werden. 
+%Option nat auswerten und natbib Package einbinden für fgdh-thesis-nat. Ohne diese Option muss die alte fgdh-thesis-alpha.bst benutzt werden. 
 \if@nat%
 \RequirePackage{natbib}
 \fi
@@ -258,7 +258,7 @@ tabsize=2,
 \pagestyle{scrheadings}
 
 %%Anhaenge einbauen
-\RequirePackage[header, title, toc]{wiseapp}
+\RequirePackage[header, title, toc]{fgdh-thesis-appendix}
 \renewcommand{\appendixtocname}{Anh\"ange}
 
 %Für den Vorspann des Werkes, bitte folgende Umgebung nutzen:
@@ -352,16 +352,16 @@ tabsize=2,
 
 %Zusatzbefehle fuer erweiterte Boxen fuer die roemischen Zahlen
 %Da diese Befehle auch in tocloft definiert werden, schreiben wir
-%einfach 'wise' davor.
-\newcommand{\wisecftsetpnumwidth}[1]{%
+%einfach (Praefix fgdhthesis) davor.
+\newcommand{\fgdhthesiscftsetpnumwidth}[1]{%
     \renewcommand{\@pnumwidth}{#1}
 }
-\newcommand{\wisecftsetrmarg}[1]{%
+\newcommand{\fgdhthesiscftsetrmarg}[1]{%
     \renewcommand{\@tocrmarg}{#1}
 }
-\newcommand{\wisecftlocalchange}[3]{%
-    \addtocontents{#1}{\protect\wisecftsetpnumwidth{#2}
-        \protect\wisecftsetrmarg{#3}}
+\newcommand{\fgdhthesiscftlocalchange}[3]{%
+    \addtocontents{#1}{\protect\fgdhthesiscftsetpnumwidth{#2}
+        \protect\fgdhthesiscftsetrmarg{#3}}
 }    
 
 %Standardmaessig formatieren wir die Herausgeber eines Werkes mal
@@ -422,14 +422,14 @@ tabsize=2,
   \cleardoublepage
   \pagenumbering{Roman}
   %Vergroesserung des Platzes fuer Seitenzahlen
-  \wisecftlocalchange{toc}{4em}{5em}
-  \wisecftlocalchange{lof}{4em}{5em}
-  \wisecftlocalchange{lot}{4em}{5em}
+  \fgdhthesiscftlocalchange{toc}{4em}{5em}
+  \fgdhthesiscftlocalchange{lof}{4em}{5em}
+  \fgdhthesiscftlocalchange{lot}{4em}{5em}
 }{%
   %%Urspruegliche Breiten einstellen
-  \wisecftlocalchange{toc}{1.55em}{2.55em}
-  \wisecftlocalchange{lof}{1.55em}{2.55em}
-  \wisecftlocalchange{lot}{1.55em}{2.55em}
+  \fgdhthesiscftlocalchange{toc}{1.55em}{2.55em}
+  \fgdhthesiscftlocalchange{lof}{1.55em}{2.55em}
+  \fgdhthesiscftlocalchange{lot}{1.55em}{2.55em}
   \cleardoublepage
 }
 
@@ -458,7 +458,7 @@ tabsize=2,
 
 
 \if@en%
-      \RequirePackage{wisetextEN}
+      \RequirePackage{fgdh-thesis-en}
      \else
-       \RequirePackage{wisetextDE}
+       \RequirePackage{fgdh-thesis-de}
      \fi%

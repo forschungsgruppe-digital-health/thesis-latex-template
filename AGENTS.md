@@ -18,13 +18,14 @@ There is no assumed local TeX install; build through Docker (this is also the CI
 ```bash
 # Compile an example (latexmkrc handles the search path + engine + bibtex):
 docker run --rm -v "$PWD":/work texlive/texlive:latest \
-  latexmk -cd examples/de/Beispielarbeit.tex
+  latexmk -cd examples/de/thesis-de.tex
 ```
 
 - Image: `texlive/texlive:latest` (full scheme; pin to the Overleaf/ZIH TeX Live year
   once known — see `docs/maintainer/decision-log.md`).
-- The root [`latexmkrc`](latexmkrc) prepends `./texmf//:` to `TEXINPUTS`/`BSTINPUTS` so the
-  bundled class/styles/bst (under `texmf/`) are found, and sets `$pdf_mode = 1`.
+- Each buildable folder (`template/`, `examples/de`, `examples/en`) ships a `latexmkrc`
+  that puts the bundled class (`latex/`) + DIN 1505 styles (`bst/`) on the search path and
+  sets `$pdf_mode = 1`; the root [`latexmkrc`](latexmkrc) does the same for whole-repo builds.
 - Render PDFs to PNG for visual checks with `gs` (poppler is **not** in the image).
 
 ## Definition of done for a build change
@@ -53,7 +54,7 @@ custom-LaTeX-on-Overleaf checklist and regenerates
 ## Release (planned)
 
 - SemVer tag `vX.Y.Z` → build PDFs + a **curated, flattened** `template.zip` (class beside
-  the main `.tex`, no `texmf/` tree) attached to a GitHub Release; update `CHANGELOG.md`
+  the main `.tex`, no nested folders) attached to a GitHub Release; update `CHANGELOG.md`
   and `CITATION.cff` (`version`, `date-released`).
 
 ## Key references

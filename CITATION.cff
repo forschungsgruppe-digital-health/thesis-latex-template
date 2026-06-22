@@ -5,7 +5,7 @@ cff-version: 1.2.0
 message: "If you use this template, please cite it using the metadata below."
 title: "FGDH Thesis LaTeX Template"
 abstract: >-
-  A LaTeX template (the `wise` document class; pdfLaTeX + BibTeX/natbib, DIN 1505
+  A LaTeX template (the `fgdh-thesis` document class; pdfLaTeX + BibTeX/natbib, DIN 1505
   citations) for academic theses at the Forschungsgruppe Digital Health,
   Faculty of Business and Economics, TU Dresden.
 type: software

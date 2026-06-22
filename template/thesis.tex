@@ -7,7 +7,7 @@
 %  for you). Save every file as UTF-8.
 %
 %  Class options:  hyperref  clickable links/TOC
-%                  nat       use the wisenat (DIN 1505) bibliography style
+%                  nat       use the fgdh-thesis-nat (DIN 1505) bibliography style
 %                  mp        margin notes
 %                  en        switch the template to English (default: German)
 %                  xlevel    enable a 4th numbered sectioning level
@@ -19,7 +19,7 @@
 % --- Title page -------------------------------------------------------
 % Pick the command for your thesis type (all take the same 8 arguments):
 %   \bachelortitlepage  \mastertitlepage  \diplomatitlepage  \dissertationtitlepage
-%   (\seminartitlepage / \projecttitlepage take 4 — see the WiSe documentation)
+%   (\seminartitlepage / \projecttitlepage take 4 — see the documentation)
 % Args: {title}{degree}{author}{student-id}{supervisor 1}{supervisor 2}{start date}{end date}
 \bachelortitlepage
   {«Titel der Arbeit»}
@@ -61,9 +61,9 @@
   \listofabbreviations
   \abbreviation{z.\,B.}{zum Beispiel}
 
-  % Bibliography: entries live in references.bib; style is wisenat (DIN 1505).
+  % Bibliography: entries live in references.bib; style is fgdh-thesis-nat (DIN 1505).
   \bibliography{references}
-  \bibliographystyle{wisenat}
+  \bibliographystyle{fgdh-thesis-nat}
 
   \begin{appendices}
     \section{«Anhang»}

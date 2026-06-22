@@ -19,9 +19,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Compile example theses (pdflatex + bibtex via latexmk)
-        # Recursive TEXINPUTS/BSTINPUTS make the bundled wise class/styles/bst (under
-        # texmf/) discoverable from each example's own directory — same mechanism as
-        # the dev container and the root latexmkrc.
+        # Recursive TEXINPUTS/BSTINPUTS make the bundled fgdh-thesis class/styles (latex/)
+        # and DIN 1505 .bst (bst/) discoverable from each document's own directory —
+        # the same mechanism as the dev container and the per-folder latexmkrc.
         env:
           TEXINPUTS: "${{ github.workspace }}//:"
           BSTINPUTS: "${{ github.workspace }}//:"

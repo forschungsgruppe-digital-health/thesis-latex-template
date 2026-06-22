@@ -40,8 +40,9 @@ Creative Commons licenses are intentionally NOT applied to the LaTeX code above
 
 3. Third-party bundled files  (own terms — NOT covered by 1 or 2)
 -----------------------------------------------------------------
-The bundled BibTeX styles `wisenat.bst`, `wisealpha.bst`, and `wisenatnosc.bst`
-(K.F. Lorenzen's DIN 1505 `natdin`/`alphadin` styles, derived from Oren Patashnik's
+The bundled BibTeX styles `fgdh-thesis-nat.bst`, `fgdh-thesis-alpha.bst`, and
+`fgdh-thesis-nat-nosc.bst` (renamed copies of K.F. Lorenzen's DIN 1505 `natdin`/`alphadin`
+styles, derived from Oren Patashnik's
 standard BibTeX styles) are third-party works whose original copyright and conditions
 are retained verbatim in the files. See THIRD-PARTY-NOTICES.md for the full attribution
 and terms. They are redistributed here under their original terms and are not relicensed.

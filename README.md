@@ -17,45 +17,45 @@ BibTeX/`natbib`, DIN 1505 citations), continued from the original template by Ma
 
 ## Get started · Schnellstart
 
-Pick **one** path. Each ends in a compiled PDF.
+**New to LaTeX? Use Overleaf (A) — nothing to install.** Each path ends in a compiled PDF.
 
-### A) Dev Container — local, reproducible *(recommended, works now)*
+### A) Overleaf — TU Dresden ZIH or cloud *(easiest, no install)*
 
-A complete LaTeX environment (full TeX Live + VS Code editor, preview, SyncTeX) with
-zero local install beyond Docker + VS Code.
+Write entirely in your browser; no LaTeX knowledge of the internals needed.
+
+- **TU Dresden ZIH** (<https://tex.zih.tu-dresden.de>, ZIH/SSO login): download
+  **`template.zip`** from the
+  [latest release](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/releases/latest),
+  then **New Project → Upload Project**, open `thesis.tex`, set **Compiler = pdfLaTeX**, Recompile.
+- **Cloud** (<https://overleaf.com>): one-click —
+  [![Open in Overleaf](https://img.shields.io/badge/Open%20in-Overleaf-47A141.svg)](https://www.overleaf.com/docs?snip_uri=https://github.com/forschungsgruppe-digital-health/thesis-latex-template/releases/latest/download/template.zip)
+
+→ Full guide incl. Git/token sync and **backup** (ZIH deletes projects idle for 90 days):
+**[docs/overleaf.md](docs/overleaf.md)**. Then fill in the blanks: [docs/filling-in.md](docs/filling-in.md).
+
+### B) Dev Container — local, reproducible
+
+A complete local LaTeX environment (full TeX Live + VS Code editor, live preview, SyncTeX);
+the only installs are Docker + VS Code.
 
 1. Install [Docker](https://www.docker.com/) and [VS Code](https://code.visualstudio.com/)
    with the **Dev Containers** extension.
-2. Clone and open this repository in VS Code:
-   `git clone https://github.com/forschungsgruppe-digital-health/thesis-latex-template.git`
-3. Run **“Dev Containers: Reopen in Container”**. On first start it pulls TeX Live (a few GB).
-4. Open [`template/thesis.tex`](template/thesis.tex) and **Build** (▶) — the PDF opens in
-   a side tab. (Or open an example under `examples/`.)
+2. Clone and open this repo in VS Code, then run **“Dev Containers: Reopen in Container”**
+   (first start pulls TeX Live, a few GB).
+3. Open [`template/thesis.tex`](template/thesis.tex) and **Build** (▶).
 
 → Details: [docs/devcontainer.md](docs/devcontainer.md).
 
-### B) Local LaTeX (command line)
+### C) Local LaTeX (command line)
 
-Requires a TeX Live (2021+ recommended) with `latexmk`. From the project root:
+For an existing TeX Live (2021+) with `latexmk`. Build inside a document's folder:
 
 ```bash
-latexmk examples/de/Beispielarbeit.tex   # pdflatex + bibtex, via latexmkrc
+cd template && latexmk thesis.tex   # pdflatex + bibtex, via the folder's latexmkrc
 ```
 
-The bundled [`latexmkrc`](latexmkrc) puts the custom class (`texmf/`) on the search path.
-
-### C) Overleaf (cloud or TU Dresden ZIH)
-
-Because Overleaf does not search subfolders, use the **flattened release ZIP** (the class
-sits beside the main `.tex`), built and attached to each release. One-click:
-
-[![Open in Overleaf](https://img.shields.io/badge/Open%20in-Overleaf-47A141.svg)](https://www.overleaf.com/docs?snip_uri=https://github.com/forschungsgruppe-digital-health/thesis-latex-template/releases/latest/download/template.zip)
-
-- **Cloud (overleaf.com):** click the badge — it imports the latest release's `template.zip`.
-- **TU Dresden ZIH (`tex.zih.tu-dresden.de`):** the badge targets overleaf.com only —
-  download the release ZIP, then **New Project → Upload Project → Compile**.
-  ⚠️ ZIH deletes projects inactive for **90 days** — keep GitHub (or a local clone) as the
-  durable copy.
+Each buildable folder (`template/`, `examples/de`, `examples/en`) ships a `latexmkrc` that
+puts the bundled class (`latex/`) and DIN 1505 styles (`bst/`) on the search path.
 
 ---
 
@@ -69,7 +69,7 @@ marked `« … »`). Then:
 | Set title, author, supervisor, degree | the `\bachelortitlepage{…}` block in `template/thesis.tex` (swap for `\master…`/`\diploma…`/`\dissertation…`) |
 | Choose language | class option: default German, `en` for English (`\documentclass[...,en]{fgdh-thesis}`) |
 | Add chapters | `\section{…}`, or split with `\include{chapter}` |
-| Add references | `template/references.bib` + `\cite{key}`; style is `\bibliographystyle{wisenat}` (DIN 1505) |
+| Add references | `template/references.bib` + `\cite{key}`; style is `\bibliographystyle{fgdh-thesis-nat}` (DIN 1505) |
 
 Full walk-through: [docs/filling-in.md](docs/filling-in.md). The richer DE/EN sample
 theses live under [`examples/`](examples/).
@@ -79,11 +79,11 @@ theses live under [`examples/`](examples/).
 ```text
 template/         minimal fill-in-the-blanks starter (start here)
 examples/         richer DE/EN sample theses (de/, en/)
-texmf/            fgdh-thesis class + styles + DIN 1505 .bst (+ deprecated wise.cls alias)
-Dokumentation/    original German documentation (PDF + sources)
-docs/             documentation: filling-in, troubleshooting, dev container, maintainer plan
+latex/            the fgdh-thesis class + styles (+ deprecated wise.cls alias)
+bst/              DIN 1505 BibTeX styles (third-party)
+docs/             documentation: filling-in, troubleshooting, dev container, maintainer/
 .devcontainer/    local LaTeX dev environment
-latexmkrc         search-path shim so the class is found from the project root
+latexmkrc         whole-repo search-path config (build any document from the root)
 ```
 
 A critique and the target layout are in
@@ -91,12 +91,14 @@ A critique and the target layout are in
 
 ## Documentation
 
+- [docs/overleaf.md](docs/overleaf.md) — Overleaf (TU Dresden ZIH & cloud): upload, Git/token sync, backup
 - [docs/filling-in.md](docs/filling-in.md) — how to fill in the template
 - [docs/troubleshooting.md](docs/troubleshooting.md) — common problems & fixes
 - [docs/devcontainer.md](docs/devcontainer.md) — the local LaTeX environment
 - [docs/maintainer/](docs/maintainer/) — inventory, decision log, structure proposal, releasing
 - [Overleaf conformance report](docs/overleaf-conformance-report.md)
-- [`Einfuehrung.pdf`](Einfuehrung.pdf), [Dokumentation/](Dokumentation/) — original German docs
+- **New to LaTeX?** Start with [Overleaf Learn](https://www.overleaf.com/learn) or
+  [learnlatex.org](https://www.learnlatex.org/) — you only need the basics to use this template.
 
 ## Contributing
 
