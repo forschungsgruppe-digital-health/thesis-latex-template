@@ -70,7 +70,7 @@ marked `« … »`). Then:
 | Set title, author, supervisor, degree | the `\bachelortitlepage{…}` block in `template/thesis.tex` (swap for `\master…`/`\diploma…`/`\dissertation…`) |
 | Choose language | class option: default German, `en` for English (`\documentclass[...,en]{fgdh-thesis}`) |
 | Add chapters | `\section{…}`, or split with `\include{chapter}` |
-| Add references | `template/references.bib` + `\cite{key}`; style is `\bibliographystyle{wisenat}` (DIN 1505) |
+| Add references | `template/references.bib` + `\cite{key}`; style is `\bibliographystyle{fgdh-thesis-nat}` (DIN 1505) |
 
 Full walk-through: [docs/filling-in.md](docs/filling-in.md). The richer DE/EN sample
 theses live under [`examples/`](examples/).
@@ -82,7 +82,7 @@ template/         minimal fill-in-the-blanks starter (start here)
 examples/         richer DE/EN sample theses (de/, en/)
 latex/            the fgdh-thesis class + styles (+ deprecated wise.cls alias)
 bst/              DIN 1505 BibTeX styles (third-party)
-docs/             documentation: filling-in, troubleshooting, dev container, maintainer/, manual/
+docs/             documentation: filling-in, troubleshooting, dev container, maintainer/
 .devcontainer/    local LaTeX dev environment
 latexmkrc         whole-repo search-path config (build any document from the root)
 ```
@@ -97,7 +97,7 @@ A critique and the target layout are in
 - [docs/devcontainer.md](docs/devcontainer.md) — the local LaTeX environment
 - [docs/maintainer/](docs/maintainer/) — inventory, decision log, structure proposal, releasing
 - [Overleaf conformance report](docs/overleaf-conformance-report.md)
-- [docs/manual/](docs/manual/) and [docs/pdf/einfuehrung.pdf](docs/pdf/einfuehrung.pdf) — original German documentation
+- [docs/pdf/einfuehrung.pdf](docs/pdf/einfuehrung.pdf) — a general LaTeX introduction (German, legacy)
 
 ## Contributing
 

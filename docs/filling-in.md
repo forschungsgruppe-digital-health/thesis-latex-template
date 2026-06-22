@@ -52,8 +52,8 @@ Put images in [`figures/`](../template/figures/) and include them:
 ## 5. Citations & bibliography
 
 - Add entries to [`references.bib`](../template/references.bib) (use JabRef/Zotero).
-- Cite with `\cite{key}`. The style is `wisenat` (DIN 1505, author–year) — already set via
-  `\bibliographystyle{wisenat}` + `\bibliography{references}`.
+- Cite with `\cite{key}`. The style is `fgdh-thesis-nat` (DIN 1505, author–year) — already set via
+  `\bibliographystyle{fgdh-thesis-nat}` + `\bibliography{references}`.
 - Build order is pdfLaTeX → BibTeX → pdfLaTeX×2; `latexmk` does this automatically.
 
 ## 6. Abbreviations

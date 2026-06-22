@@ -6,7 +6,7 @@
   "packages": {
     ".": {
       "release-type": "simple",
-      "package-name": "wise",
+      "package-name": "fgdh-thesis",
       "changelog-path": "CHANGELOG.md",
       "changelog-type": "default",
       "bump-minor-pre-major": false,
