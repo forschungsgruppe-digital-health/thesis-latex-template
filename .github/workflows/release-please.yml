@@ -1,0 +1,72 @@
+name: release-please
+
+# Automated, Semantic-Versioning releases driven by Conventional Commits.
+# release-please watches the protected `main` branch, and opens/maintains a
+# "release PR" that bumps the version (in .release-please-manifest.json + the
+# extra-files) and updates CHANGELOG.md from the commit history. Merging that PR
+# creates the Git tag (vX.Y.Z) and the GitHub Release. The separate release-assets
+# job then attaches the built artifacts to that release.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.rp.outputs.release_created }}
+      tag_name: ${{ steps.rp.outputs.tag_name }}
+    steps:
+      - id: rp
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: main
+          # config-file / manifest-file default to release-please-config.json
+          # and .release-please-manifest.json at the repo root.
+
+  # When a release is actually cut, build the PDFs + a curated, FLATTENED template
+  # ZIP and attach them to the GitHub Release (a stable "Open in Overleaf" target).
+  release-assets:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest   # TODO: pin to the ZIH TeX Live year (decision O1)
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build example PDFs
+        env:
+          TEXINPUTS: "${{ github.workspace }}//:"
+          BSTINPUTS: "${{ github.workspace }}//:"
+        run: |
+          set -e
+          for dir in Beispielarbeit/BeispielarbeitDE Beispielarbeit/BeispielarbeitEN; do
+            main=$(grep -l '\\documentclass' "$dir"/*.tex | head -1)
+            ( cd "$dir" && latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error "$(basename "$main")" )
+          done
+      - name: Assemble curated, flattened template ZIP
+        run: |
+          set -e
+          out=template-${{ needs.release-please.outputs.tag_name }}
+          mkdir -p "$out"
+          # Flatten: class/styles/bst beside the main .tex so Overleaf needs no shim.
+          cp texmf/tex/latex/wise/*.cls texmf/tex/latex/wise/*.sty "$out"/
+          cp texmf/bibtex/bst/wise/*.bst "$out"/
+          cp -r Beispielarbeit/BeispielarbeitDE/* "$out"/
+          cp LICENSE THIRD-PARTY-NOTICES.md "$out"/ 2>/dev/null || true
+          (cd "$out" && rm -f wise_diff.cls)   # dev-only variant excluded from the student ZIP
+          zip -r "$out.zip" "$out"
+      - name: Attach assets to the release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.release-please.outputs.tag_name }}
+          files: |
+            template-*.zip
+            Beispielarbeit/**/*.pdf

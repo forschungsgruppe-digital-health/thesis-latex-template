@@ -1,0 +1,43 @@
+name: ci
+
+# Compile the example theses on every push/PR so breakage is caught before students
+# hit it. This is the status check to require on the protected `main` branch.
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest   # TODO: pin to the ZIH TeX Live year (decision O1) for output parity
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile example theses (pdflatex + bibtex via latexmk)
+        # Recursive TEXINPUTS/BSTINPUTS make the bundled wise class/styles/bst (under
+        # texmf/) discoverable from each example's own directory — same mechanism as
+        # the dev container and the root latexmkrc.
+        env:
+          TEXINPUTS: "${{ github.workspace }}//:"
+          BSTINPUTS: "${{ github.workspace }}//:"
+        run: |
+          set -e
+          for dir in Beispielarbeit/BeispielarbeitDE Beispielarbeit/BeispielarbeitEN; do
+            main=$(grep -l '\\documentclass' "$dir"/*.tex | head -1)
+            echo "::group::Building $main"
+            ( cd "$dir" && latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error "$(basename "$main")" )
+            echo "::endgroup::"
+          done
+
+      - name: Upload built PDFs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: example-pdfs
+          path: Beispielarbeit/**/*.pdf
+          if-no-files-found: warn

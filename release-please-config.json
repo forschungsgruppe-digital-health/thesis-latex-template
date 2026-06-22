@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "include-component-in-tag": false,
+  "tag-separator": "-",
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "package-name": "wise",
+      "changelog-path": "CHANGELOG.md",
+      "changelog-type": "default",
+      "bump-minor-pre-major": false,
+      "extra-files": [
+        "CITATION.cff"
+      ]
+    }
+  }
+}
