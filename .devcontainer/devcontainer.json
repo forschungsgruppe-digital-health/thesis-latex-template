@@ -1,0 +1,81 @@
+{
+  // FGDH thesis template — local LaTeX authoring environment.
+  // A reproducible, offline-capable alternative to cloud Overleaf: full TeX Live +
+  // VS Code LaTeX Workshop (build-on-save, SyncTeX preview, chktex linting).
+  "name": "FGDH Thesis (TeX Live)",
+
+  // Full-scheme TeX Live — every CTAN package present, so builds need no network.
+  // RECOMMENDED: once the Overleaf/ZIH TeX Live year is confirmed, pin this to that
+  // year (e.g. a "TLYYYY-historic" tag) instead of ":latest" for byte-for-byte output
+  // parity with Overleaf. See docs/maintainer/decision-log.md (D6, O1).
+  "image": "texlive/texlive:latest",
+
+  // Make the bundled class/styles/bst discoverable from ANY directory in the workspace
+  // (kpathsea searches these paths). "//" = recursive; trailing ":" keeps system paths.
+  // This is why builds work even though the custom files live under texmf/.
+  "containerEnv": {
+    "TEXINPUTS": "${containerWorkspaceFolder}//:",
+    "BSTINPUTS": "${containerWorkspaceFolder}//:",
+    "BIBINPUTS": "${containerWorkspaceFolder}//:"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop"
+      ],
+      "settings": {
+        // Editor: enforce the project's UTF-8 / LF rule.
+        "files.encoding": "utf8",
+        "files.eol": "\n",
+
+        // Build tools.
+        "latex-workshop.latex.tools": [
+          {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
+          },
+          {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": ["%DOCFILE%"]
+          },
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": ["-pdf", "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
+          }
+        ],
+        // Recipes. Default = explicit pdfLaTeX → BibTeX → pdfLaTeX×2 (resolves DIN 1505
+        // citations and cross-references); latexmk offered as an alternative.
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "pdflatex > bibtex > pdflatex x2",
+            "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+          },
+          {
+            "name": "latexmk",
+            "tools": ["latexmk"]
+          }
+        ],
+        "latex-workshop.latex.recipe.default": "first",
+
+        // Overleaf-like compile-on-save and integrated SyncTeX preview.
+        "latex-workshop.latex.autoBuild.run": "onSave",
+        "latex-workshop.view.pdf.viewer": "tab",
+        "latex-workshop.synctex.afterBuild.enabled": true,
+
+        // Keep auxiliary files next to the source; clean only on failed builds.
+        "latex-workshop.latex.autoClean.run": "onFailed",
+
+        // Linting (chktex ships with the full TeX Live image).
+        "latex-workshop.linting.chktex.enabled": true,
+        "latex-workshop.linting.run": "onSave"
+      }
+    }
+  },
+
+  // Quick sanity check that TeX Live is present on first create.
+  "postCreateCommand": "pdflatex --version | head -1 && echo 'Dev container ready.'"
+}
