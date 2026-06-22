@@ -1,0 +1,6 @@
+# Per-project latexmkrc — build with:  cd examples/de && latexmk
+# Points the TeX search path at the repository root so the fgdh-thesis class (latex/)
+# and the DIN 1505 .bst styles (bst/) are found; the .bib and figures live here.
+$ENV{'TEXINPUTS'} = '../..//:' . ($ENV{'TEXINPUTS'} // '');
+$ENV{'BSTINPUTS'} = '../..//:' . ($ENV{'BSTINPUTS'} // '');
+$pdf_mode = 1;   # pdfLaTeX

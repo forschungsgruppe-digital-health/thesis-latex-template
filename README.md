@@ -36,13 +36,14 @@ zero local install beyond Docker + VS Code.
 
 ### B) Local LaTeX (command line)
 
-Requires a TeX Live (2021+ recommended) with `latexmk`. From the project root:
+Requires a TeX Live (2021+ recommended) with `latexmk`. Build inside a document's folder:
 
 ```bash
-latexmk examples/de/Beispielarbeit.tex   # pdflatex + bibtex, via latexmkrc
+cd template && latexmk thesis.tex   # pdflatex + bibtex, via the folder's latexmkrc
 ```
 
-The bundled [`latexmkrc`](latexmkrc) puts the custom class (`texmf/`) on the search path.
+Each buildable folder (`template/`, `examples/de`, `examples/en`) ships a `latexmkrc` that
+puts the bundled class (`latex/`) and DIN 1505 styles (`bst/`) on the search path.
 
 ### C) Overleaf (cloud or TU Dresden ZIH)
 
@@ -79,11 +80,11 @@ theses live under [`examples/`](examples/).
 ```text
 template/         minimal fill-in-the-blanks starter (start here)
 examples/         richer DE/EN sample theses (de/, en/)
-texmf/            fgdh-thesis class + styles + DIN 1505 .bst (+ deprecated wise.cls alias)
-Dokumentation/    original German documentation (PDF + sources)
-docs/             documentation: filling-in, troubleshooting, dev container, maintainer plan
+latex/            the fgdh-thesis class + styles (+ deprecated wise.cls alias)
+bst/              DIN 1505 BibTeX styles (third-party)
+docs/             documentation: filling-in, troubleshooting, dev container, maintainer/, manual/
 .devcontainer/    local LaTeX dev environment
-latexmkrc         search-path shim so the class is found from the project root
+latexmkrc         whole-repo search-path config (build any document from the root)
 ```
 
 A critique and the target layout are in
@@ -96,7 +97,7 @@ A critique and the target layout are in
 - [docs/devcontainer.md](docs/devcontainer.md) — the local LaTeX environment
 - [docs/maintainer/](docs/maintainer/) — inventory, decision log, structure proposal, releasing
 - [Overleaf conformance report](docs/overleaf-conformance-report.md)
-- [`Einfuehrung.pdf`](Einfuehrung.pdf), [Dokumentation/](Dokumentation/) — original German docs
+- [docs/manual/](docs/manual/) and [docs/pdf/einfuehrung.pdf](docs/pdf/einfuehrung.pdf) — original German documentation
 
 ## Contributing
 

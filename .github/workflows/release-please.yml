@@ -61,8 +61,8 @@ jobs:
           cp -r template/* "$out"/
           rm -f "$out"/thesis.pdf "$out"/*.aux "$out"/*.log "$out"/*.fls "$out"/*.fdb_latexmk 2>/dev/null || true
           # The fgdh-thesis class + its deprecated wise.cls alias + the style files.
-          cp texmf/tex/latex/wise/fgdh-thesis.cls texmf/tex/latex/wise/wise.cls texmf/tex/latex/wise/*.sty "$out"/
-          cp texmf/bibtex/bst/wise/*.bst "$out"/
+          cp latex/fgdh-thesis/fgdh-thesis.cls latex/fgdh-thesis/wise.cls latex/fgdh-thesis/*.sty "$out"/
+          cp bst/*.bst "$out"/
           cp LICENSE THIRD-PARTY-NOTICES.md "$out"/ 2>/dev/null || true
           zip -r "$out.zip" "$out"
           cp "$out.zip" template.zip   # stable name for the README badge (releases/latest/download/template.zip)

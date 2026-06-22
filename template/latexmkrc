@@ -1,0 +1,7 @@
+# Per-project latexmkrc — build this folder with:  cd template && latexmk thesis.tex
+# Points the TeX search path at the repository root so the fgdh-thesis class (under
+# latex/) and the DIN 1505 .bst styles (under bst/) are found; the .bib and figures
+# live in this folder. "//" = search recursively; trailing ":" keeps the system paths.
+$ENV{'TEXINPUTS'} = '..//:' . ($ENV{'TEXINPUTS'} // '');
+$ENV{'BSTINPUTS'} = '..//:' . ($ENV{'BSTINPUTS'} // '');
+$pdf_mode = 1;   # pdfLaTeX

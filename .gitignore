@@ -278,3 +278,8 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 .
+
+# --- FGDH: built thesis PDFs (CI rebuilds them; releases attach them). ---
+# Documentation PDFs under docs/ are intentionally kept (tracked).
+/template/*.pdf
+/examples/**/*.pdf

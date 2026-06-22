@@ -2,7 +2,7 @@
 
 | Symptom | Cause & fix |
 |---|---|
-| `File 'fgdh-thesis.cls' not found` on Overleaf | Overleaf doesn't search subfolders. Use the **release ZIP** (the class sits next to `thesis.tex`), or keep the root [`latexmkrc`](../latexmkrc) which adds `texmf/` to the search path. |
+| `File 'fgdh-thesis.cls' not found` on Overleaf | Overleaf doesn't search subfolders — use the **release ZIP**, a flat project where the class sits next to `thesis.tex`. |
 | `File 'fgdh-thesis.cls' not found` locally | Build from the project root (the `latexmkrc` shim is root-relative), or use the dev container (workspace-wide search path). |
 | Umlauts look wrong / `Invalid UTF-8 byte` | Save the file as **UTF-8** (not Latin-1/Latin-9). The class expects UTF-8; mixing encodings corrupts umlauts. |
 | Citations show as `[?]` / undefined | Run the full cycle (pdfLaTeX → **BibTeX** → pdfLaTeX×2). `latexmk` does this; a single pdfLaTeX run isn't enough. Check the `\cite{key}` matches a key in `references.bib`. |

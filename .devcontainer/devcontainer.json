@@ -12,7 +12,7 @@
 
   // Make the bundled class/styles/bst discoverable from ANY directory in the workspace
   // (kpathsea searches these paths). "//" = recursive; trailing ":" keeps system paths.
-  // This is why builds work even though the custom files live under texmf/.
+  // This is why builds work even though the custom files live under latex/ and bst/.
   "containerEnv": {
     "TEXINPUTS": "${containerWorkspaceFolder}//:",
     "BSTINPUTS": "${containerWorkspaceFolder}//:",

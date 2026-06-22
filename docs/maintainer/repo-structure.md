@@ -1,9 +1,14 @@
 # Phase 0 (extended) — Repository structure: critique & restructuring proposal
 
-> A critical reflection on the current file layout and a concrete, prioritized
-> proposal for restructuring it. Companion to [inventory.md](inventory.md) and
-> [decision-log.md](decision-log.md). Nothing here has been *moved* yet — this is the
-> design the migration should converge on.
+> **Status (v2.0.0): EXECUTED.** The migration below has been carried out. The package
+> was lifted out of `texmf/` to `latex/fgdh-thesis/` + `bst/`; `Dokumentation/` → `docs/manual/`
+> and `Einfuehrung.pdf` → `docs/pdf/`; all file/dir names are kebab-case; and the package
+> is named `fgdh-thesis` (not `wise`). The "Current layout" / "proposed layout" sections
+> below are kept as the **historical record** of the design — the *proposed* layout (§4,
+> adapted to `latex/fgdh-thesis/` and kebab-case) is now the actual one.
+>
+> A critical reflection on the original file layout and the prioritized plan that was
+> followed. Companion to [inventory.md](inventory.md) and [decision-log.md](decision-log.md).
 
 ## 1. Current layout
 

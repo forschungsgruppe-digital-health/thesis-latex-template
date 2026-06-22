@@ -258,7 +258,7 @@ tabsize=2,
 \pagestyle{scrheadings}
 
 %%Anhaenge einbauen
-\RequirePackage[header, title, toc]{wiseapp}
+\RequirePackage[header, title, toc]{fgdh-thesis-appendix}
 \renewcommand{\appendixtocname}{Anh\"ange}
 
 %Für den Vorspann des Werkes, bitte folgende Umgebung nutzen:
@@ -458,7 +458,7 @@ tabsize=2,
 
 
 \if@en%
-      \RequirePackage{wisetextEN}
+      \RequirePackage{fgdh-thesis-en}
      \else
-       \RequirePackage{wisetextDE}
+       \RequirePackage{fgdh-thesis-de}
      \fi%
