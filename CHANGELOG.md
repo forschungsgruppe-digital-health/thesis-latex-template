@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 From the next release onward this file is **maintained automatically by Release Please**
 from Conventional Commits — see [docs/maintainer/releasing.md](docs/maintainer/releasing.md).
 
+## [3.1.0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v3.0.0...v3.1.0) (2026-06-23)
+
+
+### Features
+
+* add AI-use declaration section; vendor-neutral conformance tooling ([89d62a5](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/89d62a54619a1faa84537f26e4df7504d2005596))
+* add the AI-use declaration section (DE + EN) ([8977f14](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/8977f141d76912b943ec7aa5d9450ca833b842d3))
+
 ## [3.0.0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v2.0.0...v3.0.0) (2026-06-22)
 
 

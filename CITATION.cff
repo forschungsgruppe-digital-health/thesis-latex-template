@@ -18,7 +18,7 @@ authors:
 repository-code: "https://github.com/forschungsgruppe-digital-health/thesis-latex-template"
 url: "https://github.com/forschungsgruppe-digital-health/thesis-latex-template"
 license: LPPL-1.3c
-version: "3.0.0" # x-release-please-version
+version: "3.1.0" # x-release-please-version
 date-released: "2026-06-22"
 keywords:
   - latex
