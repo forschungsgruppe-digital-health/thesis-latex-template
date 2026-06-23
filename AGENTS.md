@@ -21,8 +21,10 @@ docker run --rm -v "$PWD":/work texlive/texlive:latest \
   latexmk -cd examples/de/thesis-de.tex
 ```
 
-- Image: `texlive/texlive:latest` (full scheme; pin to the Overleaf/ZIH TeX Live year
-  once known — see `docs/maintainer/decision-log.md`).
+- Image: `texlive/texlive:latest` (full scheme) — matches TU Dresden's ZIH Overleaf/tex
+  service, which tracks the rolling `latest` TeX Live (see `docs/maintainer/decision-log.md`,
+  D6/O1). Use a `TLxxxx-historic` tag only when reproducing an overleaf.com project frozen
+  to a specific year.
 - Each buildable folder (`template/`, `examples/de`, `examples/en`) ships a `latexmkrc`
   that puts the bundled class (`latex/`) + DIN 1505 styles (`bst/`) on the search path and
   sets `$pdf_mode = 1`; the root [`latexmkrc`](latexmkrc) does the same for whole-repo builds.

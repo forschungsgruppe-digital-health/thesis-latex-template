@@ -5,10 +5,11 @@
   "name": "FGDH Thesis (TeX Live)",
 
   // Full-scheme TeX Live — every CTAN package present, so builds need no network.
-  // Pinned to overleaf.com's TeX Live 2025 for output parity with the cloud. If your
-  // Overleaf/ZIH project uses a different year, change this tag to match (e.g.
-  // TL2024-historic). See docs/maintainer/decision-log.md (D6, O1).
-  "image": "texlive/texlive:TL2025-historic",
+  // Tracks TU Dresden's ZIH Overleaf/tex service, which runs the rolling 'latest' TeX
+  // Live, for output parity with where students actually compile. If you instead target
+  // overleaf.com (pinned per project to its creation-time year), set a historic tag to
+  // match (e.g. texlive/texlive:TL2025-historic). See docs/maintainer/decision-log.md (D6, O1).
+  "image": "texlive/texlive:latest",
 
   // Make the bundled class/styles/bst discoverable from ANY directory in the workspace
   // (kpathsea searches these paths). "//" = recursive; trailing ":" keeps system paths.

@@ -625,13 +625,22 @@ Seminararbeit\\%
   Praxis zu entsprechen.%
 
   \vspace{1em}
-  \noindent\begin{tabular}{|p{0.27\textwidth}|p{0.40\textwidth}|p{0.18\textwidth}|}
+  % tabularx füllt exakt die Textbreite; die \hsize-Faktoren (Summe = 3) halten die
+  % Spaltenverhältnisse 0.27 : 0.40 : 0.18 bei. \tabcolsep wird lokal gesetzt, damit
+  % die Zellen wieder Innenabstand haben (sonst stößt der Text an die Linien).
+  \noindent\begingroup
+  \setlength{\tabcolsep}{6pt}%
+  \begin{tabularx}{\textwidth}{%
+      |>{\raggedright\arraybackslash\hsize=0.95\hsize\linewidth=\hsize}X%
+      |>{\raggedright\arraybackslash\hsize=1.41\hsize\linewidth=\hsize}X%
+      |>{\raggedright\arraybackslash\hsize=0.64\hsize\linewidth=\hsize}X|}
     \hline
     \textbf{Hilfsmittel (Werkzeug)} & \textbf{Art und Zweck der Nutzung} & \textbf{Betroffenes Kapitel} \\ \hline
      & & \\[1.4em] \hline
      & & \\[1.4em] \hline
      & & \\[1.4em] \hline
-  \end{tabular}
+  \end{tabularx}%
+  \endgroup
 
   \vspace{1.5cm}%
   \noindent Dresden, den \today%

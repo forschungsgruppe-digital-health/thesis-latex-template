@@ -28,6 +28,9 @@
 \RequirePackage{listings}
 \RequirePackage{fancyvrb}
 \RequirePackage{amsmath}
+% Tabellen, die exakt die Textbreite füllen (z.B. die KI-Erklärungstabelle).
+% Lädt zugleich das array-Paket (für >{...}-Spaltenvorspann und \arraybackslash).
+\RequirePackage{tabularx}
 
 \def\arraystretch{1.5}
 
@@ -300,12 +303,16 @@ tabsize=2,
 \fi%
 
 %Befehl für eine Abkürzung
-\newcommand\abbreviation[2]{
+\newcommand\abbreviation[2]{%
   \noindent%
+  % \tabcolsep lokal halten (\begingroup/\endgroup), sonst bleibt der Wert 0pt
+  % für alle folgenden Tabellen erhalten (u.a. die KI-Erklärungstabelle).
+  \begingroup
   \setlength{\tabcolsep}{0pt}%
   \begin{tabular}{p{4.5cm}p{10cm}}
     #1 & #2 \\
-  \end{tabular}
+  \end{tabular}%
+  \endgroup
   \newline
 }
 

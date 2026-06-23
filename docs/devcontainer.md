@@ -34,20 +34,22 @@ recursively, so `fgdh-thesis.cls` (under `latex/`) and the DIN 1505 `.bst` files
 (The root [`latexmkrc`](../latexmkrc) does the same for command-line `latexmk` and for
 Overleaf.)
 
-## Output parity with Overleaf (recommended pin)
+## Output parity with Overleaf
 
-The container uses `texlive/texlive:latest`. For **identical output** to an Overleaf
-project, pin the image to the same TeX Live year your Overleaf/ZIH project uses
-(Overleaf pins each project to its creation-time TeX Live and never auto-upgrades).
-Edit `.devcontainer/devcontainer.json`:
+The container uses `texlive/texlive:latest`, matching **TU Dresden's ZIH Overleaf/tex
+service**, which runs the rolling `latest` TeX Live — so the container compiles against
+the same toolchain students actually use.
+
+If you instead target **overleaf.com**, note it pins each project to its creation-time
+TeX Live and never auto-upgrades; for **identical output** there, pin this image to that
+project's year by editing `.devcontainer/devcontainer.json`:
 
 ```jsonc
-// e.g. match Overleaf TeX Live 2024:
-"image": "texlive/texlive:TL2024-historic"
+// e.g. match an overleaf.com project on TeX Live 2025:
+"image": "texlive/texlive:TL2025-historic"
 ```
 
-See [maintainer/decision-log.md](maintainer/decision-log.md) (D6, and open item O1 — the
-exact ZIH TeX Live year).
+See [maintainer/decision-log.md](maintainer/decision-log.md) (D6, O1).
 
 ## Performance & offline notes
 
