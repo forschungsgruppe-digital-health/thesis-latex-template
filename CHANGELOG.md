@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 From the next release onward this file is **maintained automatically by Release Please**
 from Conventional Commits — see [docs/maintainer/releasing.md](docs/maintainer/releasing.md).
 
+## [3.1.1](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v3.1.0...v3.1.1) (2026-06-23)
+
+
+### Bug Fixes
+
+* AI-declaration table width + padding; pin TeX Live to latest (ZIH parity) ([5f192ed](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/5f192ed988ddb4dfedee7f56b830391d29fe237a))
+* make AI-declaration table fill text width with cell padding ([4eb1243](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/4eb1243e275b38e1cf3dfb479622e778e1e29e84))
+
 ## [3.1.0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v3.0.0...v3.1.0) (2026-06-23)
 
 
