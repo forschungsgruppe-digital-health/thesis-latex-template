@@ -55,15 +55,11 @@ jobs:
         run: |
           set -e
           out=template-${{ needs.release-please.outputs.tag_name }}
-          mkdir -p "$out"
-          # Flatten the starter: class/styles/bst beside the main .tex so Overleaf
-          # needs no search-path shim and the main file sits at the project root.
-          cp -r template/* "$out"/
-          rm -f "$out"/thesis.pdf "$out"/*.aux "$out"/*.log "$out"/*.fls "$out"/*.fdb_latexmk 2>/dev/null || true
-          # The fgdh-thesis class + its deprecated wise.cls alias + the style files.
-          cp latex/fgdh-thesis/fgdh-thesis.cls latex/fgdh-thesis/wise.cls latex/fgdh-thesis/*.sty "$out"/
-          cp bst/*.bst "$out"/
-          cp LICENSE THIRD-PARTY-NOTICES.md "$out"/ 2>/dev/null || true
+          # Flatten the starter (class/styles/bst beside the main .tex) so the main file
+          # sits at the project root and Overleaf needs no search-path shim. The script
+          # also strips the repo's recursive-search latexmkrc, which would hang Overleaf
+          # compiles (the project parent is a large tree there). See tools/package-template.sh.
+          bash tools/package-template.sh "$out"
           zip -r "$out.zip" "$out"
           cp "$out.zip" template.zip   # stable name for the README badge (releases/latest/download/template.zip)
       - name: Attach assets to the release

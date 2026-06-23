@@ -43,3 +43,35 @@ jobs:
             template/thesis.pdf
             examples/**/*.pdf
           if-no-files-found: warn
+
+  # Verify the FLATTENED template.zip layout compiles the way Overleaf sees it: class,
+  # styles, and .bst beside thesis.tex, with NO repo search-path env. This catches
+  # regressions that the in-repo `build` job cannot — most importantly a latexmkrc with
+  # a recursive '..//' search path, which on Overleaf (large project parent) makes
+  # kpathsea scan an enormous tree and the compile never finishes.
+  overleaf-layout:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble the flattened project and compile it in isolation
+        run: |
+          set -e
+          # Assemble OUTSIDE the workspace, so the only way the class is found is by
+          # sitting beside thesis.tex (as on Overleaf) — never via a repo search path.
+          proj="/tmp/overleaf-proj"
+          bash tools/package-template.sh "$proj"
+
+          # Guard: the shipped latexmkrc must not reintroduce a recursive search path.
+          if grep -nE '(TEXINPUTS|BSTINPUTS).*//' "$proj/latexmkrc"; then
+            echo "::error::flattened latexmkrc has a recursive search path (//); this hangs Overleaf compiles"
+            exit 1
+          fi
+
+          # Compile with default search paths only (no TEXINPUTS/BSTINPUTS), pdfLaTeX,
+          # under a timeout so a hang fails fast instead of running out the whole job.
+          cd "$proj"
+          env -u TEXINPUTS -u BSTINPUTS \
+            timeout 300 latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error thesis.tex
+          test -f thesis.pdf && echo "Flattened Overleaf-layout project compiled standalone OK."
