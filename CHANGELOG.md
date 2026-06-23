@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 From the next release onward this file is **maintained automatically by Release Please**
 from Conventional Commits — see [docs/maintainer/releasing.md](docs/maintainer/releasing.md).
 
+## [3.1.2](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v3.1.1...v3.1.2) (2026-06-23)
+
+
+### Bug Fixes
+
+* strip recursive latexmkrc from template.zip so Overleaf compiles finish ([338848f](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/338848fd474c3a6315e0965d39d0ebdecc2af81a))
+* strip recursive latexmkrc from template.zip so Overleaf compiles finish ([0be28b9](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/0be28b9413ba0bd9a2be39da1946645948a4173d))
+
 ## [3.1.1](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v3.1.0...v3.1.1) (2026-06-23)
 
 
