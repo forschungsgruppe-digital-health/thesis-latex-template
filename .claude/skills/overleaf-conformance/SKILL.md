@@ -24,7 +24,7 @@ works for any model or a human. Do not duplicate the checklist here — read it 
 2. **Static scan:**
 
    ```bash
-   docker run --rm -v "$PWD":/repo:ro texlive/texlive:TL2025-historic \
+   docker run --rm -v "$PWD":/repo:ro texlive/texlive:latest \
      bash /repo/tools/overleaf-conformance/scan.sh /repo
    ```
 

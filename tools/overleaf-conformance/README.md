@@ -20,8 +20,8 @@ a human, with no vendor-specific runtime.
 # from the repository root
 bash tools/overleaf-conformance/scan.sh .
 
-# …or in a pinned TeX Live container (has iconv; note: no `file` — the script handles that)
-docker run --rm -v "$PWD":/repo:ro texlive/texlive:TL2025-historic \
+# …or in the TeX Live container (has iconv; note: no `file` — the script handles that)
+docker run --rm -v "$PWD":/repo:ro texlive/texlive:latest \
   bash /repo/tools/overleaf-conformance/scan.sh /repo
 ```
 

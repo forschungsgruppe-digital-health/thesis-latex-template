@@ -14,7 +14,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: texlive/texlive:TL2025-historic   # pinned to overleaf.com's TeX Live 2025; set to ZIH's year if it differs (decision O1)
+    container: texlive/texlive:latest   # tracks TU Dresden's ZIH Overleaf/tex service, which runs the rolling 'latest' TeX Live (decision O1)
     steps:
       - uses: actions/checkout@v4
 
