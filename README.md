@@ -86,16 +86,13 @@ docs/             documentation: filling-in, troubleshooting, dev container, mai
 latexmkrc         whole-repo search-path config (build any document from the root)
 ```
 
-A critique and the target layout are in
-[docs/maintainer/repo-structure.md](docs/maintainer/repo-structure.md).
-
 ## Documentation
 
 - [docs/overleaf.md](docs/overleaf.md) — Overleaf (TU Dresden ZIH & cloud): upload, Git/token sync, backup
 - [docs/filling-in.md](docs/filling-in.md) — how to fill in the template
 - [docs/troubleshooting.md](docs/troubleshooting.md) — common problems & fixes
 - [docs/devcontainer.md](docs/devcontainer.md) — the local LaTeX environment
-- [docs/maintainer/](docs/maintainer/) — inventory, decision log, structure proposal, releasing
+- [docs/maintainer/](docs/maintainer/) — decision log, releasing
 - [Overleaf conformance report](docs/overleaf-conformance-report.md)
 - **New to LaTeX?** Start with [Overleaf Learn](https://www.overleaf.com/learn) or
   [learnlatex.org](https://www.learnlatex.org/) — you only need the basics to use this template.
