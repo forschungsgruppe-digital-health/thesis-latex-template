@@ -2,6 +2,7 @@
 
 | Symptom | Cause & fix |
 |---|---|
+| Overleaf compile **never finishes** / times out | A `latexmkrc` with a recursive search path (`TEXINPUTS='..//:'`) makes Overleaf scan the project's huge parent tree on every file lookup. Fix: in the project, **delete `latexmkrc`** (or replace its contents with just `$pdf_mode = 1;`) and recompile. The flat project needs no search-path setup — the class sits beside `thesis.tex`. (Newer release ZIPs no longer ship the recursive latexmkrc.) |
 | `File 'fgdh-thesis.cls' not found` on Overleaf | Overleaf doesn't search subfolders — use the **release ZIP**, a flat project where the class sits next to `thesis.tex`. |
 | `File 'fgdh-thesis.cls' not found` locally | Build from inside the document's folder (each ships a `latexmkrc`), or use the dev container (workspace-wide search path). |
 | Umlauts look wrong / `Invalid UTF-8 byte` | Save the file as **UTF-8** (not Latin-1/Latin-9). The class expects UTF-8; mixing encodings corrupts umlauts. |
