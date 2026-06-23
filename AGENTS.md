@@ -70,5 +70,3 @@ Run it after structural or class changes.
 ## Key references
 
 - Decisions: [`docs/maintainer/decision-log.md`](docs/maintainer/decision-log.md)
-- Inventory: [`docs/maintainer/inventory.md`](docs/maintainer/inventory.md)
-- Structure proposal: [`docs/maintainer/repo-structure.md`](docs/maintainer/repo-structure.md)
