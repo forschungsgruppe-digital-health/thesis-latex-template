@@ -45,11 +45,19 @@ docker run --rm -v "$PWD":/work texlive/texlive:latest \
   (see `THIRD-PARTY-NOTICES.md`). The `fgdh-thesis` class is LPPL 1.3c (record changes in the
   CHANGELOG and keep the work identifiable as modified).
 
-## Conformance audit
+## Conformance audit (any agent or human — vendor-neutral)
 
-The skill at `.claude/skills/overleaf-conformance/` audits the repo against the
-custom-LaTeX-on-Overleaf checklist and regenerates
-`docs/overleaf-conformance-report.md`. Run it after structural or class changes.
+`tools/overleaf-conformance/` audits the repo against the custom-LaTeX-on-Overleaf
+checklist and regenerates `docs/overleaf-conformance-report.md`. It is plain Markdown + a
+shell script, so any model (Claude, Cursor, Aider, Copilot, …) or a person can use it:
+
+- Read `tools/overleaf-conformance/conformance-checklist.md` (the audit spec).
+- Run `bash tools/overleaf-conformance/scan.sh .` for the automatable checks.
+- Build the doc (BUILD-01), judge the context items, then write the report.
+
+See `tools/overleaf-conformance/README.md` for the full procedure. (Claude Code also exposes
+this as a thin skill at `.claude/skills/overleaf-conformance/`, which just points here.)
+Run it after structural or class changes.
 
 ## Release (planned)
 
@@ -59,7 +67,6 @@ custom-LaTeX-on-Overleaf checklist and regenerates
 
 ## Key references
 
-- Plan: [`maintainer-setup-cot.md`](maintainer-setup-cot.md)
 - Decisions: [`docs/maintainer/decision-log.md`](docs/maintainer/decision-log.md)
 - Inventory: [`docs/maintainer/inventory.md`](docs/maintainer/inventory.md)
 - Structure proposal: [`docs/maintainer/repo-structure.md`](docs/maintainer/repo-structure.md)
