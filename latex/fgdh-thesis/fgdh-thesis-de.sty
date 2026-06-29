@@ -601,10 +601,22 @@ Seminararbeit\\%
   \noindent Dresden, den \today%
 }
 
+% Eine Zeile der KI-Erklärungstabelle. Im optionalen Argument von \aideclaration
+% verwenden, um ein eingesetztes Werkzeug offenzulegen:
+%   \aitool{Hilfsmittel (Werkzeug)}{Art und Zweck der Nutzung}{Betroffenes Kapitel}
+\newcommand\aitool[3]{#1 & #2 & #3 \\[1.4em] \hline}
+
 % Erklärung zum Einsatz von künstlicher Intelligenz (KI). Nach \declaration einfügen.
 % Bitte das zutreffende Kästchen ankreuzen und die Tabelle ausfüllen.
+%
+% Die Tabelle wird über das optionale Argument erweitert: eine Folge von
+% \aitool{…}{…}{…}-Zeilen. Ohne Argument bleiben drei leere Zeilen zum Ausfüllen, z. B.:
+%   \aideclaration[%
+%     \aitool{ChatGPT}{Formulierungsvorschläge zur sprachlichen Glättung}{Kapitel~3}%
+%     \aitool{Elicit}{Identifikation relevanter Literatur}{Kapitel~2}%
+%   ]
 % (Quelle: Word-Vorlage der Forschungsgruppe Digital Health.)
-\newcommand\aideclaration{%
+\newcommand\aideclaration[1][\aitool{}{}{}\aitool{}{}{}\aitool{}{}{}]{%
   \addsec{Erklärung zum Einsatz von künstlicher Intelligenz}
   Hiermit erkläre ich, dass für die vorliegende Arbeit
 
@@ -628,6 +640,7 @@ Seminararbeit\\%
   % tabularx füllt exakt die Textbreite; die \hsize-Faktoren (Summe = 3) halten die
   % Spaltenverhältnisse 0.27 : 0.40 : 0.18 bei. \tabcolsep wird lokal gesetzt, damit
   % die Zellen wieder Innenabstand haben (sonst stößt der Text an die Linien).
+  % Die Datenzeilen (#1) kommen aus dem optionalen Argument (\aitool-Zeilen).
   \noindent\begingroup
   \setlength{\tabcolsep}{6pt}%
   \begin{tabularx}{\textwidth}{%
@@ -636,9 +649,7 @@ Seminararbeit\\%
       |>{\raggedright\arraybackslash\hsize=0.64\hsize\linewidth=\hsize}X|}
     \hline
     \textbf{Hilfsmittel (Werkzeug)} & \textbf{Art und Zweck der Nutzung} & \textbf{Betroffenes Kapitel} \\ \hline
-     & & \\[1.4em] \hline
-     & & \\[1.4em] \hline
-     & & \\[1.4em] \hline
+    #1
   \end{tabularx}%
   \endgroup
 

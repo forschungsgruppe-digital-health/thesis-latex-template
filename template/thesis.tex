@@ -73,7 +73,13 @@
   % Statutory declaration of authorship.
   \declaration
 
-  % Declaration on the use of AI tools (FGDH)
+  % Declaration on the use of AI tools (FGDH). \aideclaration leaves three blank rows
+  % to fill in. To disclose tools, pass them in the optional argument — one
+  % \aitool{tool}{type and purpose of use}{affected chapter} row each, e.g.:
+  %   \aideclaration[%
+  %     \aitool{ChatGPT}{Formulierungsvorschläge zur sprachlichen Glättung}{Kapitel~3}%
+  %     \aitool{Elicit}{Identifikation relevanter Literatur}{Kapitel~2}%
+  %   ]
   \aideclaration
 \end{appendix}
 

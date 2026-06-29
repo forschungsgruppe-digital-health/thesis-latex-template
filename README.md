@@ -70,6 +70,7 @@ marked `« … »`). Then:
 | Choose language | class option: default German, `en` for English (`\documentclass[...,en]{fgdh-thesis}`) |
 | Add chapters | `\section{…}`, or split with `\include{chapter}` |
 | Add references | `template/references.bib` + `\cite{key}`; style is `\bibliographystyle{fgdh-thesis-nat}` (DIN 1505) |
+| Declare AI-tool use | `\aideclaration` in the appendix — tick a box and list tools via `\aideclaration[\aitool{tool}{type & purpose}{chapter}…]` (see [filling-in.md §7](docs/filling-in.md)) |
 
 Full walk-through: [docs/filling-in.md](docs/filling-in.md). The richer DE/EN sample
 theses live under [`examples/`](examples/).
