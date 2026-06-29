@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 From the next release onward this file is **maintained automatically by Release Please**
 from Conventional Commits — see [docs/maintainer/releasing.md](docs/maintainer/releasing.md).
 
+## [3.2.0](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v3.1.2...v3.2.0) (2026-06-29)
+
+
+### Features
+
+* extensible AI-declaration table (\aitool rows) + examples & docs ([d3f4286](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/d3f428669019d491a3928fac405a09fc2879c185))
+* make the AI-declaration table extensible via \aideclaration[\aitool...] ([f37c1b6](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/commit/f37c1b6e99d2efe91c63d4abf78716497f4b23c0)), closes [#14](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/issues/14)
+
 ## [3.1.2](https://github.com/forschungsgruppe-digital-health/thesis-latex-template/compare/v3.1.1...v3.1.2) (2026-06-23)
 
 
