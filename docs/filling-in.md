@@ -63,7 +63,26 @@ Put images in [`figures/`](../template/figures/) and include them:
 \abbreviation{z.\,B.}{zum Beispiel}
 ```
 
-## 7. Compile
+## 7. AI-use declaration
+
+`\aideclaration` (in the appendix) prints the declaration on the use of AI tools with
+**three blank rows** to fill in by hand. To list the tools you used, pass them in the
+**optional argument** — one `\aitool{…}{…}{…}` row per tool:
+
+```latex
+\aideclaration[%
+  \aitool{ChatGPT}{Wording suggestions for linguistic polishing}{Chapter 3}%
+  \aitool{Elicit}{Identification of relevant literature}{Chapter 2}%
+]
+```
+
+`\aitool` takes three cells: **tool**, **type & purpose of use**, **affected chapter(s)**.
+Add as many rows as you need; with no argument (`\aideclaration`) you get the blank
+table. Worked examples are in [`examples/de`](../examples/de/thesis-de.tex) and
+[`examples/en`](../examples/en/thesis-en.tex). Don't forget to tick the applicable box
+above the table.
+
+## 8. Compile
 
 - **Dev container / VS Code:** open `template/thesis.tex` and Build (see
   [devcontainer.md](devcontainer.md)).

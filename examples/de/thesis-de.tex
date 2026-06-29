@@ -105,8 +105,13 @@ Wie in Kapitel \ref{sec:kapitel1} erklärt wurde, gibt es das in Abb. \ref{abb:k
   %Die Arbeit schließt mit der ehrenwörtlichen Erklärung
   \declaration
 
-  % Declaration on the use of AI tools (FGDH)
-  \aideclaration
+  % Erklärung zum KI-Einsatz (FGDH). Die Tabelle wird über das optionale Argument
+  % erweitert: je Werkzeug eine \aitool{Werkzeug}{Art und Zweck}{Kapitel}-Zeile.
+  % Ohne Argument (\aideclaration) bleiben drei leere Zeilen zum Ausfüllen.
+  \aideclaration[%
+    \aitool{ChatGPT}{Formulierungsvorschläge zur sprachlichen Glättung}{Kapitel~1 u.~2}%
+    \aitool{Elicit}{Identifikation relevanter wissenschaftlicher Literatur}{Kapitel~2}%
+  ]
 \end{appendix}
 
 \end{document}

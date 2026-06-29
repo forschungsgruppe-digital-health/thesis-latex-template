@@ -104,8 +104,13 @@ This is the first chapter. It is initiated by a short introduction sentence and 
   %the work closes with a declaration  of authorship
   \declaration
 
-  % Declaration on the use of AI tools (FGDH)
-  \aideclaration
+  % Declaration on the use of AI tools (FGDH). Extend the table through the optional
+  % argument: one \aitool{tool}{type and purpose}{chapter} row per tool. With no
+  % argument (\aideclaration) it leaves three blank rows to fill in.
+  \aideclaration[%
+    \aitool{ChatGPT}{Wording suggestions for linguistic polishing}{Introduction, Ch.~1}%
+    \aitool{Elicit}{Identification of relevant scholarly literature}{Ch.~1}%
+  ]
 \end{appendix}
 
 \end{document}

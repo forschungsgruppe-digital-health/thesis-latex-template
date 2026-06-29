@@ -617,10 +617,22 @@ I hereby certify that this thesis has been composed by me and is based on my own
   \noindent Dresden, the \today%
 }
 
+% One row of the AI-declaration table. Use it inside the optional argument of
+% \aideclaration to disclose a tool:
+%   \aitool{aid (tool)}{type and purpose of use}{affected chapter(s)}
+\newcommand\aitool[3]{#1 & #2 & #3 \\[1.4em] \hline}
+
 % Declaration on the use of artificial intelligence (AI). Insert after \declaration.
 % Tick the applicable box and fill in the table.
+%
+% Extend the table through the optional argument: a sequence of \aitool{…}{…}{…}
+% rows. With no argument it shows three blank rows to fill in by hand, e.g.:
+%   \aideclaration[%
+%     \aitool{ChatGPT}{Wording suggestions for linguistic polishing}{Chapter~3}%
+%     \aitool{Elicit}{Identification of relevant literature}{Chapter~2}%
+%   ]
 % (Source: the Forschungsgruppe Digital Health Word template.)
-\newcommand\aideclaration{%
+\newcommand\aideclaration[1][\aitool{}{}{}\aitool{}{}{}\aitool{}{}{}]{%
   \addsec{Declaration on the Use of Artificial Intelligence}
   I hereby declare that, for the present thesis,
 
@@ -639,9 +651,10 @@ I hereby certify that this thesis has been composed by me and is based on my own
   thesis, in accordance with the principles of good scientific practice.%
 
   \vspace{1em}
-  % tabularx füllt exakt die Textbreite; die \hsize-Faktoren (Summe = 3) halten die
-  % Spaltenverhältnisse 0.27 : 0.40 : 0.18 bei. \tabcolsep wird lokal gesetzt, damit
-  % die Zellen wieder Innenabstand haben (sonst stößt der Text an die Linien).
+  % tabularx fills the exact text width; the \hsize factors (sum = 3) keep the column
+  % proportions 0.27 : 0.40 : 0.18. \tabcolsep is set locally so the cells regain inner
+  % padding (otherwise the text touches the rules). The data rows (#1) come from the
+  % optional argument (\aitool rows).
   \noindent\begingroup
   \setlength{\tabcolsep}{6pt}%
   \begin{tabularx}{\textwidth}{%
@@ -650,9 +663,7 @@ I hereby certify that this thesis has been composed by me and is based on my own
       |>{\raggedright\arraybackslash\hsize=0.64\hsize\linewidth=\hsize}X|}
     \hline
     \textbf{Aid (tool)} & \textbf{Type and purpose of use} & \textbf{Affected chapter} \\ \hline
-     & & \\[1.4em] \hline
-     & & \\[1.4em] \hline
-     & & \\[1.4em] \hline
+    #1
   \end{tabularx}%
   \endgroup
 
